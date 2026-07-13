@@ -1,0 +1,27 @@
+[workspace]
+name = "typhoon-test-suite"
+platforms = ["linux-64", "osx-arm64", "win-64"]
+channels = [
+  "https://conda.anaconda.org/anderslanglands/label/test",
+  "https://conda.anaconda.org/anderslanglands",
+  "conda-forge",
+]
+channel-priority = "disabled"
+
+[dependencies]
+python = "3.11.*"
+openusd-typhoon = "*"
+pytest = "*"
+numpy = "*"
+pillow = "*"
+goldeneye = "*"
+
+[pypi-dependencies]
+flip-evaluator = "==1.7"
+
+[tasks]
+test = "pytest"
+"goldeneye:download-references" = "goldeneye download-references"
+"goldeneye:update-references" = "goldeneye update-references"
+"goldeneye:extract-failures" = "goldeneye extract-failures"
+"goldeneye:view" = "goldeneye view"

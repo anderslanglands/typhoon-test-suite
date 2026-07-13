@@ -1,0 +1,7 @@
+.pixi/
+_output/
+.pytest_cache/
+__pycache__/
+*.py[cod]
+.goldeneye-reference-state.json
+reference/

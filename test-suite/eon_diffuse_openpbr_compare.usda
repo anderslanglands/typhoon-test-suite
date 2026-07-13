@@ -1,0 +1,33 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    renderSettingsPrimPath = "/RenderSettings"
+    subLayers = [
+        @./_assets/scenes/eon_diffuse_openpbr_compare.usda@
+    ]
+)
+
+def RenderSettings "RenderSettings" (
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI"]
+)
+{
+    rel camera = </World/MainCamera>
+    rel products = [</RenderProduct>]
+    float pixelAspectRatio = 1
+    int2 resolution = (512, 256)
+}
+
+def RenderProduct "RenderProduct"
+{
+    rel camera = </World/MainCamera>
+    rel orderedVars = [</RenderProduct/Color>]
+    token productName = "eon_diffuse_openpbr_compare.exr"
+    token productType = "raster"
+
+    def RenderVar "Color"
+    {
+        token dataType = "color4f"
+        string sourceName = "color"
+        token sourceType = "raw"
+    }
+}
