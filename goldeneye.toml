@@ -11,18 +11,16 @@ command = [
     "--manifest-path", "../openusd-omniverse/pixi.toml",
     "--clean-env",
     "usdrender",
-    "--disableCameraLight",
     "{usd_path}",
     "--outputRoot", "{suite_output_root}",
 ]
 
-[renderers.typhoon-refactor]
+[renderers.typhoon-local]
 command = [
     "pixi", "run",
-    "--manifest-path", "../openusd-omniverse-typhoon-refactor/pixi.toml",
+    "--manifest-path", "../openusd-omniverse/pixi.toml",
     "--clean-env",
     "usdrender",
-    "--disableCameraLight",
     "{usd_path}",
     "--outputRoot", "{suite_output_root}",
 ]

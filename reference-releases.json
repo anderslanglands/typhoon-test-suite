@@ -1,0 +1,214 @@
+{
+  "groups": {
+    "test-suite": {
+      "archive": "test-suite--3397bc21bb92.zip",
+      "archive_sha256": "ea0be80cf5c3b2f4200a1979feafbc31fef87c34502b60f3e180cb5afde2d777",
+      "archive_size": 24299264,
+      "files": [
+        {
+          "path": "test-suite/reference/caustics_off_policy_regression.exr",
+          "sha256": "f4dbd27d3aba0cc6c4e961ae589dafec003fa592ddd1f6a8a7a72026479112e6",
+          "size": 1082177
+        },
+        {
+          "path": "test-suite/reference/colortransform_gallery.exr",
+          "sha256": "6813436eb6ab36a48123c3c4391479f95c3a2d333262e177e7b0eaf975b60008",
+          "size": 338588
+        },
+        {
+          "path": "test-suite/reference/cornell_box.exr",
+          "sha256": "d5039a3bdc533fa0e9e7ad90770423c2e29ebfc4008bdc4da114af59924fcdb3",
+          "size": 1362826
+        },
+        {
+          "path": "test-suite/reference/cutglass_dispersion_compare.exr",
+          "sha256": "d8c353cdf1a030f17e3ac86a0b4e74a71b5764836a5763d1bc2a4f137e152b37",
+          "size": 1085685
+        },
+        {
+          "path": "test-suite/reference/disneyPrincipled_parameter_parity.exr",
+          "sha256": "5b691712edca8f6c4ce179c6dbd2c009703dda7ec0ea3cea5f445a6d11c4c5fb",
+          "size": 420956
+        },
+        {
+          "path": "test-suite/reference/dpdu_dpdv_debug.exr",
+          "sha256": "39570e288d2dfc5ef91f00ddbd6c50db8456044905bf1565077ebbafc1f0c507",
+          "size": 294410
+        },
+        {
+          "path": "test-suite/reference/emissive.exr",
+          "sha256": "56f2e90a8e8f9d7e4f88cfb03d72d39f06acbdf00f254f05a7d666cfad07d1df",
+          "size": 46807
+        },
+        {
+          "path": "test-suite/reference/eon_diffuse_openpbr_compare.exr",
+          "sha256": "925a432da1653255bcd26d42b6d9b63a2a214791c8a0e3fdd3361d18b7836629",
+          "size": 584654
+        },
+        {
+          "path": "test-suite/reference/furnace_material_models.exr",
+          "sha256": "82c8c0c8b308b5b238589837886538322963f8f1ea171321b4ba2ff1cf5853c3",
+          "size": 354589
+        },
+        {
+          "path": "test-suite/reference/geompropvalue_test.exr",
+          "sha256": "15e113ad0f28734c96c7b1cb7223274d6e772b23e8d0fbd039384385f1f72cb0",
+          "size": 374480
+        },
+        {
+          "path": "test-suite/reference/gltfPbr_parameter_parity.exr",
+          "sha256": "0d6bd739b476f85cb1d18b81cda8532ca68acfd3d843f3373b133a58021dee9b",
+          "size": 401494
+        },
+        {
+          "path": "test-suite/reference/ies_profile_gallery.exr",
+          "sha256": "53ecdd5fdc9a6f99293bfd5154d8824d6fd1664346ee647a11e09c45dbd2340f",
+          "size": 1114572
+        },
+        {
+          "path": "test-suite/reference/microfacet_ms_smoke.exr",
+          "sha256": "2f4c95db37b6c1b70b24fa1754d952daa7b355da73ac5439150220bae10a941b",
+          "size": 446585
+        },
+        {
+          "path": "test-suite/reference/multi_material.exr",
+          "sha256": "59a7bf118efa402fd70550013a8292188336af2e8c770a0fc9a07e6ee0f8f95a",
+          "size": 283312
+        },
+        {
+          "path": "test-suite/reference/nd_usd_nodes_gallery.exr",
+          "sha256": "3b6f24c201a9668ef1777918206551e5a3d74b33dd759d759eaaf05440d715b8",
+          "size": 515220
+        },
+        {
+          "path": "test-suite/reference/nodegraph_mix.exr",
+          "sha256": "a79aa00b5e44f4fdd6130e99861e7cb6239278f5e4c553a94ac23909409a4ce2",
+          "size": 269036
+        },
+        {
+          "path": "test-suite/reference/nodegraph_multiply.exr",
+          "sha256": "e05361db537310cbf1d833018ba5c9c4802aa6d83be3ce138a1015cdc23f78f2",
+          "size": 384075
+        },
+        {
+          "path": "test-suite/reference/nodegraph_ramp.exr",
+          "sha256": "413c74a73e6f22ce9890aed87c90fcd94ea616c88c3502a49f1f5647422343c4",
+          "size": 842364
+        },
+        {
+          "path": "test-suite/reference/npr_nodes_sphere_gallery.exr",
+          "sha256": "fe8ce3d87885a0caef7e56abe375c9da4fbfa87ce14b49aef838e3869a3ec2c6",
+          "size": 405418
+        },
+        {
+          "path": "test-suite/reference/openPbr_bump_fractal.exr",
+          "sha256": "327d6fea4ebf0a0920d32205c4ec8be4c6950ea0536ad209b1170735be79df36",
+          "size": 427652
+        },
+        {
+          "path": "test-suite/reference/openPbr_glass.exr",
+          "sha256": "da25e50524f1a138200b534c5fec660225c40cb11ccda53cc35eff6cb631bbc1",
+          "size": 84638
+        },
+        {
+          "path": "test-suite/reference/openPbr_parameter_parity.exr",
+          "sha256": "12ef2714f951e91d842c8e535c7d0662ec556bf3a7692cd59db0b45552600098",
+          "size": 381400
+        },
+        {
+          "path": "test-suite/reference/openPbr_simple.exr",
+          "sha256": "5cdc7f427cc52890f60592acd4cfbb803c080ebf787760a343e024208f3be01e",
+          "size": 384146
+        },
+        {
+          "path": "test-suite/reference/openpbr_sss_native_adobe_compare.exr",
+          "sha256": "6a96ada4b875e8aae6de2edfcf7fdf8455f8ad40d172a7f8d6eda8335bbf163d",
+          "size": 878604
+        },
+        {
+          "path": "test-suite/reference/procedural2d_gallery.exr",
+          "sha256": "4452130c88c6f3d20ef02a45b5b36eb5670fac614e6b4b6ac5921ba96a69f570",
+          "size": 146671
+        },
+        {
+          "path": "test-suite/reference/procedural3d_gallery.exr",
+          "sha256": "63e17aed06248cfb0459a9d3d7eb013d492cbb65b313a7dac9b77b8a125f9516",
+          "size": 85644
+        },
+        {
+          "path": "test-suite/reference/rough_dielectric_white_furnace_sphere.exr",
+          "sha256": "63b6a31d06892eb688961cac6df02d49f02c0561f199f2c5780e413feb0f07ab",
+          "size": 901118
+        },
+        {
+          "path": "test-suite/reference/sss_randomwalk_gallery.exr",
+          "sha256": "507ef005fa8f0607a5fd3cc76d397240ef7cd2360bc82281bef97355b68ea007",
+          "size": 1329285
+        },
+        {
+          "path": "test-suite/reference/standardSurface_coated.exr",
+          "sha256": "199e44ee801ed46fcd553275087698f926ebdd4c4ff7481c3a0b13813da27621",
+          "size": 258056
+        },
+        {
+          "path": "test-suite/reference/standardSurface_simple.exr",
+          "sha256": "d431751c56b154dfd3f1410f754397be0813b04dd28d691ba6633cf51212aad1",
+          "size": 384243
+        },
+        {
+          "path": "test-suite/reference/subdiv_facevarying_test.exr",
+          "sha256": "a3af07d57aeec26d7ea144acfdadb52725f747b00ec1cbb797025e445fb97501",
+          "size": 375211
+        },
+        {
+          "path": "test-suite/reference/subdiv_st_interpolation_compare.exr",
+          "sha256": "c3e89ea159f7ad210bb3dbfc98583183cf8ffae9edfbdf526d9f606249955336",
+          "size": 304974
+        },
+        {
+          "path": "test-suite/reference/surface_derivatives_test.exr",
+          "sha256": "922d1bdbca0361904bd46b7f166c5095a5c60db2da4a91d7c0e9b76f9eb94dfa",
+          "size": 1021557
+        },
+        {
+          "path": "test-suite/reference/surface_shader_gallery.exr",
+          "sha256": "2af163b95854028c1429d615f19eee6e9564a720f2da832c1486f501b7e08ac7",
+          "size": 1257833
+        },
+        {
+          "path": "test-suite/reference/texture_image_compare_gallery.exr",
+          "sha256": "4cbf17520fdf20b6dc222cfbfd5fc8fd6e43995e440a50209603777e957c3633",
+          "size": 859961
+        },
+        {
+          "path": "test-suite/reference/transparency_material_gallery.exr",
+          "sha256": "8d53cd5886396db52f87e33307fdd6fd48223c72602e801498546c6a024c55d9",
+          "size": 1682830
+        },
+        {
+          "path": "test-suite/reference/usdPreviewSurface_metallic.exr",
+          "sha256": "bfca3adbb4aa92ad03e94d084b3badb33fbf71346d0a136b5ac140e701e1fa3e",
+          "size": 382026
+        },
+        {
+          "path": "test-suite/reference/usdPreviewSurface_simple.exr",
+          "sha256": "c95d83a3e7f72607d44e7d174b13ee1b53b60d20fd9fbcf7615c342901e05b17",
+          "size": 384321
+        },
+        {
+          "path": "test-suite/reference/usd_native_nodes_gallery.exr",
+          "sha256": "2a39badb6bd9f2e0dd39c778311b7531f9dd66414eba7e387860d0a1ed11a964",
+          "size": 610803
+        },
+        {
+          "path": "test-suite/reference/volume_transmission_single_cube.exr",
+          "sha256": "3425e98f2b0aead3750e55c7730ac22ee3dcc61c5435307fa79e9dad3c19b0f5",
+          "size": 1544205
+        }
+      ],
+      "release": "reference-data-20260717T012106Z-8407a137-58ffcf99"
+    }
+  },
+  "repository": "anderslanglands/typhoon-test-suite",
+  "schema_version": 1
+}
