@@ -1,0 +1,411 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    upAxis = "Y"
+    renderSettingsPrimPath = "/RenderSettings"
+    doc = """Subdivision primvar interpolation matrix.
+    Columns: uniform, vertex, varying, faceVarying.
+    Rows: faceVaryingLinearInterpolation none, cornersOnly, cornersPlus1,
+          cornersPlus2, boundaries, all.
+    The indexed face-varying column contains shared regions, seams, corners,
+    and darts; the other columns are controls that must not change by row.
+    """
+)
+
+class Mesh "UniformProto"
+{
+    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    int[] faceVertexIndices = [0, 1, 6, 5, 1, 2, 7, 6, 2, 3, 8, 7, 3, 4, 9, 8, 5, 6, 11, 10, 6, 7, 12, 11, 7, 8, 13, 12, 8, 9, 14, 13, 10, 11, 16, 15, 11, 12, 17, 16, 12, 13, 18, 17, 13, 14, 19, 18, 15, 16, 21, 20, 16, 17, 22, 21, 17, 18, 23, 22, 18, 19, 24, 23]
+    point3f[] points = [(-1, -1, 0.04), (-0.5, -1, 0), (0, -1, 0), (0.5, -1, 0.04), (1, -1, 0), (-1, -0.5, 0), (-0.5, -0.5, 0.045), (0, -0.5, 0.13), (0.5, -0.5, 0.045), (1, -0.5, 0), (-1, 0, 0), (-0.5, 0, 0.13), (0, 0, 0.18), (0.5, 0, 0.09), (1, 0, 0.04), (-1, 0.5, 0.04), (-0.5, 0.5, 0.045), (0, 0.5, 0.09), (0.5, 0.5, 0.085), (1, 0.5, 0), (-1, 1, 0), (-0.5, 1, 0), (0, 1, 0.04), (0.5, 1, 0), (1, 1, 0)]
+    color3f[] primvars:testColor = [(0.093125, 0.093125, 0.12), (0.198125, 0.093125, 0.48), (0.408125, 0.093125, 0.84), (0.723125, 0.093125, 0.12), (0.093125, 0.198125, 0.48), (0.198125, 0.198125, 0.84), (0.408125, 0.198125, 0.12), (0.723125, 0.198125, 0.48), (0.093125, 0.408125, 0.84), (0.198125, 0.408125, 0.12), (0.408125, 0.408125, 0.48), (0.723125, 0.408125, 0.84), (0.093125, 0.723125, 0.12), (0.198125, 0.723125, 0.48), (0.408125, 0.723125, 0.84), (0.723125, 0.723125, 0.12)] (
+        interpolation = "uniform"
+    )
+    uniform token subdivisionScheme = "catmullClark"
+}
+class Mesh "VertexProto"
+{
+    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    int[] faceVertexIndices = [0, 1, 6, 5, 1, 2, 7, 6, 2, 3, 8, 7, 3, 4, 9, 8, 5, 6, 11, 10, 6, 7, 12, 11, 7, 8, 13, 12, 8, 9, 14, 13, 10, 11, 16, 15, 11, 12, 17, 16, 12, 13, 18, 17, 13, 14, 19, 18, 15, 16, 21, 20, 16, 17, 22, 21, 17, 18, 23, 22, 18, 19, 24, 23]
+    point3f[] points = [(-1, -1, 0.04), (-0.5, -1, 0), (0, -1, 0), (0.5, -1, 0.04), (1, -1, 0), (-1, -0.5, 0), (-0.5, -0.5, 0.045), (0, -0.5, 0.13), (0.5, -0.5, 0.045), (1, -0.5, 0), (-1, 0, 0), (-0.5, 0, 0.13), (0, 0, 0.18), (0.5, 0, 0.09), (1, 0, 0.04), (-1, 0.5, 0.04), (-0.5, 0.5, 0.045), (0, 0.5, 0.09), (0.5, 0.5, 0.085), (1, 0.5, 0), (-1, 1, 0), (-0.5, 1, 0), (0, 1, 0.04), (0.5, 1, 0), (1, 1, 0)]
+    color3f[] primvars:testColor = [(0.08, 0.08, 0.12), (0.1325, 0.08, 0.48), (0.29, 0.08, 0.84), (0.5525, 0.08, 0.12), (0.92, 0.08, 0.48), (0.08, 0.1325, 0.84), (0.1325, 0.1325, 0.12), (0.29, 0.1325, 0.48), (0.5525, 0.1325, 0.84), (0.92, 0.1325, 0.12), (0.08, 0.29, 0.48), (0.1325, 0.29, 0.84), (0.29, 0.29, 0.12), (0.5525, 0.29, 0.48), (0.92, 0.29, 0.84), (0.08, 0.5525, 0.12), (0.1325, 0.5525, 0.48), (0.29, 0.5525, 0.84), (0.5525, 0.5525, 0.12), (0.92, 0.5525, 0.48), (0.08, 0.92, 0.84), (0.1325, 0.92, 0.12), (0.29, 0.92, 0.48), (0.5525, 0.92, 0.84), (0.92, 0.92, 0.12)] (
+        interpolation = "vertex"
+    )
+    uniform token subdivisionScheme = "catmullClark"
+}
+class Mesh "VaryingProto"
+{
+    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    int[] faceVertexIndices = [0, 1, 6, 5, 1, 2, 7, 6, 2, 3, 8, 7, 3, 4, 9, 8, 5, 6, 11, 10, 6, 7, 12, 11, 7, 8, 13, 12, 8, 9, 14, 13, 10, 11, 16, 15, 11, 12, 17, 16, 12, 13, 18, 17, 13, 14, 19, 18, 15, 16, 21, 20, 16, 17, 22, 21, 17, 18, 23, 22, 18, 19, 24, 23]
+    point3f[] points = [(-1, -1, 0.04), (-0.5, -1, 0), (0, -1, 0), (0.5, -1, 0.04), (1, -1, 0), (-1, -0.5, 0), (-0.5, -0.5, 0.045), (0, -0.5, 0.13), (0.5, -0.5, 0.045), (1, -0.5, 0), (-1, 0, 0), (-0.5, 0, 0.13), (0, 0, 0.18), (0.5, 0, 0.09), (1, 0, 0.04), (-1, 0.5, 0.04), (-0.5, 0.5, 0.045), (0, 0.5, 0.09), (0.5, 0.5, 0.085), (1, 0.5, 0), (-1, 1, 0), (-0.5, 1, 0), (0, 1, 0.04), (0.5, 1, 0), (1, 1, 0)]
+    color3f[] primvars:testColor = [(0.08, 0.08, 0.12), (0.1325, 0.08, 0.48), (0.29, 0.08, 0.84), (0.5525, 0.08, 0.12), (0.92, 0.08, 0.48), (0.08, 0.1325, 0.84), (0.1325, 0.1325, 0.12), (0.29, 0.1325, 0.48), (0.5525, 0.1325, 0.84), (0.92, 0.1325, 0.12), (0.08, 0.29, 0.48), (0.1325, 0.29, 0.84), (0.29, 0.29, 0.12), (0.5525, 0.29, 0.48), (0.92, 0.29, 0.84), (0.08, 0.5525, 0.12), (0.1325, 0.5525, 0.48), (0.29, 0.5525, 0.84), (0.5525, 0.5525, 0.12), (0.92, 0.5525, 0.48), (0.08, 0.92, 0.84), (0.1325, 0.92, 0.12), (0.29, 0.92, 0.48), (0.5525, 0.92, 0.84), (0.92, 0.92, 0.12)] (
+        interpolation = "varying"
+    )
+    uniform token subdivisionScheme = "catmullClark"
+}
+class Mesh "FaceVaryingProto"
+{
+    int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    int[] faceVertexIndices = [0, 1, 6, 5, 1, 2, 7, 6, 2, 3, 8, 7, 3, 4, 9, 8, 5, 6, 11, 10, 6, 7, 12, 11, 7, 8, 13, 12, 8, 9, 14, 13, 10, 11, 16, 15, 11, 12, 17, 16, 12, 13, 18, 17, 13, 14, 19, 18, 15, 16, 21, 20, 16, 17, 22, 21, 17, 18, 23, 22, 18, 19, 24, 23]
+    point3f[] points = [(-1, -1, 0.04), (-0.5, -1, 0), (0, -1, 0), (0.5, -1, 0.04), (1, -1, 0), (-1, -0.5, 0), (-0.5, -0.5, 0.045), (0, -0.5, 0.13), (0.5, -0.5, 0.045), (1, -0.5, 0), (-1, 0, 0), (-0.5, 0, 0.13), (0, 0, 0.18), (0.5, 0, 0.09), (1, 0, 0.04), (-1, 0.5, 0.04), (-0.5, 0.5, 0.045), (0, 0.5, 0.09), (0.5, 0.5, 0.085), (1, 0.5, 0), (-1, 1, 0), (-0.5, 1, 0), (0, 1, 0.04), (0.5, 1, 0), (1, 1, 0)]
+    color3f[] primvars:testColor = [(0.08, 0.08, 0.12), (0.1136, 0.08, 0.48), (0.29, 0.08, 0.84), (0.6176, 0.08, 0.12), (0.92, 0.08, 0.48), (0.08, 0.1136, 0.84), (0.1136, 0.1136, 0.12), (0.29, 0.0884, 0.48), (0.6176, 0.1136, 0.84), (0.92, 0.1136, 0.12), (0.08, 0.2144, 0.48), (0.1136, 0.2144, 0.84), (0.29, 0.1136, 0.12), (0.6176, 0.2144, 0.48), (0.92, 0.2144, 0.84), (0.08, 0.3824, 0.12), (0.1325, 0.3824, 0.48), (0.29, 0.2144, 0.84), (0.5525, 0.3824, 0.12), (0.92, 0.3824, 0.48), (0.08, 0.6176, 0.84), (0.1325, 0.6176, 0.12), (0.29, 0.4349, 0.48), (0.5525, 0.6176, 0.84), (0.92, 0.6176, 0.12), (0.08, 0.92, 0.48), (0.1325, 0.92, 0.84), (0.29, 0.92, 0.12), (0.5525, 0.92, 0.48), (0.92, 0.92, 0.84), (0.2144, 0.08, 0.12), (0.3824, 0.08, 0.48), (0.2144, 0.0884, 0.84), (0.3824, 0.0884, 0.12), (0.2144, 0.1325, 0.48), (0.3824, 0.1325, 0.84), (0.2144, 0.92, 0.12), (0.3824, 0.92, 0.48)] (
+        interpolation = "faceVarying"
+    )
+    int[] primvars:testColor:indices = [0, 1, 6, 5, 1, 30, 32, 6, 31, 3, 8, 33, 3, 4, 9, 8, 5, 6, 11, 10, 6, 32, 34, 11, 33, 8, 13, 35, 8, 9, 14, 13, 15, 16, 21, 20, 16, 17, 22, 21, 17, 18, 23, 22, 18, 19, 24, 23, 20, 21, 26, 25, 21, 22, 36, 26, 22, 23, 28, 37, 23, 24, 29, 28]
+    uniform token subdivisionScheme = "catmullClark"
+}
+def RenderSettings "RenderSettings" (
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI"]
+)
+{
+    rel camera = </Camera>
+    rel products = [</RenderProduct>]
+    float pixelAspectRatio = 1
+    int2 resolution = (800, 1200)
+    token ty:samplerSequence = "openqmc_sobolbn"
+    int ty:convergedSamplesPerPixel = 1
+    int ty:randomNumberSeed = 1
+    int ty:maxBounces = 0
+}
+
+def RenderProduct "RenderProduct"
+{
+    rel camera = </Camera>
+    rel orderedVars = [</RenderProduct/Color>]
+    token productName = "subdiv_primvar_interpolation_matrix.exr"
+    token productType = "raster"
+
+    def RenderVar "Color"
+    {
+        token dataType = "color4f"
+        string sourceName = "color"
+        token sourceType = "raw"
+    }
+}
+
+def Camera "Camera"
+{
+    float focalLength = 35
+    float horizontalAperture = 20
+    float verticalAperture = 30
+    float2 clippingRange = (0.1, 1000)
+    double3 xformOp:translate = (0, 0, 20)
+    uniform token[] xformOpOrder = ["xformOp:translate"]
+}
+
+def Xform "World"
+{
+    def Scope "Materials"
+    {
+        def Material "PrimvarColor"
+        {
+            token outputs:mtlx:surface.connect = </World/Materials/PrimvarColor/Surface.outputs:out>
+
+            def Shader "ReadColor"
+            {
+                uniform token info:id = "ND_geompropvalue_color3"
+                string inputs:geomprop = "testColor"
+                color3f inputs:default = (1, 0, 1)
+                color3f outputs:out
+            }
+
+            def Shader "Surface"
+            {
+                uniform token info:id = "ND_standard_surface_surfaceshader"
+                float inputs:base = 0
+                float inputs:specular = 0
+                float inputs:emission = 1
+                color3f inputs:emission_color.connect = </World/Materials/PrimvarColor/ReadColor.outputs:out>
+                token outputs:out
+            }
+        }
+    }
+
+    def Mesh "none_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "none"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, 5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "none_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "none"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, 5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "none_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "none"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, 5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "none_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "none"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, 5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersOnly_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersOnly"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, 3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersOnly_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersOnly"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, 3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersOnly_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersOnly"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, 3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersOnly_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersOnly"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, 3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus1_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus1"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, 1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus1_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus1"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, 1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus1_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus1"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, 1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus1_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus1"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, 1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus2_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus2"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, -1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus2_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus2"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, -1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus2_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus2"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, -1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "cornersPlus2_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "cornersPlus2"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, -1, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "boundaries_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "boundaries"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, -3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "boundaries_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "boundaries"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, -3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "boundaries_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "boundaries"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, -3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "boundaries_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "boundaries"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, -3, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "all_uniform" (
+        references = </UniformProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "all"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-3.6, -5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "all_vertex" (
+        references = </VertexProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "all"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (-1.2, -5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "all_varying" (
+        references = </VaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "all"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (1.2, -5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Mesh "all_faceVarying" (
+        references = </FaceVaryingProto>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        uniform token faceVaryingLinearInterpolation = "all"
+        rel material:binding = </World/Materials/PrimvarColor>
+        double3 xformOp:translate = (3.6, -5, 0)
+        float3 xformOp:scale = (0.82, 0.82, 0.82)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+}

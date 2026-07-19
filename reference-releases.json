@@ -1,9 +1,9 @@
 {
   "groups": {
     "test-suite": {
-      "archive": "test-suite--3397bc21bb92.zip",
-      "archive_sha256": "ea0be80cf5c3b2f4200a1979feafbc31fef87c34502b60f3e180cb5afde2d777",
-      "archive_size": 24299264,
+      "archive": "test-suite--7a4b539af36a.zip",
+      "archive_sha256": "98a80379f3b617238182e109f6dff54cd985f6bace2b4eb947eb2ca44437bc3b",
+      "archive_size": 27422478,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
@@ -161,6 +161,11 @@
           "size": 375211
         },
         {
+          "path": "test-suite/reference/subdiv_primvar_interpolation_matrix.exr",
+          "sha256": "25fcf6bf9e985e0a6159008647fa35cc7ce9cc6eeb873438ce7b509b66c46b2b",
+          "size": 3123018
+        },
+        {
           "path": "test-suite/reference/subdiv_st_interpolation_compare.exr",
           "sha256": "c3e89ea159f7ad210bb3dbfc98583183cf8ffae9edfbdf526d9f606249955336",
           "size": 304974
@@ -206,7 +211,7 @@
           "size": 1544205
         }
       ],
-      "release": "reference-data-20260717T012106Z-8407a137-58ffcf99"
+      "release": "reference-data-20260719T173221Z-f216c325-b051799f"
     }
   },
   "repository": "anderslanglands/typhoon-test-suite",
