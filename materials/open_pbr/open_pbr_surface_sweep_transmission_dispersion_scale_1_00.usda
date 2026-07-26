@@ -1,0 +1,67 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "open_pbr_surface_sweep_transmission_dispersion_scale_1_00" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/open_pbr_surface_sweep_transmission_dispersion_scale_1_00/SR_open_pbr_surface_sweep_transmission_dispersion_scale_1_00.outputs:out>
+        token outputs:surface.connect = </Looks/open_pbr_surface_sweep_transmission_dispersion_scale_1_00/SR_open_pbr_surface_sweep_transmission_dispersion_scale_1_00.outputs:out>
+
+        def Shader "SR_open_pbr_surface_sweep_transmission_dispersion_scale_1_00"
+        {
+            uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+            color3f inputs:base_color = (0.3, 0.03, 0.06)
+            float inputs:base_metalness = 0
+            float inputs:base_weight = 1
+            float inputs:coat_weight = 0
+            float inputs:fuzz_weight = 0
+            float inputs:geometry_opacity = 1
+            float inputs:specular_roughness = 0.04
+            float inputs:specular_weight = 1
+            float inputs:thin_film_thickness = 0
+            float inputs:thin_film_weight = 0
+            color3f inputs:transmission_color = (0.95, 0.98, 1)
+            float inputs:transmission_depth = 0.008
+            float inputs:transmission_dispersion_abbe_number = 20
+            float inputs:transmission_dispersion_scale = 1
+            float inputs:transmission_weight = 1
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/open_pbr_surface_sweep_transmission_dispersion_scale_1_00>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+    }
+
+    over "Product"
+    {
+        token productName = "open_pbr/open_pbr_surface_sweep_transmission_dispersion_scale_1_00.exr"
+    }
+}

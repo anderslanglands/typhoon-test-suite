@@ -1,0 +1,77 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_facingratio_float from the MaterialX NPR Utility Nodes section with literal normalized viewdirection = (0, 0, 1), normal = (0.866025, 0, -0.5), faceforward = true, and invert = false. The raw dot product between view direction and surface normal is -0.5, and faceforward makes the result positive, so the node result is 0.5. The scalar result is packed into red with green and blue zero, so the expected emitted RGB on the plane is (0.5, 0, 0)."
+    }
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "facingratio_float" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/facingratio_float/surface.outputs:out>
+        token outputs:surface.connect = </Looks/facingratio_float/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_facingratio_float"
+            float3 inputs:viewdirection = (0, 0, 1)
+            float3 inputs:normal = (0.866025, 0, -0.5)
+            bool inputs:faceforward = true
+            bool inputs:invert = false
+            float outputs:out
+        }
+        def Shader "display_color"
+        {
+            uniform token info:id = "ND_combine3_color3"
+            float inputs:in1.connect = </Looks/facingratio_float/node_under_test.outputs:out>
+            float inputs:in2 = 0
+            float inputs:in3 = 0
+            color3f outputs:out
+        }
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/facingratio_float/display_color.outputs:out>
+            token outputs:out
+        }
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/facingratio_float/uniform_edf.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        rel material:binding = </Looks/facingratio_float>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/facingratio_float.exr"
+        }
+    }
+}

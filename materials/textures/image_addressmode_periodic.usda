@@ -1,0 +1,92 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "image_addressmode_periodic" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/image_addressmode_periodic/SR_image_addressmode_periodic.outputs:out>
+        token outputs:surface.connect = </Looks/image_addressmode_periodic/SR_image_addressmode_periodic.outputs:out>
+
+        def Shader "SR_image_addressmode_periodic"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            color3f inputs:base_color.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic.outputs:out_base_color>
+            float inputs:specular = 0.5
+            float inputs:specular_roughness = 0.45
+            token outputs:out
+        }
+
+        def NodeGraph "NG_image_addressmode_periodic"
+        {
+            color3f outputs:out_base_color.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic/node_under_test.outputs:out>
+
+            def Shader "uv0"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                float2 outputs:out
+            }
+
+            def Shader "uv_scaled"
+            {
+                uniform token info:id = "ND_multiply_vector2"
+                float2 inputs:in1.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic/uv0.outputs:out>
+                float2 inputs:in2 = (3, 3)
+                float2 outputs:out
+            }
+
+            def Shader "uv_expanded"
+            {
+                uniform token info:id = "ND_add_vector2"
+                float2 inputs:in1.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic/uv_scaled.outputs:out>
+                float2 inputs:in2 = (-1, -1)
+                float2 outputs:out
+            }
+
+            def Shader "node_under_test"
+            {
+                uniform token info:id = "ND_image_color3"
+                color3f inputs:default = (1, 0, 1)
+                asset inputs:file = @../_assets/materials/Materials/nodes/image_addressmode_constant/textures/address_modes.png@ (
+                    colorSpace = "srgb_texture"
+                )
+                string inputs:filtertype = "closest"
+                float2 inputs:texcoord.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic/uv_expanded.outputs:out>
+                string inputs:uaddressmode = "periodic"
+                string inputs:vaddressmode = "periodic"
+                color3f outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/image_addressmode_periodic>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "textures/image_addressmode_periodic.exr"
+    }
+}

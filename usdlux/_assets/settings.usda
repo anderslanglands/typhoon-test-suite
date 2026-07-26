@@ -1,0 +1,47 @@
+#usda 1.0
+
+def Scope "Render"
+{
+    def RenderSettings "Settings" (
+        prepend apiSchemas = ["KarmaRenderSettingsAPI", "TyphoonRenderSettingsAPI"]
+    )
+    {
+        custom int arnold:global:AA_samples = 6
+        custom bool arnold:global:enable_progressive_render = 1
+        custom int arnold:global:GI_total_depth = 0
+        rel camera = </cameras/camera1>
+        rel products = [</Render/RenderProduct>]
+        float4 dataWindowNDC = (0, 0, 1, 1)
+        uniform bool disableMotionBlur = 1
+        token[] includedPurposes = ["default", "render"]
+        bool instantaneousShutter = 1
+        int karma:global:pathtracedsamples = 64
+        int ty:convergedSamplesPerPixel = 16
+        int ty:maxBounces = 0
+        float ty:fireflyClampThreshold = 0.0
+        float ty:causticsClampThreshold = 0.0
+        int karma:global:samplesperpixel = 9
+        custom float karma:object:diffuselimit = 0
+        custom float karma:object:reflectlimit = 0
+        custom float karma:object:refractlimit = 0
+        custom float karma:object:ssslimit = 0
+        token[] materialBindingPurposes = ["full", "allPurpose"]
+        float pixelAspectRatio = 1
+        int2 resolution = (64, 64)
+        custom string ri:integrator:name = "PxrDirectLighting"
+    }
+
+    def RenderProduct "RenderProduct"
+    {
+        rel camera = </cameras/camera1>
+        rel orderedVars = [</Render/RenderProduct/Color>]
+        token productType = "raster"
+
+        def RenderVar "Color"
+        {
+            token dataType = "color4f"
+            string sourceName = "color"
+            token sourceType = "raw"
+        }
+    }
+}

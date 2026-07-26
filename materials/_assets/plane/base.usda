@@ -1,0 +1,60 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    upAxis = "Y"
+)
+
+over "World"
+{
+    def Camera "Camera"
+    {
+        float2 clippingRange = (0.05, 1000)
+        float focalLength = 50
+        float horizontalAperture = 41.421356
+        float verticalAperture = 41.421356
+        double3 xformOp:translate = (0, 0, 5)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}
+
+def "Render"
+{
+    def RenderSettings "Settings" (
+        prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
+    )
+    {
+        rel camera = </World/Camera>
+        rel products = </Render/Settings/Product>
+        uniform int2 resolution = (64, 64)
+        int primvars:arnold:AA_samples = 8
+        int primvars:arnold:GI_diffuse_depth = 16
+        int primvars:arnold:GI_diffuse_samples = 1
+        int primvars:arnold:GI_specular_depth = 16
+        int primvars:arnold:GI_specular_samples = 1
+        int primvars:arnold:GI_sss_samples = 1
+        int primvars:arnold:GI_total_depth = 16
+        int primvars:arnold:GI_transmission_depth = 16
+        int primvars:arnold:GI_transmission_samples = 1
+        int primvars:arnold:GI_volume_depth = 16
+        int primvars:arnold:GI_volume_samples = 1
+        int primvars:arnold:light_samples = 1
+        uniform int ty:convergedSamplesPerPixel = 8
+
+        def RenderProduct "Product"
+        {
+            rel camera = </World/Camera>
+            rel orderedVars = </Render/Settings/Product/Var>
+            token productName = "render.exr"
+            uniform token productType = "raster"
+
+            def RenderVar "Var"
+            {
+                uniform token dataType = "color4f"
+                uniform string sourceName = "color"
+                uniform token sourceType = "raw"
+            }
+        }
+    }
+}

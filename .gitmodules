@@ -1,0 +1,3 @@
+[submodule "materials/_assets/wg-assets"]
+	path = materials/_assets/wg-assets
+	url = https://github.com/usd-wg/assets.git

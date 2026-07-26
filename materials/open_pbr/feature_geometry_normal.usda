@@ -1,0 +1,49 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "feature_geometry_normal" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/feature_geometry_normal/surface_shader1.outputs:out>
+        token outputs:surface.connect = </Looks/feature_geometry_normal/surface_shader1.outputs:out>
+
+        def Shader "surface_shader1"
+        {
+            uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+            color3f inputs:base_color = (0.65, 0.45, 0.95)
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/feature_geometry_normal>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "open_pbr/feature_geometry_normal.exr"
+    }
+}

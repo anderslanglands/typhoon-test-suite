@@ -1,0 +1,25 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "World"
+{
+    def Mesh "Geometry"
+    {
+        uniform bool doubleSided = 0
+        float3[] extent = [(-2.1, -2.1, 0), (2.1, 2.1, 0)]
+        int[] faceVertexCounts = [4]
+        int[] faceVertexIndices = [0, 1, 2, 3]
+        normal3f[] normals = [(0, 0, 1)] (
+            interpolation = "constant"
+        )
+        point3f[] points = [(-2.1, -2.1, 0), (2.1, -2.1, 0), (2.1, 2.1, 0), (-2.1, 2.1, 0)]
+        texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+            interpolation = "vertex"
+        )
+        uniform token subdivisionScheme = "none"
+    }
+}

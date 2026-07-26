@@ -1,0 +1,79 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "heighttonormal_normal_input" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/heighttonormal_normal_input/surface_shader1.outputs:out>
+        token outputs:surface.connect = </Looks/heighttonormal_normal_input/surface_shader1.outputs:out>
+
+        def Shader "surface_shader1"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            color3f inputs:base_color = (0.8, 0.8, 0.8)
+            float3 inputs:normal.connect = </Looks/heighttonormal_normal_input/height_to_normal_normal.outputs:out>
+            token outputs:out
+        }
+
+        def NodeGraph "height_to_normal_normal"
+        {
+            float3 outputs:out.connect = </Looks/heighttonormal_normal_input/height_to_normal_normal/normal_from_height.outputs:out>
+
+            def Shader "height_image"
+            {
+                uniform token info:id = "ND_image_float"
+                float inputs:default = 0.5
+                asset inputs:file = @../_assets/materials/Materials/surfaces/standard_surface/heighttonormal_normal_input/textures/grid.png@
+                float outputs:out
+            }
+
+            def Shader "height_to_normal"
+            {
+                uniform token info:id = "ND_heighttonormal_vector3"
+                float inputs:in.connect = </Looks/heighttonormal_normal_input/height_to_normal_normal/height_image.outputs:out>
+                float inputs:scale = 2
+                float3 outputs:out
+            }
+
+            def Shader "normal_from_height"
+            {
+                uniform token info:id = "ND_normalmap_float"
+                float3 inputs:in.connect = </Looks/heighttonormal_normal_input/height_to_normal_normal/height_to_normal.outputs:out>
+                float inputs:scale = 1
+                float3 outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/heighttonormal_normal_input>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "geometric/heighttonormal_normal_input.exr"
+    }
+}

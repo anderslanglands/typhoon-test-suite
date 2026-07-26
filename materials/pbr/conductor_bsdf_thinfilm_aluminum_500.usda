@@ -1,0 +1,63 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_conductor_bsdf with aluminum-style conductor optical constants and thinfilm_thickness explicitly set to 500 nanometers on the shaderball. Roughness is set to (0, 0) to make the interference as crisp as possible, thinfilm_ior is set to 1.6, and ior/extinction are authored as (1.34560, 0.96521, 0.61722) and (7.47460, 6.39950, 5.30310). The remaining conductor inputs stay at their MaterialX defaults: weight 1, GGX distribution, and no retroreflection. The output is connected directly to ND_surface.bsdf, so the shaderball should read as a sharp aluminum-like metallic reflection with angle-dependent thin-film interference tinting the reflected dome lighting."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "conductor_bsdf_thinfilm_aluminum_500" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/conductor_bsdf_thinfilm_aluminum_500/surface.outputs:out>
+        token outputs:surface.connect = </Looks/conductor_bsdf_thinfilm_aluminum_500/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_conductor_bsdf"
+            float2 inputs:roughness = (0, 0)
+            float inputs:thinfilm_thickness = 500
+            float inputs:thinfilm_ior = 1.6
+            color3f inputs:ior = (1.34560, 0.96521, 0.61722)
+            color3f inputs:extinction = (7.47460, 6.39950, 5.30310)
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/conductor_bsdf_thinfilm_aluminum_500/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/conductor_bsdf_thinfilm_aluminum_500>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "pbr/conductor_bsdf_thinfilm_aluminum_500.exr"
+    }
+}

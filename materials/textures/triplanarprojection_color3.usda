@@ -1,0 +1,102 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_triplanarprojection_color3 on the shaderball. Object-space position is scaled by 0.75 and used as the projection coordinate, object-space normal drives the triplanar blend, upaxis is Y, blend is 0.25, and closest filtering keeps the projected grid crisp. The X/Y/Z file inputs are red-, green-, and blue-tinted RGBA copies of the clear grid texture tagged as srgb_rec709_scene. The color3 output is connected to standard_surface base_color, so surfaces facing each axis should mainly show that axis tint with blended transitions on curved regions."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "triplanarprojection_color3" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/triplanarprojection_color3/SR_triplanarprojection_color3.outputs:out>
+        token outputs:surface.connect = </Looks/triplanarprojection_color3/SR_triplanarprojection_color3.outputs:out>
+
+        def Shader "SR_triplanarprojection_color3"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            color3f inputs:base_color.connect = </Looks/triplanarprojection_color3/NG_triplanarprojection_color3.outputs:out>
+            float inputs:specular = 0.5
+            float inputs:specular_roughness = 0.4
+            token outputs:out
+        }
+
+        def NodeGraph "NG_triplanarprojection_color3"
+        {
+            color3f outputs:out.connect = </Looks/triplanarprojection_color3/NG_triplanarprojection_color3/node_under_test.outputs:out>
+
+            def Shader "position"
+            {
+                uniform token info:id = "ND_position_vector3"
+                string inputs:space = "object"
+                float3 outputs:out
+            }
+
+            def Shader "position_scaled"
+            {
+                uniform token info:id = "ND_multiply_vector3"
+                float3 inputs:in1.connect = </Looks/triplanarprojection_color3/NG_triplanarprojection_color3/position.outputs:out>
+                float3 inputs:in2 = (0.75, 0.75, 0.75)
+                float3 outputs:out
+            }
+
+            def Shader "normal"
+            {
+                uniform token info:id = "ND_normal_vector3"
+                string inputs:space = "object"
+                float3 outputs:out
+            }
+
+            def Shader "node_under_test"
+            {
+                uniform token info:id = "ND_triplanarprojection_color3"
+                float inputs:blend = 0.25
+                color3f inputs:default = (1, 0, 1)
+                asset inputs:filex = @../_assets/materials/Materials/nodes/triplanarprojection/textures/axis_x.png@ (
+                    colorSpace = "srgb_rec709_scene"
+                )
+                asset inputs:filey = @../_assets/materials/Materials/nodes/triplanarprojection/textures/axis_y.png@ (
+                    colorSpace = "srgb_rec709_scene"
+                )
+                asset inputs:filez = @../_assets/materials/Materials/nodes/triplanarprojection/textures/axis_z.png@ (
+                    colorSpace = "srgb_rec709_scene"
+                )
+                string inputs:filtertype = "closest"
+                float3 inputs:normal.connect = </Looks/triplanarprojection_color3/NG_triplanarprojection_color3/normal.outputs:out>
+                float3 inputs:position.connect = </Looks/triplanarprojection_color3/NG_triplanarprojection_color3/position_scaled.outputs:out>
+                int inputs:upaxis = 1
+                color3f outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/triplanarprojection_color3>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "textures/triplanarprojection_color3.exr"
+    }
+}

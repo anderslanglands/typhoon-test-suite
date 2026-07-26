@@ -1,0 +1,77 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    endTimeCode = 3
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    startTimeCode = 3
+    subLayers = [
+        @../wg-assets/full_assets/StandardShaderBall/standard_shader_ball_scene.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "standard_shader_ball_scene" (
+    variants = {
+        string example_material = "none"
+        string surface_geometry = "triangulated"
+    }
+)
+{
+    over "materials" (
+        variants = {
+            string material_model = "OpenPBRSurface"
+        }
+    )
+    {
+        over "examples" (
+            variants = {
+                string material_model = ""
+            }
+        )
+        {
+        }
+    }
+}
+
+def Scope "Render"
+{
+    def RenderSettings "RenderSettings" (
+        prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
+    )
+    {
+        rel camera = </standard_shader_ball_scene/camera>
+        rel products = [</Render/Product>]
+        uniform int2 resolution = (64, 64)
+        int primvars:arnold:AA_samples = 4
+        int primvars:arnold:GI_diffuse_depth = 16
+        int primvars:arnold:GI_diffuse_samples = 1
+        int primvars:arnold:GI_specular_depth = 16
+        int primvars:arnold:GI_specular_samples = 1
+        int primvars:arnold:GI_sss_samples = 1
+        int primvars:arnold:GI_total_depth = 16
+        int primvars:arnold:GI_transmission_depth = 16
+        int primvars:arnold:GI_transmission_samples = 1
+        int primvars:arnold:GI_volume_depth = 16
+        int primvars:arnold:GI_volume_samples = 1
+        int primvars:arnold:light_samples = 1
+        uniform int ty:convergedSamplesPerPixel = 16
+    }
+
+    def RenderProduct "Product"
+    {
+        rel camera = </standard_shader_ball_scene/camera>
+        rel orderedVars = [</Render/Product/Var>]
+        token productType = "raster"
+        token productName = "render.exr"
+
+        def RenderVar "Var"
+        {
+            token dataType = "color4f"
+            string sourceName = "color"
+            token sourceType = "raw"
+        }
+    }
+}

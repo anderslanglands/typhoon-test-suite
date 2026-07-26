@@ -14,7 +14,7 @@ def RenderSettings "RenderSettings" (
     rel camera = </World/MainCamera>
     rel products = [</RenderProduct>]
     float pixelAspectRatio = 1
-    int2 resolution = (512, 299)
+    int2 resolution = (128, 75)
 }
 
 def RenderProduct "RenderProduct"

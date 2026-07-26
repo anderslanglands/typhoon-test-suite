@@ -1,0 +1,59 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_surface_unlit by binding its surfaceshader output directly on the shaderball. The node receives emission 0.75, emission_color (0.2, 0.5, 0.9), transmission 0, and opacity 1. With transmission disabled and opacity fully opaque, the unlit surface should emit emission * emission_color, so the visible shaderball surface should render RGB (0.15, 0.375, 0.675) independent of normals and scene lighting."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "surface_unlit" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/surface_unlit/node_under_test.outputs:out>
+        token outputs:surface.connect = </Looks/surface_unlit/node_under_test.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_surface_unlit"
+            float inputs:emission = 0.75
+            color3f inputs:emission_color = (0.2, 0.5, 0.9)
+            float inputs:transmission = 0
+            float inputs:opacity = 1
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/surface_unlit>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+    }
+
+    over "Product"
+    {
+        token productName = "pbr/surface_unlit.exr"
+    }
+}

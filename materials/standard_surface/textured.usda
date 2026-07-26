@@ -1,0 +1,79 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "textured" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/textured/SR_Textured.outputs:out>
+        token outputs:surface.connect = </Looks/textured/SR_Textured.outputs:out>
+
+        def Shader "SR_Textured"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            color3f inputs:base_color.connect = </Looks/textured/NG_Textured.outputs:base_color_out>
+            float inputs:specular_roughness.connect = </Looks/textured/NG_Textured.outputs:roughness_out>
+            token outputs:out
+        }
+
+        def NodeGraph "NG_Textured"
+        {
+            color3f outputs:base_color_out.connect = </Looks/textured/NG_Textured/base_tex.outputs:out>
+            float outputs:roughness_out.connect = </Looks/textured/NG_Textured/roughness_tex.outputs:out>
+
+            def Shader "uv_scale"
+            {
+                uniform token info:id = "ND_convert_float_vector2"
+                float inputs:in = 8
+                float2 outputs:out
+            }
+
+            def Shader "base_tex"
+            {
+                uniform token info:id = "ND_tiledimage_color3"
+                asset inputs:file = @../_assets/materials/Materials/surfaces/standard_surface/textured/textures/checker.png@
+                float2 inputs:uvtiling.connect = </Looks/textured/NG_Textured/uv_scale.outputs:out>
+                color3f outputs:out
+            }
+
+            def Shader "roughness_tex"
+            {
+                uniform token info:id = "ND_tiledimage_float"
+                asset inputs:file = @../_assets/materials/Materials/surfaces/standard_surface/textured/textures/roughness.png@
+                float2 inputs:uvtiling.connect = </Looks/textured/NG_Textured/uv_scale.outputs:out>
+                float outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/textured>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "standard_surface/textured.exr"
+    }
+}

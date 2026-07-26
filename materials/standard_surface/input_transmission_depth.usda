@@ -1,0 +1,93 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "input_transmission_depth" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/input_transmission_depth/SR_default.outputs:out>
+        token outputs:surface.connect = </Looks/input_transmission_depth/SR_default.outputs:out>
+
+        def Shader "SR_default"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            float inputs:base = 1
+            color3f inputs:base_color = (0.8, 0.8, 0.8)
+            float inputs:coat = 0
+            float inputs:coat_affect_color = 0
+            float inputs:coat_affect_roughness = 0
+            float inputs:coat_anisotropy = 0
+            color3f inputs:coat_color = (1, 1, 1)
+            float inputs:coat_IOR = 1.5
+            float inputs:coat_rotation = 0
+            float inputs:coat_roughness = 0.1
+            float inputs:diffuse_roughness = 0
+            float inputs:emission = 0
+            color3f inputs:emission_color = (1, 1, 1)
+            float inputs:metalness = 0
+            color3f inputs:opacity = (1, 1, 1)
+            float inputs:sheen = 0
+            color3f inputs:sheen_color = (1, 1, 1)
+            float inputs:sheen_roughness = 0.3
+            float inputs:specular = 1
+            float inputs:specular_anisotropy = 0
+            color3f inputs:specular_color = (1, 1, 1)
+            float inputs:specular_IOR = 1.5
+            float inputs:specular_rotation = 0
+            float inputs:specular_roughness = 0.2
+            float inputs:subsurface = 0
+            float inputs:subsurface_anisotropy = 0
+            color3f inputs:subsurface_color = (1, 1, 1)
+            color3f inputs:subsurface_radius = (1, 1, 1)
+            float inputs:subsurface_scale = 1
+            float inputs:thin_film_IOR = 1.5
+            float inputs:thin_film_thickness = 0
+            bool inputs:thin_walled = 0
+            float inputs:transmission = 1
+            color3f inputs:transmission_color = (0.25, 0.55, 0.9)
+            float inputs:transmission_depth = 0.05
+            float inputs:transmission_dispersion = 0
+            float inputs:transmission_extra_roughness = 0
+            color3f inputs:transmission_scatter = (0, 0, 0)
+            float inputs:transmission_scatter_anisotropy = 0
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/input_transmission_depth>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int ty:convergedSamplesPerPixel = 128
+
+    }
+
+    over "Product"
+    {
+        token productName = "standard_surface/input_transmission_depth.exr"
+    }
+}

@@ -1,0 +1,57 @@
+#usda 1.0
+(
+    subLayers = [
+        @./_assets/settings.usda@,
+        @./_assets/materials.usda@,
+        @./_assets/camera.usda@
+    ]
+    renderSettingsPrimPath = "/Render/Settings"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "cameras"
+{
+    over "camera1"
+    {
+        matrix4d xformOp:transform:xform1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:xform1"]
+    }
+}
+
+over "Render"
+{
+    over "RenderProduct"
+    {
+        token productName = "dome-embree.{frame:04d}.exr"
+    }
+}
+
+def Xform "lights"
+{
+    def DomeLight "dome_light" (
+        prepend apiSchemas = ["KarmaLightAPI", "LightAPI"]    )
+    {
+        custom rel filters = None
+        color3f inputs:color = (1, 1, 1)
+        float inputs:colorTemperature = 6500
+        float inputs:diffuse = 1
+        bool inputs:enableColorTemperature = 0
+        float inputs:exposure = 0
+        float inputs:intensity = 1
+        bool inputs:normalize = 0
+        float inputs:specular = 1
+        asset inputs:texture:file = @./dome_grid_2k.exr@
+        token inputs:texture:format = "latlong"
+        custom bool karma:light:renderlightgeo = 1
+        rel light:filters = None
+        rel portals = None
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

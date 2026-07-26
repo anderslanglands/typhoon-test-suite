@@ -1,0 +1,110 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "opacity_mask" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/opacity_mask/open_pbr_surface_surfaceshader.outputs:out>
+        token outputs:surface.connect = </Looks/opacity_mask/open_pbr_surface_surfaceshader.outputs:out>
+
+        def Shader "open_pbr_surface_surfaceshader"
+        {
+            uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+            color3f inputs:base_color = (0.0518895, 0.29606, 0.425324)
+            float inputs:geometry_opacity.connect = </Looks/opacity_mask/NG_opacity_mask.outputs:out_alpha_mask>
+            token outputs:out
+        }
+
+        def NodeGraph "NG_opacity_mask"
+        {
+            float outputs:out_alpha_mask.connect = </Looks/opacity_mask/NG_opacity_mask/opacity_mask.outputs:out>
+
+            def Shader "obj_pos"
+            {
+                uniform token info:id = "ND_position_vector3"
+                float3 outputs:out
+            }
+
+            def Shader "wave_driver"
+            {
+                uniform token info:id = "ND_dotproduct_vector3"
+                float3 inputs:in1.connect = </Looks/opacity_mask/NG_opacity_mask/obj_pos.outputs:out>
+                float3 inputs:in2 = (1, 0, 1)
+                float outputs:out
+            }
+
+            def Shader "wave_scale"
+            {
+                uniform token info:id = "ND_multiply_float"
+                float inputs:in1.connect = </Looks/opacity_mask/NG_opacity_mask/wave_driver.outputs:out>
+                float inputs:in2 = 7
+                float outputs:out
+            }
+
+            def Shader "wave"
+            {
+                uniform token info:id = "ND_sin_float"
+                float inputs:in.connect = </Looks/opacity_mask/NG_opacity_mask/wave_scale.outputs:out>
+                float outputs:out
+            }
+
+            def Shader "wave_to_zero_one_scale"
+            {
+                uniform token info:id = "ND_multiply_float"
+                float inputs:in1.connect = </Looks/opacity_mask/NG_opacity_mask/wave.outputs:out>
+                float inputs:in2 = 0.5
+                float outputs:out
+            }
+
+            def Shader "wave_to_zero_one"
+            {
+                uniform token info:id = "ND_add_float"
+                float inputs:in1.connect = </Looks/opacity_mask/NG_opacity_mask/wave_to_zero_one_scale.outputs:out>
+                float inputs:in2 = 0.5
+                float outputs:out
+            }
+
+            def Shader "opacity_mask"
+            {
+                uniform token info:id = "ND_ifgreater_float"
+                float inputs:in1 = 1
+                float inputs:in2 = 0
+                float inputs:value1.connect = </Looks/opacity_mask/NG_opacity_mask/wave_to_zero_one.outputs:out>
+                float inputs:value2 = 0.5
+                float outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/opacity_mask>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "open_pbr/opacity_mask.exr"
+    }
+}

@@ -1,0 +1,84 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "geompropvalueuniform_filename" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/geompropvalueuniform_filename/surface.outputs:out>
+        token outputs:surface.connect = </Looks/geompropvalueuniform_filename/surface.outputs:out>
+
+        def Shader "uv0"
+        {
+            uniform token info:id = "ND_texcoord_vector2"
+            float2 outputs:out
+        }
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_geompropvalueuniform_filename"
+            string inputs:geomprop = "testFilename"
+            asset inputs:default = @../_assets/materials/Materials/radial.exr@
+            asset outputs:out
+        }
+
+        def Shader "image"
+        {
+            uniform token info:id = "ND_image_color3"
+            color3f inputs:default = (1, 0, 1)
+            asset inputs:file.connect = </Looks/geompropvalueuniform_filename/node_under_test.outputs:out>
+            float2 inputs:texcoord.connect = </Looks/geompropvalueuniform_filename/uv0.outputs:out>
+            color3f outputs:out
+        }
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/geompropvalueuniform_filename/image.outputs:out>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/geompropvalueuniform_filename/uniform_edf.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        asset primvars:testFilename = @../_assets/materials/Materials/grid.exr@ (
+            interpolation = "constant"
+        )
+        rel material:binding = </Looks/geompropvalueuniform_filename>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/geompropvalueuniform_filename.exr"
+        }
+    }
+}

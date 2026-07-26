@@ -1,0 +1,67 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests a volume-only material path with ND_anisotropic_vdf. The material intentionally authors only outputs:mtlx:volume and outputs:volume, with no surface output connected. ND_anisotropic_vdf receives absorption (1.05, 0.54, 0.24), scattering (0.24, 0.54, 0.96), and anisotropy 0.55, then ND_volume wraps that VDF into a volumeshader. Bound to the closed shaderball, supported renderers should render the participating medium alone: dome-lit rays through the object should show denser tinted attenuation and forward-biased scattering without any surface BSDF or EDF contribution."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "anisotropic_vdf_volume_only" (
+    )
+    {
+        token outputs:mtlx:volume.connect = </Looks/anisotropic_vdf_volume_only/volume.outputs:out>
+        token outputs:volume.connect = </Looks/anisotropic_vdf_volume_only/volume.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_anisotropic_vdf"
+            float3 inputs:absorption = (1.05, 0.54, 0.24)
+            float3 inputs:scattering = (0.24, 0.54, 0.96)
+            float inputs:anisotropy = 0.55
+            token outputs:out
+        }
+
+        def Shader "volume"
+        {
+            uniform token info:id = "ND_volume"
+            token inputs:vdf.connect = </Looks/anisotropic_vdf_volume_only/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/anisotropic_vdf_volume_only>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int ty:convergedSamplesPerPixel = 128
+
+    }
+
+    over "Product"
+    {
+        token productName = "pbr/anisotropic_vdf_volume_only.exr"
+    }
+}

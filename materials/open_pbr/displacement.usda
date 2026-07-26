@@ -1,0 +1,97 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests MaterialX displacement on the shaderball. ND_position_vector3 supplies object-space position; ND_extract_vector3 selects X; ND_multiply_float applies a frequency of 12 radians per object-space unit; ND_sin_float produces a signed wave; and ND_displacement_float scales it to +/-0.07 units along the subdivision-surface normal. The material_surface mesh is overridden to Catmull-Clark so the silhouette and highlights should show many smooth displacement bands, with screen-space complexity controlling their tessellation density."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "displacement"
+    {
+        token outputs:mtlx:surface.connect = </Looks/displacement/open_pbr_surface_surfaceshader.outputs:out>
+        token outputs:surface.connect = </Looks/displacement/open_pbr_surface_surfaceshader.outputs:out>
+        token outputs:mtlx:displacement.connect = </Looks/displacement/displacement_shader.outputs:out>
+        token outputs:displacement.connect = </Looks/displacement/displacement_shader.outputs:out>
+
+        def Shader "position"
+        {
+            uniform token info:id = "ND_position_vector3"
+            string inputs:space = "object"
+            float3 outputs:out
+        }
+
+        def Shader "position_x"
+        {
+            uniform token info:id = "ND_extract_vector3"
+            float3 inputs:in.connect = </Looks/displacement/position.outputs:out>
+            int inputs:index = 0
+            float outputs:out
+        }
+
+        def Shader "frequency"
+        {
+            uniform token info:id = "ND_multiply_float"
+            float inputs:in1.connect = </Looks/displacement/position_x.outputs:out>
+            float inputs:in2 = 12
+            float outputs:out
+        }
+
+        def Shader "wave"
+        {
+            uniform token info:id = "ND_sin_float"
+            float inputs:in.connect = </Looks/displacement/frequency.outputs:out>
+            float outputs:out
+        }
+
+        def Shader "displacement_shader"
+        {
+            uniform token info:id = "ND_displacement_float"
+            float inputs:displacement.connect = </Looks/displacement/wave.outputs:out>
+            float inputs:scale = 0.07
+            token outputs:out
+        }
+
+        def Shader "open_pbr_surface_surfaceshader"
+        {
+            uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+            float inputs:base_weight = 0.35
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/displacement>
+            uniform token subdivisionScheme = "catmullClark"
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int2 resolution = (128, 128)
+    }
+
+    over "Product"
+    {
+        token productName = "open_pbr/displacement.exr"
+    }
+}

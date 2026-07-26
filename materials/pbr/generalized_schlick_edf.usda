@@ -1,0 +1,69 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_generalized_schlick_edf on the shaderball. A white ND_uniform_edf is connected as the base EDF, then ND_generalized_schlick_edf applies a generalized Schlick directional factor with color0 (0.08, 0.22, 1), color90 (1, 0.38, 0.06), and exponent 3. The result is connected directly to ND_surface.edf, so the shaderball should emit with a blue-facing response that shifts toward warm orange at grazing angles."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "generalized_schlick_edf" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/generalized_schlick_edf/surface.outputs:out>
+        token outputs:surface.connect = </Looks/generalized_schlick_edf/surface.outputs:out>
+
+        def Shader "base_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color = (1, 1, 1)
+            token outputs:out
+        }
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_generalized_schlick_edf"
+            token inputs:base.connect = </Looks/generalized_schlick_edf/base_edf.outputs:out>
+            color3f inputs:color0 = (0.08, 0.22, 1)
+            color3f inputs:color90 = (1, 0.38, 0.06)
+            float inputs:exponent = 3
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/generalized_schlick_edf/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/generalized_schlick_edf>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "pbr/generalized_schlick_edf.exr"
+    }
+}

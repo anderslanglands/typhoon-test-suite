@@ -1,217 +1,2248 @@
 {
   "groups": {
+    "materials/geometric": {
+      "archive": "materials--geometric--65da34255422.zip",
+      "archive_sha256": "8e0aa52d4fb97d276f363ff32a5091cb943f4e595611f1a35cf7f3e5b76a91a9",
+      "archive_size": 740209,
+      "files": [
+        {
+          "path": "materials/reference/geometric/binormal_default.exr",
+          "sha256": "c44702b8ce5de37561413e4b69e29a4c106e06b0eb3b7b8245a13800feef417f",
+          "size": 51823
+        },
+        {
+          "path": "materials/reference/geometric/facingratio_float.exr",
+          "sha256": "298de2726bc07b82c48d69aaf3bfa4c37f7c02ef0f3b01db80a8eab82863f73c",
+          "size": 20312
+        },
+        {
+          "path": "materials/reference/geometric/geomcolor_color3.exr",
+          "sha256": "75780af0d8c8ff6b7521d376c976510c790f4a895e3a85c196deb2da06e96a46",
+          "size": 37386
+        },
+        {
+          "path": "materials/reference/geometric/geomcolor_color4.exr",
+          "sha256": "75780af0d8c8ff6b7521d376c976510c790f4a895e3a85c196deb2da06e96a46",
+          "size": 37386
+        },
+        {
+          "path": "materials/reference/geometric/geompropvalue_color3.exr",
+          "sha256": "ba691e245a18956caabb0e74d7c041f2036450c70c812f30506d38507d202fb5",
+          "size": 38279
+        },
+        {
+          "path": "materials/reference/geometric/geompropvalue_float.exr",
+          "sha256": "da06ea1b9fb24276ea333a44b2f21b1d9b634c66887a16973142ea591815a08e",
+          "size": 20263
+        },
+        {
+          "path": "materials/reference/geometric/geompropvalue_vector2.exr",
+          "sha256": "0397c0a63745b8645c0fe0339911e57ddd0e0c304357ae915ffc953808cb8ee7",
+          "size": 37435
+        },
+        {
+          "path": "materials/reference/geometric/geompropvalueuniform_filename.exr",
+          "sha256": "24ab56cc0da38d0206370bfaa5f96645f8a921dc38f26d113f69dbd157a8a771",
+          "size": 38466
+        },
+        {
+          "path": "materials/reference/geometric/geompropvalueuniform_string.exr",
+          "sha256": "c2c6daf8264199391e81a2483f32aa256f5977e4c6797d52e6bee5ef18b0d260",
+          "size": 20748
+        },
+        {
+          "path": "materials/reference/geometric/heighttonormal_normal_input.exr",
+          "sha256": "0598a9cd4412e652d2291d640277ff757f06b15f4bbae3802efaf37232227088",
+          "size": 20277
+        },
+        {
+          "path": "materials/reference/geometric/normal_space_object.exr",
+          "sha256": "6df72a84293f90529ed98848e7360f35e2219ba12abbb4ba2aead48be12b4c74",
+          "size": 51851
+        },
+        {
+          "path": "materials/reference/geometric/normal_space_world.exr",
+          "sha256": "6df72a84293f90529ed98848e7360f35e2219ba12abbb4ba2aead48be12b4c74",
+          "size": 51851
+        },
+        {
+          "path": "materials/reference/geometric/normal_world.exr",
+          "sha256": "afa9af06a2fdb79a97c1ed904a91a837313b6ac14de7151fd448e9d7dcac0fff",
+          "size": 51834
+        },
+        {
+          "path": "materials/reference/geometric/position_world.exr",
+          "sha256": "3ac04e39d5820d71fcb3ae7d145ae41552ff9833a8b8ed1d47a9b4aed3e7484a",
+          "size": 51853
+        },
+        {
+          "path": "materials/reference/geometric/tangent_default.exr",
+          "sha256": "b30733b591b108d87daec66a133076f50da1cf93fd7c8c50149a475bde201da5",
+          "size": 51557
+        },
+        {
+          "path": "materials/reference/geometric/texcoord.exr",
+          "sha256": "4b3c59cc6b946b6512115e331228da8b60f4749c5a8873337606bbce0c0c6438",
+          "size": 51849
+        },
+        {
+          "path": "materials/reference/geometric/uv2_default.exr",
+          "sha256": "1c5bbb0947dbca66701687ba6af6724ec894fafd0ce3fc18514598eea8b8f7d8",
+          "size": 51882
+        },
+        {
+          "path": "materials/reference/geometric/viewdirection.exr",
+          "sha256": "14eb8876c502a726a4376d2e3c2c96515ae7a5634e48a23ae47ad2f6fd77e09f",
+          "size": 51907
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "materials/misc": {
+      "archive": "materials--misc--a4038773a896.zip",
+      "archive_sha256": "6e80a959d6ff8087d00a41d4eb83bdeb8af6fcb63edc1d9460697ebffba3499d",
+      "archive_size": 21152,
+      "files": [
+        {
+          "path": "materials/reference/misc/time.exr",
+          "sha256": "4061722c1bb9b8e7a62b72676c402c4849721dc2e04a934cc2c58710e48109d1",
+          "size": 20988
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "materials/open_pbr": {
+      "archive": "materials--open_pbr--c2e609e255fe.zip",
+      "archive_sha256": "27ba2a5991a1a9194c20c026969c3af56d13559e448435b1d1d49b7ab29b21c8",
+      "archive_size": 877109,
+      "files": [
+        {
+          "path": "materials/reference/open_pbr/displacement.exr",
+          "sha256": "2b54fc6abbca359509702783a3c505d0690a5cde2d58f1a3a755ca6c39dce9bc",
+          "size": 75354
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_base_color.exr",
+          "sha256": "e65abbe1dc01b130efc61ced1484b0f5d953c9a373f382fdaa27349dab780a89",
+          "size": 36259
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_coat.exr",
+          "sha256": "d0d8f241ad7b91713f5788dd617f8d52b89bf2552097eabc6734cd6ab351653c",
+          "size": 51913
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_emission.exr",
+          "sha256": "af8305ae0777e15d3f17a8162997cdd476359bdcdd3ad968eedaa51ab3a34508",
+          "size": 51926
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_fuzz.exr",
+          "sha256": "7e3c53092cccbe0a0e69e4d96ad76cf434c60ccf808cdb3f0523072a3d804577",
+          "size": 51900
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_geometry_normal.exr",
+          "sha256": "a845d22879431348a7439c84faaa0be82ce139a3e22b6b91eecd83462697ddf1",
+          "size": 51874
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_geometry_tangent.exr",
+          "sha256": "1cb509411569cc3d4a88df9a7e2202fb16571669d07fb9e775019ca053644d66",
+          "size": 51850
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_opacity.exr",
+          "sha256": "a75c3bdf6824100eb7ed0cd71084a21d1fcf5da0af2e461adcfc5547040f3cac",
+          "size": 51582
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_specular.exr",
+          "sha256": "e8c326c459d25183089ee23e602f9b2a8c512a38beae62d4c03ef7aa63d1c954",
+          "size": 51911
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_subsurface.exr",
+          "sha256": "d2cb7430a3c5db6b0deacc2899e754eabb3466ccb21434de2926f9abb6cb1790",
+          "size": 54084
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_thin_film.exr",
+          "sha256": "3c546d9851c7c5a64b657abfa9419c4a311b5fd103cc636b15382c2f2dea36b0",
+          "size": 51574
+        },
+        {
+          "path": "materials/reference/open_pbr/feature_transmission.exr",
+          "sha256": "7d00abbc2a4c28748ebd5147edeae84f5048cf25c3e3466dfc1b9a50f14c41c6",
+          "size": 20383
+        },
+        {
+          "path": "materials/reference/open_pbr/glass.exr",
+          "sha256": "d615295ce7c36ac65dbe7c24e2b8acad44b0e09ae6b2bee8b65d6c7fe622db79",
+          "size": 37108
+        },
+        {
+          "path": "materials/reference/open_pbr/honey.exr",
+          "sha256": "9647ca4d4c037a81b6639edba30f215af912a282037ede44de1f1a6ce2fc0b63",
+          "size": 45071
+        },
+        {
+          "path": "materials/reference/open_pbr/lightbulb.exr",
+          "sha256": "1fd1377b6f2361b1dc2eeb08d112c6c08b0aa54d134a442a3691d95e1d01e3e0",
+          "size": 52103
+        },
+        {
+          "path": "materials/reference/open_pbr/opacity_mask.exr",
+          "sha256": "0956e3232c8c5da624ebcd5349fc5f0985322d5ffd1ddc2e5c3967f8a8f329b3",
+          "size": 51281
+        },
+        {
+          "path": "materials/reference/open_pbr/open_pbr_surface_sweep_transmission_dispersion_scale_1_00.exr",
+          "sha256": "0ac83913345005cd46617abdedc72cab0974ec948b5fc89e30d5b2ed28df5fe5",
+          "size": 50776
+        },
+        {
+          "path": "materials/reference/open_pbr/soapbubble.exr",
+          "sha256": "374a0ae15b785d72065c25c171d8406f836c88b042daca23e848d4c5ee847c88",
+          "size": 36980
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "materials/pbr": {
+      "archive": "materials--pbr--434f3693b613.zip",
+      "archive_sha256": "ad8141447b8d67b16f11883e059696374ce2366b11edaa14dc007496e65b8902",
+      "archive_size": 720229,
+      "files": [
+        {
+          "path": "materials/reference/pbr/anisotropic_vdf_volume_only.exr",
+          "sha256": "a6ddc09ce096a0253092a7212c31c13217d302ec83ec3ff185af9a0bb16bc00e",
+          "size": 54194
+        },
+        {
+          "path": "materials/reference/pbr/burley_diffuse_bsdf.exr",
+          "sha256": "40953c7cee43222442baa8c1bddaf139f59bda42a2e63f6b43628d71ed850b1c",
+          "size": 51884
+        },
+        {
+          "path": "materials/reference/pbr/conductor_bsdf.exr",
+          "sha256": "56d7801a98a6ad7768222509ce4c9f9e7e61d28ff4a8a35229bfd10fac13eb2d",
+          "size": 51870
+        },
+        {
+          "path": "materials/reference/pbr/conductor_bsdf_thinfilm_aluminum_500.exr",
+          "sha256": "d348ed4a4adbbfc6258311cdd80f5e90212fb5dab6566f40a2fa24e8b7388405",
+          "size": 36936
+        },
+        {
+          "path": "materials/reference/pbr/dielectric_layer.exr",
+          "sha256": "9a3fa19f20f904e4e1d84293d46f5488715ee4f7ea32b79330ba86e497e2b6a1",
+          "size": 20423
+        },
+        {
+          "path": "materials/reference/pbr/dielectric_layer_absorption.exr",
+          "sha256": "3852da8f911496b831067367c3f972e914ec4507b71aa8a0c0522b858b00bfd9",
+          "size": 35102
+        },
+        {
+          "path": "materials/reference/pbr/dielectric_layer_anisotropic.exr",
+          "sha256": "33fb7c563ae33a19fb9e6d09fd4b09e3a530ac06f11339af660a64dbacc1fb00",
+          "size": 30331
+        },
+        {
+          "path": "materials/reference/pbr/generalized_schlick_bsdf.exr",
+          "sha256": "42679a142fe6acc38a9bbb01d43abd2e5da12c521ab6b1bf9813b7ab3d83b1ef",
+          "size": 51787
+        },
+        {
+          "path": "materials/reference/pbr/generalized_schlick_edf.exr",
+          "sha256": "52a43e3e2ace828cfe5f5d20e0f7c7f50f48aa46249a88af1f2407e20b0dc0a9",
+          "size": 51986
+        },
+        {
+          "path": "materials/reference/pbr/oren_nayar_diffuse_bsdf.exr",
+          "sha256": "d7f7d6d6e6bfad914e78ca7cfae78e1034f90fabb61caec2ad0d4176122e54ab",
+          "size": 51909
+        },
+        {
+          "path": "materials/reference/pbr/sheen_bsdf.exr",
+          "sha256": "2dd122cfcc30a4fdbff983536f519298abe96ea5609b1283b14cd98a931c0b4f",
+          "size": 51754
+        },
+        {
+          "path": "materials/reference/pbr/sheen_bsdf_zeltner.exr",
+          "sha256": "2dd122cfcc30a4fdbff983536f519298abe96ea5609b1283b14cd98a931c0b4f",
+          "size": 51754
+        },
+        {
+          "path": "materials/reference/pbr/subsurface_bsdf_long_radius_anisotropic.exr",
+          "sha256": "cebe4231f7b580d57165ebe071e696ad9301f3c7fb058724c3792c868e1fd220",
+          "size": 53579
+        },
+        {
+          "path": "materials/reference/pbr/subsurface_bsdf_short_radius_isotropic.exr",
+          "sha256": "1b2754341adb0c1bc2cba7c686f406ccf63f7f0eae92118ea1e769e0c0b0a76f",
+          "size": 54085
+        },
+        {
+          "path": "materials/reference/pbr/surface_unlit.exr",
+          "sha256": "ef475dbd6706f198048ed7744e39489fcf816158f6be1b727a77dc46f992dff9",
+          "size": 32881
+        },
+        {
+          "path": "materials/reference/pbr/translucent_bsdf.exr",
+          "sha256": "dc6936a90cbc6569e30f932721fa4b6a780c7a9fc2a73021e7be982689432b78",
+          "size": 36878
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "materials/standard_surface": {
+      "archive": "materials--standard_surface--5d6cf39cac24.zip",
+      "archive_sha256": "6e59c2ae3c5b77f18cc8fd2487478dc94f491902e940572842d1d25bdb172bab",
+      "archive_size": 268198,
+      "files": [
+        {
+          "path": "materials/reference/standard_surface/feature_metalness.exr",
+          "sha256": "8412310a40631db2aa5ddd56a4b0e23d15a2dde9701a13b7c1c6d29f84aab524",
+          "size": 51864
+        },
+        {
+          "path": "materials/reference/standard_surface/feature_sheen.exr",
+          "sha256": "2f99623f1df31e2d7815cae73319a05b6d89f7ff415a160a86e21e12cd3fb282",
+          "size": 51895
+        },
+        {
+          "path": "materials/reference/standard_surface/input_thin_walled.exr",
+          "sha256": "7e40135e1d97cb719a5677a7e72b111269e49229ccb0942f1ec04675934e9c2c",
+          "size": 20424
+        },
+        {
+          "path": "materials/reference/standard_surface/input_transmission_depth.exr",
+          "sha256": "653a6c8b204d8c924415b12babd05e7976626903712ec9bf93ceb3b5281abdbe",
+          "size": 44493
+        },
+        {
+          "path": "materials/reference/standard_surface/input_transmission_extra_roughness.exr",
+          "sha256": "ca682d14ead507582874fbb7f3b71ca890e3f78e421a8f3573e7e744fc0c9a50",
+          "size": 20380
+        },
+        {
+          "path": "materials/reference/standard_surface/input_transmission_scatter_anisotropy.exr",
+          "sha256": "f9b0db6bda367ec4988decac7834d8a5ae0e2e26daa6bb0f5828415ff912f296",
+          "size": 37013
+        },
+        {
+          "path": "materials/reference/standard_surface/ior.exr",
+          "sha256": "b65b663b3f5a8a97dcba462caf9b49251344fbaf09d772c0b05426d62f215a15",
+          "size": 20274
+        },
+        {
+          "path": "materials/reference/standard_surface/textured.exr",
+          "sha256": "8b99cb4b9dddb3b714c954a4167d7ee0972117fc6ee9a1ac44c06b3dc8fb3e71",
+          "size": 20263
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "materials/textures": {
+      "archive": "materials--textures--99f0fb24234e.zip",
+      "archive_sha256": "026629f8e5a70b3c58f53b9d4a478e007140a40face4364408f3ad678a69d538",
+      "archive_size": 241771,
+      "files": [
+        {
+          "path": "materials/reference/textures/blur_color3.exr",
+          "sha256": "0420dcabf16ab8206ce411876a367003529ce74110c9c3fe0d120ab6cf950755",
+          "size": 52702
+        },
+        {
+          "path": "materials/reference/textures/image_addressmode_constant.exr",
+          "sha256": "2acccae81e04a908d9878247c2520fe0d55938ba058062731031680eaf00033c",
+          "size": 46904
+        },
+        {
+          "path": "materials/reference/textures/image_addressmode_periodic.exr",
+          "sha256": "77064f7c451b55e9fe99357b39bf02b6a001884150ba1db8dcf6483486c5b91f",
+          "size": 49172
+        },
+        {
+          "path": "materials/reference/textures/image_format_png.exr",
+          "sha256": "e985fa67b3f52446aa3197dbe2d2ed362ae76df3935b2bf58817a4648822d8d2",
+          "size": 27517
+        },
+        {
+          "path": "materials/reference/textures/image_udim.exr",
+          "sha256": "ae33d3df347cd633c0d99a67a7b6e83ccd68035f28cdc394ed57f741d958d987",
+          "size": 12544
+        },
+        {
+          "path": "materials/reference/textures/triplanarprojection_color3.exr",
+          "sha256": "719811478758db501a26166952e62f3071721b46dc8c87b3d87cce6553dc4aa0",
+          "size": 51828
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
     "test-suite": {
-      "archive": "test-suite--7a4b539af36a.zip",
-      "archive_sha256": "98a80379f3b617238182e109f6dff54cd985f6bace2b4eb947eb2ca44437bc3b",
-      "archive_size": 27422478,
+      "archive": "test-suite--8a695de59450.zip",
+      "archive_sha256": "6b69a779fc10ac72c58e18c404bd558a36337d058473b2f167af6d927b16f4dd",
+      "archive_size": 2051576,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
-          "sha256": "f4dbd27d3aba0cc6c4e961ae589dafec003fa592ddd1f6a8a7a72026479112e6",
-          "size": 1082177
+          "sha256": "3d94bb3a5c52a97bddc415f8b839862951ed6da2222664661c4fb0aff5c39eb7",
+          "size": 75057
         },
         {
           "path": "test-suite/reference/colortransform_gallery.exr",
-          "sha256": "6813436eb6ab36a48123c3c4391479f95c3a2d333262e177e7b0eaf975b60008",
-          "size": 338588
+          "sha256": "57699b578145eab15cf10facd2eb5fcf6ab0793a504e769b3c24479166ac3732",
+          "size": 27792
         },
         {
           "path": "test-suite/reference/cornell_box.exr",
-          "sha256": "d5039a3bdc533fa0e9e7ad90770423c2e29ebfc4008bdc4da114af59924fcdb3",
-          "size": 1362826
+          "sha256": "822cdbb5201121c7efeb7f7eeafb761a237fee1e16e40d846e19f5c9a5ad23f5",
+          "size": 93715
         },
         {
           "path": "test-suite/reference/cutglass_dispersion_compare.exr",
-          "sha256": "d8c353cdf1a030f17e3ac86a0b4e74a71b5764836a5763d1bc2a4f137e152b37",
-          "size": 1085685
+          "sha256": "bd468939b0007944af4342966baf284b11242ef4822d3bd50430fef3c2d8ecef",
+          "size": 120723
         },
         {
           "path": "test-suite/reference/disneyPrincipled_parameter_parity.exr",
-          "sha256": "5b691712edca8f6c4ce179c6dbd2c009703dda7ec0ea3cea5f445a6d11c4c5fb",
-          "size": 420956
+          "sha256": "31239c3e9d81f13ae3fd548c4d0e0015f37e5747a596390b1f2d27f34933e102",
+          "size": 33421
         },
         {
           "path": "test-suite/reference/dpdu_dpdv_debug.exr",
-          "sha256": "39570e288d2dfc5ef91f00ddbd6c50db8456044905bf1565077ebbafc1f0c507",
-          "size": 294410
+          "sha256": "f161968002fd1110e0eb466cf1dffcff1828af56f221e4f3c0752d508dc17add",
+          "size": 28114
         },
         {
           "path": "test-suite/reference/emissive.exr",
-          "sha256": "56f2e90a8e8f9d7e4f88cfb03d72d39f06acbdf00f254f05a7d666cfad07d1df",
-          "size": 46807
+          "sha256": "44c2970711d0012610e35a3827e804440c8cfa7b89d07098e54a8dba0ad61bb6",
+          "size": 9518
         },
         {
           "path": "test-suite/reference/eon_diffuse_openpbr_compare.exr",
-          "sha256": "925a432da1653255bcd26d42b6d9b63a2a214791c8a0e3fdd3361d18b7836629",
-          "size": 584654
+          "sha256": "3da7320333edf586b3b265e7fd313ae0ef36163585bf3d1298e1ef7df04cc509",
+          "size": 43464
         },
         {
           "path": "test-suite/reference/furnace_material_models.exr",
-          "sha256": "82c8c0c8b308b5b238589837886538322963f8f1ea171321b4ba2ff1cf5853c3",
-          "size": 354589
+          "sha256": "1354b2fe0ff35c35a925263e5e3ac733ea8ee6a732e6296b1b7d49d1c48c53af",
+          "size": 26896
         },
         {
           "path": "test-suite/reference/geompropvalue_test.exr",
-          "sha256": "15e113ad0f28734c96c7b1cb7223274d6e772b23e8d0fbd039384385f1f72cb0",
-          "size": 374480
+          "sha256": "24ee66d2a6c61e2ab6a3773d00925619bb0f9e452b62b1bdebf71e55beff1db6",
+          "size": 28255
         },
         {
           "path": "test-suite/reference/gltfPbr_parameter_parity.exr",
-          "sha256": "0d6bd739b476f85cb1d18b81cda8532ca68acfd3d843f3373b133a58021dee9b",
-          "size": 401494
+          "sha256": "a9794e5510d615a25a139a68776d838304b3c39cc705f746938e660fe933b4af",
+          "size": 32005
         },
         {
           "path": "test-suite/reference/ies_profile_gallery.exr",
-          "sha256": "53ecdd5fdc9a6f99293bfd5154d8824d6fd1664346ee647a11e09c45dbd2340f",
-          "size": 1114572
+          "sha256": "5ccb7afecae42e65fb1f74dad3d53bc7d1c5ed9261cf62a1a3b821296970cb67",
+          "size": 74751
         },
         {
           "path": "test-suite/reference/microfacet_ms_smoke.exr",
-          "sha256": "2f4c95db37b6c1b70b24fa1754d952daa7b355da73ac5439150220bae10a941b",
-          "size": 446585
+          "sha256": "c32b8ee170de947f4553b27a340bb78b8fa2e2b9318b2601f5f6f2be28da1893",
+          "size": 39069
         },
         {
           "path": "test-suite/reference/multi_material.exr",
-          "sha256": "59a7bf118efa402fd70550013a8292188336af2e8c770a0fc9a07e6ee0f8f95a",
-          "size": 283312
+          "sha256": "8b6b658d773060d8a01be4043f3fd7612aedb42caffa0ba4f193bc6f7bd8a8e3",
+          "size": 23086
         },
         {
           "path": "test-suite/reference/nd_usd_nodes_gallery.exr",
-          "sha256": "3b6f24c201a9668ef1777918206551e5a3d74b33dd759d759eaaf05440d715b8",
-          "size": 515220
+          "sha256": "57dc0aef8010d805257377fbdcfc4e4a36c17ca5c3839ffdd09db4dab7e23451",
+          "size": 39245
         },
         {
           "path": "test-suite/reference/nodegraph_mix.exr",
-          "sha256": "a79aa00b5e44f4fdd6130e99861e7cb6239278f5e4c553a94ac23909409a4ce2",
-          "size": 269036
+          "sha256": "f1d0caec6b6d332a93aeba6fc51ac46dcba0521943c66d764a9b925057e1f9d8",
+          "size": 20885
         },
         {
           "path": "test-suite/reference/nodegraph_multiply.exr",
-          "sha256": "e05361db537310cbf1d833018ba5c9c4802aa6d83be3ce138a1015cdc23f78f2",
-          "size": 384075
+          "sha256": "9665b7239e845b7d14e5d02fc1314691891295782507730baad16f0e97076a2d",
+          "size": 28705
         },
         {
           "path": "test-suite/reference/nodegraph_ramp.exr",
-          "sha256": "413c74a73e6f22ce9890aed87c90fcd94ea616c88c3502a49f1f5647422343c4",
-          "size": 842364
+          "sha256": "85899ac8c5ba05b805d899eecae3d040291a2dab6e16db8f1165c342f289fd8b",
+          "size": 85995
         },
         {
           "path": "test-suite/reference/npr_nodes_sphere_gallery.exr",
-          "sha256": "fe8ce3d87885a0caef7e56abe375c9da4fbfa87ce14b49aef838e3869a3ec2c6",
-          "size": 405418
+          "sha256": "09c67a6eaff365efcd51124eb719c20cacd206dba6d3c0dcf41f9b64d67b0446",
+          "size": 31766
         },
         {
           "path": "test-suite/reference/openPbr_bump_fractal.exr",
-          "sha256": "327d6fea4ebf0a0920d32205c4ec8be4c6950ea0536ad209b1170735be79df36",
-          "size": 427652
+          "sha256": "691faa266fd442bdd538c1a5df8d31b1e2709d9363b30a2db7514fc94e9bd3dc",
+          "size": 30593
         },
         {
           "path": "test-suite/reference/openPbr_glass.exr",
-          "sha256": "da25e50524f1a138200b534c5fec660225c40cb11ccda53cc35eff6cb631bbc1",
-          "size": 84638
+          "sha256": "d2c8fd41151627d390703695d80224357a5840645d09376b213d2c39db58bd56",
+          "size": 9056
         },
         {
           "path": "test-suite/reference/openPbr_parameter_parity.exr",
-          "sha256": "12ef2714f951e91d842c8e535c7d0662ec556bf3a7692cd59db0b45552600098",
-          "size": 381400
+          "sha256": "fe1a43916d91c2c6266adbc78e6786554778061e0acf7a523eb5c3738aaf495f",
+          "size": 30623
         },
         {
           "path": "test-suite/reference/openPbr_simple.exr",
-          "sha256": "5cdc7f427cc52890f60592acd4cfbb803c080ebf787760a343e024208f3be01e",
-          "size": 384146
+          "sha256": "62817dd574e0e465a1623d124b219cc8457d10d26dd0392ddd2e3f300c6aafec",
+          "size": 28699
         },
         {
           "path": "test-suite/reference/openpbr_sss_native_adobe_compare.exr",
-          "sha256": "6a96ada4b875e8aae6de2edfcf7fdf8455f8ad40d172a7f8d6eda8335bbf163d",
-          "size": 878604
+          "sha256": "577daed4b3dc56c654943a04bf6606b8756c67cfcce7fcd614b4a9d412f08268",
+          "size": 62096
         },
         {
           "path": "test-suite/reference/procedural2d_gallery.exr",
-          "sha256": "4452130c88c6f3d20ef02a45b5b36eb5670fac614e6b4b6ac5921ba96a69f570",
-          "size": 146671
+          "sha256": "8dbce0c3c356a2aad44e9d181a49dacfaad8379878cb08a4a434799202225d75",
+          "size": 17504
         },
         {
           "path": "test-suite/reference/procedural3d_gallery.exr",
-          "sha256": "63e17aed06248cfb0459a9d3d7eb013d492cbb65b313a7dac9b77b8a125f9516",
-          "size": 85644
+          "sha256": "4d9d17fbbc2c86a6a0c848e3b910de73533daabc4b32b97500e1e96f9bd8b17b",
+          "size": 10918
         },
         {
           "path": "test-suite/reference/rough_dielectric_white_furnace_sphere.exr",
-          "sha256": "63b6a31d06892eb688961cac6df02d49f02c0561f199f2c5780e413feb0f07ab",
-          "size": 901118
+          "sha256": "baef928ee6ff32a784a25abb49fd7509081e67718c94a37604188bef064e79c9",
+          "size": 61913
         },
         {
           "path": "test-suite/reference/sss_randomwalk_gallery.exr",
-          "sha256": "507ef005fa8f0607a5fd3cc76d397240ef7cd2360bc82281bef97355b68ea007",
-          "size": 1329285
+          "sha256": "8cdfc42a17f2e1263429335c04bc8a5e307641e1e35090b8656f7869b4784645",
+          "size": 127107
         },
         {
           "path": "test-suite/reference/standardSurface_coated.exr",
-          "sha256": "199e44ee801ed46fcd553275087698f926ebdd4c4ff7481c3a0b13813da27621",
-          "size": 258056
+          "sha256": "e22387e2ce82969995d8de16113573cc056be96886883b1ece5bf77dd5096363",
+          "size": 20111
         },
         {
           "path": "test-suite/reference/standardSurface_simple.exr",
-          "sha256": "d431751c56b154dfd3f1410f754397be0813b04dd28d691ba6633cf51212aad1",
-          "size": 384243
+          "sha256": "bbb5bfbad923224ab967be2fed38f82d028e51bc971bb9d5bcc8e41f82416dda",
+          "size": 28744
         },
         {
           "path": "test-suite/reference/subdiv_facevarying_test.exr",
-          "sha256": "a3af07d57aeec26d7ea144acfdadb52725f747b00ec1cbb797025e445fb97501",
-          "size": 375211
+          "sha256": "479abe28e4527b7df4483f770307a4bc8ffdbfb746d688081989d4ff1b33be78",
+          "size": 31754
         },
         {
           "path": "test-suite/reference/subdiv_primvar_interpolation_matrix.exr",
-          "sha256": "25fcf6bf9e985e0a6159008647fa35cc7ce9cc6eeb873438ce7b509b66c46b2b",
-          "size": 3123018
+          "sha256": "3b9c07558ecc24566a3723bb610fee848a8562a45bd3ca0eeed6bd76c9fd76d3",
+          "size": 51812
         },
         {
           "path": "test-suite/reference/subdiv_st_interpolation_compare.exr",
-          "sha256": "c3e89ea159f7ad210bb3dbfc98583183cf8ffae9edfbdf526d9f606249955336",
-          "size": 304974
+          "sha256": "6805b033ae98a41b5ad71aa24e7c6a54b00b1adc5613cf9c2073202c2ab98b3f",
+          "size": 26294
         },
         {
           "path": "test-suite/reference/surface_derivatives_test.exr",
-          "sha256": "922d1bdbca0361904bd46b7f166c5095a5c60db2da4a91d7c0e9b76f9eb94dfa",
-          "size": 1021557
+          "sha256": "d02e4f5a2a9fd07d0c022c2a0e554e470dcd9284a4fc4808bcb906e22daf972b",
+          "size": 77964
         },
         {
           "path": "test-suite/reference/surface_shader_gallery.exr",
-          "sha256": "2af163b95854028c1429d615f19eee6e9564a720f2da832c1486f501b7e08ac7",
-          "size": 1257833
+          "sha256": "4fa562d9f7b28b7e19bca93e23fa771b745e3846bf6984b8d1993ae1cc13b784",
+          "size": 125682
         },
         {
           "path": "test-suite/reference/texture_image_compare_gallery.exr",
-          "sha256": "4cbf17520fdf20b6dc222cfbfd5fc8fd6e43995e440a50209603777e957c3633",
-          "size": 859961
+          "sha256": "f1467d01a49d2aea2a8a4461e5fe3acaed61ed19e5b55565d2bc9c30a2715dd5",
+          "size": 75169
         },
         {
           "path": "test-suite/reference/transparency_material_gallery.exr",
-          "sha256": "8d53cd5886396db52f87e33307fdd6fd48223c72602e801498546c6a024c55d9",
-          "size": 1682830
+          "sha256": "98432c6826522860e94c70ddc7b2b2531dd31b62b976a128693957b1ac9ef16b",
+          "size": 134958
         },
         {
           "path": "test-suite/reference/usdPreviewSurface_metallic.exr",
-          "sha256": "bfca3adbb4aa92ad03e94d084b3badb33fbf71346d0a136b5ac140e701e1fa3e",
-          "size": 382026
+          "sha256": "40fb1f7869b833bac3a97cfc83bcafcc6643031c023086cdc3a4653149a4839f",
+          "size": 28532
         },
         {
           "path": "test-suite/reference/usdPreviewSurface_simple.exr",
-          "sha256": "c95d83a3e7f72607d44e7d174b13ee1b53b60d20fd9fbcf7615c342901e05b17",
-          "size": 384321
+          "sha256": "392901e1782e5bdf0f0d5f43158be64c32512f5c06b4f86cb170fe4f3439b091",
+          "size": 28714
         },
         {
           "path": "test-suite/reference/usd_native_nodes_gallery.exr",
-          "sha256": "2a39badb6bd9f2e0dd39c778311b7531f9dd66414eba7e387860d0a1ed11a964",
-          "size": 610803
+          "sha256": "50036b6f5a02cce000db6ab37ecb9da8dbb9aa12d821c7bcd4515e4f13a3b681",
+          "size": 46693
         },
         {
           "path": "test-suite/reference/volume_transmission_single_cube.exr",
-          "sha256": "3425e98f2b0aead3750e55c7730ac22ee3dcc61c5435307fa79e9dad3c19b0f5",
-          "size": 1544205
+          "sha256": "78aa90df66ed745042df25ab9b671be0bbd8a717c64d0ce6d699e845e806ebdb",
+          "size": 127144
         }
       ],
-      "release": "reference-data-20260719T173221Z-f216c325-b051799f"
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
+    },
+    "usdlux": {
+      "archive": "usdlux--e7270e3eb681.zip",
+      "archive_sha256": "146cc49e3722b9c75d4401b5140f12b4f120cb779986440c7b3f9ad6542bd886",
+      "archive_size": 4736399,
+      "files": [
+        {
+          "path": "usdlux/reference/cylinder-embree.0001.exr",
+          "sha256": "ebad79940f436e8433179f626a2f374494a5b1b2f1921487e4f49f38bee68909",
+          "size": 15041
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0002.exr",
+          "sha256": "f55c49d9b47a953de5fbe2d33e5897831e4bf432b1265f67e927536e8fd57583",
+          "size": 14800
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0003.exr",
+          "sha256": "10b1991e05386c26e071ac98bb4e25d79b17df961634fa9c7fd9614e282bce9c",
+          "size": 14924
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0004.exr",
+          "sha256": "8ae52639d9c5f83ee37569f6f52b1324bb8ebb9d710d9d9e9ac5fa664540987e",
+          "size": 14967
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0005.exr",
+          "sha256": "d5d85fa597514e86a26746dd4701ce60abaa724b5bc7502563fefd726c86f411",
+          "size": 14971
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0006.exr",
+          "sha256": "4196fa5d3472485b1abbfc2656ad6678b718363b36c6b73812721a9ac0c09f80",
+          "size": 14976
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0007.exr",
+          "sha256": "8fdfeec0e07037b6c2415249dc95bc20582b042c32852de73d7c919e59975f15",
+          "size": 14993
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0008.exr",
+          "sha256": "65cc9e880a19b2e48155afaa0bcf6df16b1d46e63d43e2ae80b2adbc6645878f",
+          "size": 15022
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0009.exr",
+          "sha256": "f95233a399026938d87a86c1da7d0c5b548d26412e875280f19c14d40c02455c",
+          "size": 15016
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0010.exr",
+          "sha256": "2a996a9342ba177afcf7786fb2daf9fa09c77c43bae438d1893dd95bf46359a2",
+          "size": 15050
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0011.exr",
+          "sha256": "884e627fd8f8842e3abc398b002e5bff19b5bea1b4fff8fad6f29d899882502f",
+          "size": 14969
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0012.exr",
+          "sha256": "37abaf9ff76700e3d52cd8955f28a0928d1273502eb64147d0374c32c926f6e6",
+          "size": 15003
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0013.exr",
+          "sha256": "9dcf49f02ece0f4696ecb0326cfcae41079c0fef1938f91a1c150d0b3b52d737",
+          "size": 15023
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0014.exr",
+          "sha256": "5e33194bb1d810f4e4050664e0e61f9251256b8a5823522ea3f17deeb935d3c9",
+          "size": 15019
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0015.exr",
+          "sha256": "a26883119357aca331d8f97e63c8736329ec25c9d2ea0729a9ab30a528f9d0ce",
+          "size": 15047
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0016.exr",
+          "sha256": "09368b71f9de52bc534c2e06b386a853bba55342ded1e68e7665eb906784e052",
+          "size": 38363
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0017.exr",
+          "sha256": "8f33c997daa790a8744e51b74b77ef6b5e070b827a7f8eb1f77743c3a2e4832f",
+          "size": 38224
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0018.exr",
+          "sha256": "b6bde73c9311a83ef468403ec89fdb269696961d5f35445d3d112345c303c589",
+          "size": 38195
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0019.exr",
+          "sha256": "6f88c8bcca5fbc4b19670bb5830b68963c7b3c800ee056eb60ca30c44eff127a",
+          "size": 38176
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0020.exr",
+          "sha256": "e6e33e99cd717b2f0b829854c250a77f833d42df4cc8ca49dedc81d7d704388d",
+          "size": 38191
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0021.exr",
+          "sha256": "8b5e2e32aa63ae1341054784ac8fd5bec6a87227bd58e3c1f687a65fc1a0abf1",
+          "size": 14603
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0022.exr",
+          "sha256": "c493118fa69be5b38fed2dadd2b3f4f7da46ae278849a381b25ca36d3666bfe6",
+          "size": 11992
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0023.exr",
+          "sha256": "79d62307f88ef9f9ebe53359c9058482b48ceef90ca0c6579ea8753dc104d4eb",
+          "size": 8877
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0024.exr",
+          "sha256": "3c0ce151fbce950197b09af2cdcb46501233aed6a021b4f69783b251e7b372ac",
+          "size": 6664
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0025.exr",
+          "sha256": "2e893454505b5d77588786b551156881e61b13f4901655c5135e53c2db742d51",
+          "size": 3686
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0026.exr",
+          "sha256": "a7491f84e7923d3289d2566409734a56856341f3aae372bde625b8652b3432d2",
+          "size": 6362
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0027.exr",
+          "sha256": "557dd266acfb1234844b75538b1592be1ad3c1fc84afb579f53d382afe8aefa8",
+          "size": 6391
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0028.exr",
+          "sha256": "11277b53945f3e4d74b173d872ae7190d668fdc62a0db9043118625d5a93bc32",
+          "size": 6375
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0029.exr",
+          "sha256": "ee5e513e17b6e66fb6d786f47d72812fc8aa0e12f041884036a1822211c1e011",
+          "size": 6387
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0030.exr",
+          "sha256": "0365d4db192630f5dd2735d0094c92ae8da25b07ad3c5fd64d9834a71b74f3bd",
+          "size": 6322
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0031.exr",
+          "sha256": "99bb6a1fa91c9e2240ba4ac55016ae141d14103edebf33ab40483f70c81b572a",
+          "size": 15043
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0032.exr",
+          "sha256": "8833885d5413283a03362094ff9ebdc34f8973b362e42871d383fdd66499331e",
+          "size": 15059
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0033.exr",
+          "sha256": "0457ea1390edc82af1a07dec210839b8a04ce2c194e716b1d6ef5cc88db07de1",
+          "size": 15050
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0034.exr",
+          "sha256": "8b29fdb9478282fc71177883734d1474c4e604098825e86ba226c1323c201671",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0035.exr",
+          "sha256": "8fe276552394db36750c09f65ddf55a4e352cfd193a58a0bfb5da94c2409e4e5",
+          "size": 15041
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0036.exr",
+          "sha256": "7d89c0c0f710e9e5255a5b8d0ad5f5c48cf7d8ced10c051ef35a4c17a2f5d6a5",
+          "size": 7996
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0037.exr",
+          "sha256": "15ff4b3afed5aef5ece0785ceb1f3477054332b3404970271ef8d7ea2c05bb92",
+          "size": 12662
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0038.exr",
+          "sha256": "2733d7878aa95ef25ce7e43d0a3dd693b4d58f0942624760c12a43ed02f088de",
+          "size": 12768
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0039.exr",
+          "sha256": "6d6f6d860440029b0f1fabdd8564c2914e4674cf7086273b92b51258907c2b3f",
+          "size": 12899
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0040.exr",
+          "sha256": "7f89a4acb6b2cf8ecb6c83a0af5de3d4de43373c6ae52f2b0d98307c254b4b93",
+          "size": 12787
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0041.exr",
+          "sha256": "2c590fc16296478050c341f2ffe3133de6b06558d6c3091561220ffe0d64aa5a",
+          "size": 15049
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0042.exr",
+          "sha256": "f4fae17ce92d91121df9ea555aca01ee899dab781b9b4d03f83090e65a33e122",
+          "size": 26922
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0043.exr",
+          "sha256": "3a7ef273b773d7d7fb3dfa4dd6d5fe4f79da279c24daa615fb27b1f801800860",
+          "size": 26910
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0044.exr",
+          "sha256": "f7d73bc3224f750b120efc1b8d34f256ee78e85705452d83641a6f5e944c9208",
+          "size": 26861
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0045.exr",
+          "sha256": "a43a9fa3aebc6c2f6bd084c51f8319c384523fd7913a4ff905d561f122107335",
+          "size": 15037
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0046.exr",
+          "sha256": "b80761d1542fed453dfe46086bb122f01cdca0313073fa76969ef833f3eda48d",
+          "size": 15049
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0047.exr",
+          "sha256": "bcfc89f4bbff61710bd20eb00f7fd2484ab4e889a568ebd88fd54adc54333e4d",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0048.exr",
+          "sha256": "23e5d9b85094e3d3654975e45a44c2875db69e70abcdfe77a274b917062f17d1",
+          "size": 15041
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0049.exr",
+          "sha256": "2708e218e5b9d87eaa2652a573e36e84d0855c76a7a39ffb589e9f7a815d0214",
+          "size": 8761
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0050.exr",
+          "sha256": "e97a63a77705f3d4d24252f70164165b46869748423b779f2c2c98e74cb13379",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0051.exr",
+          "sha256": "139ef453f43b5849de86e9366464ce89aab38acc57da4b06806e5eaf19a73aee",
+          "size": 15022
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0052.exr",
+          "sha256": "38b9a3621072fbbcfe0c73098fa25c7f1e735af0a2baa16ffe638e2a0ff59736",
+          "size": 15031
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0053.exr",
+          "sha256": "e369290ba2724bab2c63836896592096d8fd3dd5a8d7b7b887b6c7cd345f5b7b",
+          "size": 15036
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0054.exr",
+          "sha256": "b92c0ec53faeb6ac5149834c888908f92180a23775ba2c67a5d53fdcaf15d3f2",
+          "size": 15052
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0055.exr",
+          "sha256": "89e2da095ee9a1c147068d88323490d14ef2089bfd5ecee0fa871e72f5591c9f",
+          "size": 15034
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0056.exr",
+          "sha256": "6d3cd36c87b41332f1f4744567bf8b453e8e2d230edce0c20adade9abbd68739",
+          "size": 15046
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0057.exr",
+          "sha256": "ba714480b776a935ca94ff1e29ccad96102a7b69d2ff5233b94882e2b784fd86",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0058.exr",
+          "sha256": "28005792b3632c00802173ad6924f2415b6cd2dc4e86598b9816c7d56388d912",
+          "size": 8768
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0059.exr",
+          "sha256": "58e22607fa9d6a8fa831b9678446f81d15a4dcfd793d8693b30d5f6837e9af31",
+          "size": 15047
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0060.exr",
+          "sha256": "cf6473a76704dcdb21b96e5e727bbeffa4b1a1be5cb4fd6426a3a0553ed90243",
+          "size": 15036
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0061.exr",
+          "sha256": "57f90a428114b1be2b4db512188467d1091d095aa15375496ab44f10865bbe02",
+          "size": 15057
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0062.exr",
+          "sha256": "ef6971a2152edaa1fc905c4d1b9287715eb3db0a3824acdf1516da9bb3a7b7d5",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/cylinder-embree.0063.exr",
+          "sha256": "a11d894b03c7b4b056e461f16cbc12321556365748575938604534e6ad9f16b7",
+          "size": 15046
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0001.exr",
+          "sha256": "73d85bf1611ee7651295e5b79790d61cf5d9d5c0046f50151592190929021102",
+          "size": 10451
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0002.exr",
+          "sha256": "8b8ac2e1761b580fa4895f170192d4b50cd3f5560b8414c16c1b04ab2c6e7223",
+          "size": 10460
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0003.exr",
+          "sha256": "11b35559b77ea19d41f836284cf508c60e76604032e6aad259df78242129fada",
+          "size": 10561
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0004.exr",
+          "sha256": "d6457bf7285ad727d3d0b8c9ebc7a383e3fcf815a475ff3158c6662d5370f295",
+          "size": 10655
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0005.exr",
+          "sha256": "451be0555ad77eb84fb59ca3928065c001cc10dac0493b50f60a7be7bed2c064",
+          "size": 10634
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0006.exr",
+          "sha256": "2e39539747ad913622ea50ec947290c806c352ee40806dfc71dfca0474548b39",
+          "size": 10324
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0007.exr",
+          "sha256": "859e758c20d86ee485bf01bbd2cfd9aede9f99030ac3951759832c4635523be1",
+          "size": 10352
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0008.exr",
+          "sha256": "2cd58183a5a8350192c1db797759bec6ab99451c7c1f4ba84384a5957044d4e4",
+          "size": 10414
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0009.exr",
+          "sha256": "526116c64328087ea599c2896d83d870f3bd6aa6e6d23b003571e228bd2a2e1d",
+          "size": 10451
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0010.exr",
+          "sha256": "29f688b532935ccf9be81aed97cfd4afd173c24c1adb1f566de50281f099bc5f",
+          "size": 10475
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0011.exr",
+          "sha256": "27b9cd5c3e46a51f95f80a16286d2858e6e1c3ee319a7b1ba080558ec2eae628",
+          "size": 10338
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0012.exr",
+          "sha256": "a4b46e196b6cd5dafc509247db6cde7b011fcb9b8a98f6770623257e806d2c75",
+          "size": 10392
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0013.exr",
+          "sha256": "ebe5bca784ffd3192af6a9b5a9c615b5f4d8056d8b5a9edad179f7325d1a3ec6",
+          "size": 10408
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0014.exr",
+          "sha256": "528e78f6ad573df0e3d7937a9897327279e38dde805dfff5373fa57390446661",
+          "size": 10417
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0015.exr",
+          "sha256": "824dc292d324ff364bb75ae5e4fc357e7be440e06f268032ed84aacc9f4c6f64",
+          "size": 10453
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0016.exr",
+          "sha256": "78c9bc2816e236f7c834269d8163486b6b3f94743f2e2f34667664ff6fcec9aa",
+          "size": 24798
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0017.exr",
+          "sha256": "3cc5916d9a6cc1975599808e5465a7a2f420520455bde70b46c46dc5c6262436",
+          "size": 24667
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0018.exr",
+          "sha256": "4dc160eb7f0c407095545507587075933c008853ed102b0483c22be9713fa167",
+          "size": 24701
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0019.exr",
+          "sha256": "f6829319b407fd0f6be29d770a3f08df458ee809885b36e4bd5159170585e54c",
+          "size": 24677
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0020.exr",
+          "sha256": "4fa89eac30c21d477f4a951c71a2f08291dfca9369366bf504e1726d1f8ff246",
+          "size": 24694
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0021.exr",
+          "sha256": "f9680dc8b3b98ab293f7b9d0beb9fcbe161873fe201e0c84e2a99346a4c82389",
+          "size": 8144
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0022.exr",
+          "sha256": "d0f5745b5ac0112e30cb661303ef8ca7a72bab21c6a167fa7fdc183341125376",
+          "size": 8110
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0023.exr",
+          "sha256": "5eb86dd09a4ff6a976b0e2a57bb6047fd84f0fb3005f20026a494cfecd812a4a",
+          "size": 8109
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0024.exr",
+          "sha256": "525ff6e3733aad903c7a847062fb100e761f231c7f412a50e772a2bb0c36829f",
+          "size": 5846
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0025.exr",
+          "sha256": "1d13f8b56c081477463f208164c85c449e6b48101f4083dcfbbfb2520127328f",
+          "size": 3240
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0026.exr",
+          "sha256": "bf0e10e2a559e0308afd6e9e1580a4cd8a3e5d74c56c08d84b2c09b634e48e43",
+          "size": 6386
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0027.exr",
+          "sha256": "357e268a2ae45c3c813711d150ca7e15a5b7bdc41d2e9a95af96ea779c34dc46",
+          "size": 6407
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0028.exr",
+          "sha256": "e5c30b06c5cd57a5fce931a47cb8ac7058f7dbcf65fae973b5e764bc6a9b889f",
+          "size": 6388
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0029.exr",
+          "sha256": "06b8ebc26937da128fe471613923a4ac313f307e94f5db0e81ae4d41c91bf3f7",
+          "size": 6341
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0030.exr",
+          "sha256": "467d560c4870e7af199908a839867a3cb3f051bd0b49543340b3488234bc1278",
+          "size": 6381
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0031.exr",
+          "sha256": "e06ea5ef93955384c7cb16c6b12c99229a52af83c87d60ba141c72251a64470d",
+          "size": 10439
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0032.exr",
+          "sha256": "d9e0d58eddaa25c5c4683b72c690058c651fdc0cd266cb00a5c4cdebe7552e41",
+          "size": 10412
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0033.exr",
+          "sha256": "d67d9b678d4f13e0bb8bb9e3825981241c9fd25b9a506e884661c070e12d4f1e",
+          "size": 10415
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0034.exr",
+          "sha256": "a12c6a183c9fd283364fe044173f9d3112f98f9ee8c0d9b9a75564e704179aec",
+          "size": 10344
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0035.exr",
+          "sha256": "1c98df0d9bbdd89f85215f0d8bdaaf40b88ea95d862e088e6d187f957d8b4b44",
+          "size": 10265
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0036.exr",
+          "sha256": "320b24d4b14e91beb598795799c428f33c58c6e00498d718f8e23f2b81ec26e1",
+          "size": 8123
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0037.exr",
+          "sha256": "35f341aaa74225d9a17f6f86af66676d7e77709d2b32011b0282dd7938a2e74f",
+          "size": 12982
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0038.exr",
+          "sha256": "a25249c5e9103d92ef2af31df268ae8502cd8baadbdb4776c4310256c1f39dcb",
+          "size": 12984
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0039.exr",
+          "sha256": "4a5ed54d83b98a5a3b83c4e4c6b9b046b6d6ec1c4820622f16074583d746d6f2",
+          "size": 13057
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0040.exr",
+          "sha256": "dbd0745e88fe3dcbe640e31682721dbdaae598745b3e5d0e389b4f01a1db975a",
+          "size": 13025
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0041.exr",
+          "sha256": "7edcc42b9c9ed839ebf0eb76365354f175c49e463276101b5e8baab9c05e3849",
+          "size": 10416
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0042.exr",
+          "sha256": "1fcfc10aac55466f7f6017b29945155c0f7aefec6a0bbf4a8d9584b72cf21549",
+          "size": 17691
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0043.exr",
+          "sha256": "02f8cca4fa2b41ac6288fe7daf2da5eb55e798f73e0fb0d4f949452132e7ad93",
+          "size": 17729
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0044.exr",
+          "sha256": "40a81d82932b05257b3ddb03136c8cefb8cac10a7922b5821eeefb7f4cce7f05",
+          "size": 17638
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0045.exr",
+          "sha256": "084f17c0a8a9629171254bded8a398bf84262465f74a59a99d25915daf33f0af",
+          "size": 10420
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0046.exr",
+          "sha256": "6aafe5908e9dd155e564888c62abb4488f153b0366b48662a3918c49df22d3c8",
+          "size": 10430
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0047.exr",
+          "sha256": "6ee58cb74e59d5966c83215fb969513904a28a1fbd082b6332261299b46e968a",
+          "size": 10441
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0048.exr",
+          "sha256": "7b5045ac00178d60fc0e89824c00d03f4b3558fe84626b9517cda99a51f0165b",
+          "size": 10446
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0049.exr",
+          "sha256": "6a4a4d1b1a03112ca2d2c5e1b9f886c662a074335b0f9f765eb375cbf76e2401",
+          "size": 3156
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0050.exr",
+          "sha256": "ad844465f22d18fe7ba2203cdc3e5a7a8e31a11849de5f43a3bf3a42e269da6d",
+          "size": 10401
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0051.exr",
+          "sha256": "c26303640bc07a94f60cf97d9014f168d1a09911337abda8fb1e96e497aeeacc",
+          "size": 10420
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0052.exr",
+          "sha256": "2aaed2eb08ec3685eee0f9be46502aee25818e480f8f7fb46a29986672b75a1b",
+          "size": 10437
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0053.exr",
+          "sha256": "46894a5a72421dd0fae7523c94be7d83bc1d093725c29f7a6be2feec3145cbb2",
+          "size": 10413
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0054.exr",
+          "sha256": "dab27628d58ed4fe9c056709ad5cd19ac788797839029bcac1ba56ed59ca12df",
+          "size": 10423
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0055.exr",
+          "sha256": "29fc6741d737cfac781e5f4751673f0f23a90f9f3e74fa6bca8a6cff46ae7fd6",
+          "size": 10427
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0056.exr",
+          "sha256": "c640ce347520eae283da2d526edfd4b30e2765a1f5120fb61202b2174e74b8ce",
+          "size": 10416
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0057.exr",
+          "sha256": "afcbcd935309f5e1168233976da5d600859098ac504804db64dcc3399af4aa10",
+          "size": 10416
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0058.exr",
+          "sha256": "6a4a4d1b1a03112ca2d2c5e1b9f886c662a074335b0f9f765eb375cbf76e2401",
+          "size": 3156
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0059.exr",
+          "sha256": "466b094a68117e264e08dec7c885fca0f688db47ac0888cf780e937a5ad3a691",
+          "size": 10452
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0060.exr",
+          "sha256": "d6a66a4577c1048e5dce1d66d2af75a48ba9501cbf02819c1a23d4d588d46749",
+          "size": 10395
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0061.exr",
+          "sha256": "ef42925788605862604e84b414f7235b137d8538232f5d60212477a4c13be87c",
+          "size": 10416
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0062.exr",
+          "sha256": "e8964e4c77d14f2033f2e8ff0c405f069940badc219b2e36f27609bd9f327b4e",
+          "size": 10440
+        },
+        {
+          "path": "usdlux/reference/disk-embree.0063.exr",
+          "sha256": "bf4afcb471886612098cb991c28b560fc238a4df1883f1a765c0b43a3447334e",
+          "size": 10434
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0001.exr",
+          "sha256": "ced5b1a2fd3bb2d94ecde1825c43a89b1671e09b0e5c998280825783030eb8c2",
+          "size": 7346
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0002.exr",
+          "sha256": "97564837844d66a9de7e0b7d318ed5b5bdb11f8a5d0de7c0fb57bfaaf7fc1ec1",
+          "size": 13368
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0003.exr",
+          "sha256": "01c362fcb4f7055e945b23da058fd55852721396f25252d99f42529bafeaf6a9",
+          "size": 14819
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0004.exr",
+          "sha256": "1f592c4d9b9e230505f363e97a6e235ca0c277e117bd4ce56c26e930b09b0aa0",
+          "size": 14953
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0005.exr",
+          "sha256": "b321ce685d9d2224d3aa35d50aa357c0a84ac61898ffedc92ea73116253e398e",
+          "size": 15057
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0006.exr",
+          "sha256": "a79413a1ea122aab48a2e0fa222e9e582a9628d8ef003e0d1b7555bf0f677b92",
+          "size": 7321
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0007.exr",
+          "sha256": "0e0c101a548de4ac89ab4cc37b2270c89e29f0eec5dc85aa431324ca346c5596",
+          "size": 7444
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0008.exr",
+          "sha256": "b2283fcb90e0b5fdd36d2e8cabc11ea2de2f0e32d1333dcc54f133bbdc20cf89",
+          "size": 8106
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0009.exr",
+          "sha256": "fb6a009c4e779e8864911fe168ee19b961e441648da79b8209f241d679b47b85",
+          "size": 7844
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0010.exr",
+          "sha256": "f4a8b378f2e6a3378761fcb13e26c21aa96ec02724c8f6ee08ba07eb85b45583",
+          "size": 6236
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0011.exr",
+          "sha256": "9f4781a13886ca0654390f5febf21f0aa35e787c501cd37a641f4515040854fc",
+          "size": 4594
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0012.exr",
+          "sha256": "e36ff3d3a4fad2351567751d2c245abcc149b7abdf93ab76ffff133c10b382fa",
+          "size": 14765
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0013.exr",
+          "sha256": "6eec2cbdb9fb0db71c2856af18ef5dc5992a334a02dc01c460f07b4d591a8d1e",
+          "size": 15040
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0014.exr",
+          "sha256": "fa34a915eed655b3884a8b32512a148dc9aeaa6c59623e8c11e2cfe05ed52ed2",
+          "size": 15062
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0015.exr",
+          "sha256": "51b431325f0c9e353e87f8695cb7e349db70218f1dfeff31851acac8cf072b2c",
+          "size": 15048
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0016.exr",
+          "sha256": "1e785e73eaf93cc1900e334563fa006eb1c19acce6a9773ca0f30673b1a73130",
+          "size": 15056
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0017.exr",
+          "sha256": "c7c1aee1e82631fd76357c369642d6487652599597d3ba64263868d064dd904e",
+          "size": 15053
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0018.exr",
+          "sha256": "dcc25f607df811f05f71aeeb00dbec6bcd69e430253de5e547b5152609f77104",
+          "size": 15050
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0019.exr",
+          "sha256": "5af52d3e91ac4cb30db0ff32466e40e855b6fb4f0e0ba9a00c5b09769f3792f9",
+          "size": 15042
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0020.exr",
+          "sha256": "bc80cac8f314f72bffd36e533d286ec35fc418bff69d4542d2662adea3c0beab",
+          "size": 15058
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0021.exr",
+          "sha256": "f578de3d241cf0455e677196169483ae125c7e6a54b1894ef0d57d4b2c5b59fb",
+          "size": 4616
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0022.exr",
+          "sha256": "5c8d15808e642db71dc5b536cc44a9ac44d5bfc576ff605e59a448d0d1408ebd",
+          "size": 14881
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0023.exr",
+          "sha256": "9e9709c005177ecce8f0f3d439b7b9cfa53847856404f71230bf4018a31aec03",
+          "size": 15052
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0024.exr",
+          "sha256": "d1cc4813e9e78951bcc6c0af6eff0029e207bec873a8304c217239968826d3a5",
+          "size": 15069
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0025.exr",
+          "sha256": "e3b0ecbe42a2cf0d4ca6de90edf10b1cccb5e4d9a1f21663d8efe86479421023",
+          "size": 15048
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0026.exr",
+          "sha256": "5bb1363588d44f05198e014b7728471de424bc50e52d1d6d531274c847faeeb7",
+          "size": 15054
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0027.exr",
+          "sha256": "8ea6d77cb822af21777c8d41d73d6f7bcd19f227150849af738b2c5cfc2ea8c7",
+          "size": 15042
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0028.exr",
+          "sha256": "53c76b5aa43d6e50cd7368fd4d5cd47d68fe6858c704df69c95c2733406f6df3",
+          "size": 15049
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0029.exr",
+          "sha256": "51aa78efb00dec0d7f76d916b7ce4794cecf2b3ff1eaa1805d2a86bee05dc544",
+          "size": 15045
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0030.exr",
+          "sha256": "49971387d3bca69284682a752eedbc997a77e96a4bbc5f64b187c7fd0cf694ce",
+          "size": 15046
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0031.exr",
+          "sha256": "c37fa253cf3d528717fd7b0d65d485a88380eb0522d220b8685161dc999a7359",
+          "size": 15098
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0032.exr",
+          "sha256": "42b9f104467fbfa499a035a5242d5da184fb84f0f3c7f6243932402849231834",
+          "size": 14423
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0033.exr",
+          "sha256": "d8bb3e7a6c3a5de11137e5808445306f365ec100704ef23573e706b557cff89f",
+          "size": 13813
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0034.exr",
+          "sha256": "788881d948d43fdd13c9253a7c7e2192754ae33ea7a276b270f6f82f58a459eb",
+          "size": 14278
+        },
+        {
+          "path": "usdlux/reference/distant-embree.0035.exr",
+          "sha256": "408ca4c206c4201da73276ab8150079ffa346466227da219de4b4c1b461bf176",
+          "size": 14115
+        },
+        {
+          "path": "usdlux/reference/dome-embree.0001.exr",
+          "sha256": "fc4bf274a20bc776316a32d94d3652689f436dc04433cd6974901eacf246a40a",
+          "size": 46092
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0001.exr",
+          "sha256": "bd82375b5484af2760755d82559863dc3eb0704130242f8739122b177202c78e",
+          "size": 18691
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0002.exr",
+          "sha256": "6a4a4d1b1a03112ca2d2c5e1b9f886c662a074335b0f9f765eb375cbf76e2401",
+          "size": 3156
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0003.exr",
+          "sha256": "c85896db40613f89209f3b6131983e0a5ab17e0357f9c83d8d9f94bf60ffc37a",
+          "size": 13165
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0004.exr",
+          "sha256": "b0cd6e26d029502986dc2efc5d003da8bea54a4937ed1750219aae83ec51b05e",
+          "size": 18704
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0005.exr",
+          "sha256": "223d88486f9286dafab03bfdf718fc4f233de5b673793cc7b540cfdc370172bb",
+          "size": 4942
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0006.exr",
+          "sha256": "afca8209e97684e534c3295b311143ebadccd49a97efdc07e4a4276e0906fa05",
+          "size": 18680
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0007.exr",
+          "sha256": "7da0d88dd5f1d699cd18e02bf9fc59cbe02ac62b02c0cfe131af959f186b8d63",
+          "size": 13152
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0008.exr",
+          "sha256": "94527f1f032fae18697dbd881d9ec25c3df172f347f6db6b49267509fe9f98ae",
+          "size": 18690
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0009.exr",
+          "sha256": "c49f7308ead43b2e4cbe27b99f1d0768c56e46a5d1e5ea59583d3242478bcf07",
+          "size": 20215
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0010.exr",
+          "sha256": "8ce5dab4171d431d3124e0d26f75cf36df95dc7905c454c6c97fa3f681c7284e",
+          "size": 20297
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0011.exr",
+          "sha256": "aa11e56314eba82229a0ee0c8ce87b29bdbd45a4dc6aa1fff6e39769547bcd50",
+          "size": 18139
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0012.exr",
+          "sha256": "f67d247f56c9978cb1b79f918bc599c249e62d4d482ca649dca128956f655cb7",
+          "size": 17907
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0013.exr",
+          "sha256": "262d084cbdd7b763cb0d34ad0dfc7f10fcf3a909dfb711e9b5f5a958f41c5665",
+          "size": 18014
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0014.exr",
+          "sha256": "474ccef17129f0f5620636f63b3c53a0b8d57e2eafcd17cd68d626b7575e875b",
+          "size": 18132
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0015.exr",
+          "sha256": "e7e9fbee2ae1aaf005ab1fe28201ed142c65b7b849f9eb2ddb7923d54ab27039",
+          "size": 4976
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0016.exr",
+          "sha256": "22796239fcc68e14e3fd793880a82ff7074b090f5fc002239c4aab259f48107e",
+          "size": 18147
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0017.exr",
+          "sha256": "682426482ae4a532bbf3de8d4507313c09a5c4c189f9cee1036132a2451c4b6a",
+          "size": 19412
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0018.exr",
+          "sha256": "acf2ad380eec2fba181c39ea51f3a5e1b6f6ba576bdca7dddf492cd868c0763d",
+          "size": 18128
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0019.exr",
+          "sha256": "cbbb20c7703b59a195fa329b103b574286a89baa685c05197980b0534e707e0a",
+          "size": 18060
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0020.exr",
+          "sha256": "01a275b6bbdd3c622de0f7d770931e74ff4cfdff02e6a4ec8f870f36db2f5ea5",
+          "size": 17540
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0021.exr",
+          "sha256": "736ab7b9d41406413dd1e842d7e649742a6149a690eed8b74529d0da81acd8b3",
+          "size": 18112
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0022.exr",
+          "sha256": "a5916aea96c48bd43d3a840b5f573ed82403226e1c27d5401624f5214ccda4ae",
+          "size": 17940
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0023.exr",
+          "sha256": "dc5ddccc9a94af43034d97a7e4b9198232bf1c7d95c22122eb11f8f32172d299",
+          "size": 18035
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0024.exr",
+          "sha256": "0a7e3778851c20b15d2e7de483eda60a23de855fc48f7ddade48351d09b37a77",
+          "size": 18118
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0025.exr",
+          "sha256": "bd9836549bada79a54f69eaaf2151e293720064168e111ba4000d2079e608b22",
+          "size": 4983
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0026.exr",
+          "sha256": "cca032b0c65f499bc786ca2e192bf6a96875a1769309ce15512793951b1d73be",
+          "size": 18134
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0027.exr",
+          "sha256": "60f4b6be477e3b1fd9ffd0d4c291ed261230ec3f9ff8ddf868d13c5fd08c8317",
+          "size": 19374
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0028.exr",
+          "sha256": "344dca02148ebc4937a037f8afdaa5f11534a3e277c2a18fae7d8717b185ab95",
+          "size": 18136
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0029.exr",
+          "sha256": "7a4d331cd4f0b4e17d45f5e843a8597d0efa0d3a2d3c81e14409b5b26589680d",
+          "size": 18094
+        },
+        {
+          "path": "usdlux/reference/iesLibPreview-embree.0030.exr",
+          "sha256": "913d78bd475726b4752b66cccbda983b1a1ed05e77c977c35a0f0f0b9b96cb06",
+          "size": 17505
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0001.exr",
+          "sha256": "38d2e4d2f9bf4bf6bae093f1f13212204bf168e239283b71dc7ce484b0f72adc",
+          "size": 10477
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0002.exr",
+          "sha256": "6efbaeecaa212d2b42574d4b535052f7d8179424690e8df17c66327368713c78",
+          "size": 10479
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0003.exr",
+          "sha256": "013a37e50985fbefc93f284fedf2bed677ec79fb07de2d496b71326a32e6b6a3",
+          "size": 10576
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0004.exr",
+          "sha256": "d026125ab46d7fa653fa11dcb42c4b24ca717b0123ae62fa43e0ab7a2d479eb2",
+          "size": 10674
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0005.exr",
+          "sha256": "29a10a7c75a1717557715d978a856f110ebd3637e6d970feb9a64f12af4c964b",
+          "size": 10719
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0006.exr",
+          "sha256": "a886040fe73a832b91ef6b0c3b010f70642665c4f9ebe89c8d085c4f0ddd108c",
+          "size": 10461
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0007.exr",
+          "sha256": "8f5ab3b2e6d831f9407124efdb1af5dc5d9d853ae7a2725bf14ca11ffe0c6b1b",
+          "size": 10456
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0008.exr",
+          "sha256": "edfb9796fa8c9074e98bd97cc7c9c20cc9c0aa58a6341d0d9c512378266b2a1c",
+          "size": 10464
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0009.exr",
+          "sha256": "688012df5cfd87a65b57d2087f2e48409fd0cc6a15b0a2799ccae6421200a7b0",
+          "size": 10476
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0010.exr",
+          "sha256": "694058ccc6b8825b2164377f75ab985b2885b1cee31f3881f4180bf78cae7823",
+          "size": 10479
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0011.exr",
+          "sha256": "dfc527c491f0a8de7700cc4e5e74362c01e62a4346c21ee19a69ffcd21e17752",
+          "size": 10461
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0012.exr",
+          "sha256": "b34052871236f983853175a0423593ef16baec312517d402150f61fc2aa99994",
+          "size": 10470
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0013.exr",
+          "sha256": "21763b790ec3e8e0e4e9dc14e764924d0bca67ea0821c0683d89139d0490e8c9",
+          "size": 10472
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0014.exr",
+          "sha256": "2229a0b23c4089e0bbe60af788f4961895b1a2b3ccbc60d66e74bccc7caae9c5",
+          "size": 10474
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0015.exr",
+          "sha256": "8a53e1078393918ec64d0396ab423891d0fd76e6c81c7ba3fd79cdc7fa90a7b3",
+          "size": 10471
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0016.exr",
+          "sha256": "7001e50119bcc53cf942645dd1faedbceef65fb08009304fe740872853638608",
+          "size": 24843
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0017.exr",
+          "sha256": "8307beec58796494820360d596f37670ec9925fb089c73fff64205d7e9445827",
+          "size": 24745
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0018.exr",
+          "sha256": "aa2b9bdf0ef164e3c6590bd7fd7e09637298881ca8eae19aec4aedb9efdede74",
+          "size": 24744
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0019.exr",
+          "sha256": "6be7725771e4471518b35b662c75cb1a90d2ca0c86f09a9926de1d2513b51e00",
+          "size": 24756
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0020.exr",
+          "sha256": "58c14a357b65c15ef5147b420b1b7e7c954be0122c35a709cc5fb2a41536ccb7",
+          "size": 24776
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0021.exr",
+          "sha256": "fb3642c95f882abeb9eb8cbd3c19cd7f04dbca12fe547c306f85e1a763e734c2",
+          "size": 9093
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0022.exr",
+          "sha256": "67cae11858bae652533574a551a027b3724dd125c1692b63993785e3e4911f6f",
+          "size": 9088
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0023.exr",
+          "sha256": "576cc4f5e9c542fb8795cc8c6c1f5f0fe80b6770664674c2bbd26bad38c901e1",
+          "size": 9073
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0024.exr",
+          "sha256": "e0b4652f12e074a1dbb96f6839e5374416bed16e136a6e2eaa459e9f0fd275bf",
+          "size": 7338
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0025.exr",
+          "sha256": "70f961f0c494e5935d4501857549c7d126b709fb4f75d5e0f559d21a82d731d1",
+          "size": 4843
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0026.exr",
+          "sha256": "e3bd922b074cc9a56ee720572961a4b4ac1bd3e7b5cbfc2f90078765c7c11521",
+          "size": 7204
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0027.exr",
+          "sha256": "69b89e7ec5ac50f029531364e0bd3fcb17242088117d353f006affe307604cee",
+          "size": 7196
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0028.exr",
+          "sha256": "2dab6aad3eefa4741bd5794f81449b4e8293545e4f3e9226aead244217972a5f",
+          "size": 7139
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0029.exr",
+          "sha256": "d2f52cc0fd4d2ed1976d046121f0345180f3ca0a8607bc43359288d1e04eecc8",
+          "size": 7191
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0030.exr",
+          "sha256": "5ec5da61c2b45c95d120219f5b64f57c65200e57158f7c8698d6fa7a6c7762f6",
+          "size": 7176
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0031.exr",
+          "sha256": "b25a3ac8c3cf3e048251aa5963d40c7f40b7544ba6a378250a635b3c1bb6262a",
+          "size": 10474
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0032.exr",
+          "sha256": "4c903fd6d411e8d6bd91da71f8e5f7b5cbba238a47c75415e37001db841036ab",
+          "size": 10435
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0033.exr",
+          "sha256": "bf5468d0c5c0593a8f05f6425896ff3880a45de23240ff1b6365cc317ed6ba7a",
+          "size": 10423
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0034.exr",
+          "sha256": "d5dfb813339343454ffe57fff649da48d5076416486c1b22ced476dfbdf0f4de",
+          "size": 10369
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0035.exr",
+          "sha256": "977226068940d3425e05c475dd0c72e5110521855756c588263e3afd2896eae2",
+          "size": 10259
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0036.exr",
+          "sha256": "ca44f44f5e45b4eddfd3446b7caa255a98bf552548dcbe849651635268634299",
+          "size": 8597
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0037.exr",
+          "sha256": "31be4068577b6663dbd9601fe4d8c86ecccdc960feae2358f82d7c0af94520f3",
+          "size": 14012
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0038.exr",
+          "sha256": "90fa6a9a09ba133bf6892faedcf944e492ca7cf3dff1ef62694486042e346a68",
+          "size": 13934
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0039.exr",
+          "sha256": "afbd5c18e9f48332f50bc4df604b848365d1252b43f1806eaa0318ae274862af",
+          "size": 13912
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0040.exr",
+          "sha256": "704bf992b7c64ca25091cdd00a17a98e4b4b10c10d9cb3309cb50b0e288f9c15",
+          "size": 13945
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0041.exr",
+          "sha256": "a33b74918687d39159fb4da4d3385ee0be812fcbc1a4b9e74e08a3d03a58fd83",
+          "size": 10448
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0042.exr",
+          "sha256": "6230aa1213eaeddeb6b59e32122fec98cf49a4c8aed04e71399d7aa78bbc8381",
+          "size": 17727
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0043.exr",
+          "sha256": "17d8c731a13a57bab02f58982ada1c54261155c416e08fc884a63125a814ff20",
+          "size": 17786
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0044.exr",
+          "sha256": "3256dcc8dec2fdc557cc32deb437b1af91abcc601d8de2a8fa785d12a5b3266c",
+          "size": 17674
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0045.exr",
+          "sha256": "5b6c4d52691d20c45b30cd9343f420b9c9e3b7965a3c8c4c8ec1dfcaefdee542",
+          "size": 10428
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0046.exr",
+          "sha256": "a100a82b6816981f4f1b8888f8f84eda004b37236c08556784bd4740d95d738c",
+          "size": 10453
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0047.exr",
+          "sha256": "f2e337de97c211e6a186d563ec8ad17e449e815521ee84e7861b365419fc6bc6",
+          "size": 10449
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0048.exr",
+          "sha256": "96ea71b7ea52f53ca8b823f4b455bbb5aaedd6509c871c2563a7dd06bf837f54",
+          "size": 10454
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0049.exr",
+          "sha256": "6a4a4d1b1a03112ca2d2c5e1b9f886c662a074335b0f9f765eb375cbf76e2401",
+          "size": 3156
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0050.exr",
+          "sha256": "848b39dc3812f3f9fae8e1073ef187996a016e3d51ce9bda43c5afc99917f4ab",
+          "size": 10414
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0051.exr",
+          "sha256": "bcf38ae786e380e6a4fc5759f9eca7635693a9df9771de663d14fa5053065b25",
+          "size": 10431
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0052.exr",
+          "sha256": "c68f21f41a3b70c44ce7672eeab238c33b08eda852833c44c7d8c632dea62713",
+          "size": 10478
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0053.exr",
+          "sha256": "2650e68e05e09cef0234cbdba34b122b9f172af22b3173c3fa86d5ff09916176",
+          "size": 10435
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0054.exr",
+          "sha256": "332dd082af2f11e6d41abe5c6b03d9aad488e0385b1c1f9a6bcb4aa28bcd1cea",
+          "size": 10435
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0055.exr",
+          "sha256": "472663e4803990a3d3e1a381f52a602f72e3aff936a8afcbb8dfecb7899e2030",
+          "size": 10446
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0056.exr",
+          "sha256": "a309720564568f53a653d10b897bf5472fe02f6df30a72d2fe109ae4022d651f",
+          "size": 10439
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0057.exr",
+          "sha256": "79fe70c1588155038a931eff2c99d84cc70cb83cf03bab1ef3685a5aae5c6b0f",
+          "size": 10432
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0058.exr",
+          "sha256": "6a4a4d1b1a03112ca2d2c5e1b9f886c662a074335b0f9f765eb375cbf76e2401",
+          "size": 3156
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0059.exr",
+          "sha256": "ee2e16a9695b549ca49dcccb25910075ce0e6695b8cf04e7a972267b07fc893b",
+          "size": 10457
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0060.exr",
+          "sha256": "a4aeeadf14015972bb3a059c0e89713883cd191b24867297dadca7b39833c290",
+          "size": 10446
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0061.exr",
+          "sha256": "83ce7b69e7f800ae753340ffc1ccbfba74bd32a0c88cb06b3d80fd2dfcd82e0e",
+          "size": 10452
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0062.exr",
+          "sha256": "de2dd71ae4285a217197920f3d34445a4bc275bec569c3945a57791df626ae59",
+          "size": 10446
+        },
+        {
+          "path": "usdlux/reference/rect-embree.0063.exr",
+          "sha256": "374ad1694aecd2af38f1c983576f2b843b9632e236fbc342af57378c8ace5971",
+          "size": 10438
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0001.exr",
+          "sha256": "e54673ed788aa65e55a9bbc78444cb996a82061cc3097f2590a2c7e05186de22",
+          "size": 15027
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0002.exr",
+          "sha256": "40192609765e85399ed944d5bf22a8f6bafe6c0494d933b9b83c2f169ea551b7",
+          "size": 15039
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0003.exr",
+          "sha256": "5e897c5b2795a80a6b1322b4fd8c6b61c6daf8d2017e47123f8d492d134b68e8",
+          "size": 15049
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0004.exr",
+          "sha256": "3775e9c1d91091971f8bd2648854496af81bef655fe8f9df02b2ed02f0970c41",
+          "size": 15012
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0005.exr",
+          "sha256": "4bccb707dd6e0e82791faf404725a896fff9f0da3df29ca4d1840c862d3a5562",
+          "size": 14989
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0006.exr",
+          "sha256": "7c4d9467dc0f59b733f879106d737a0d60352ec29865ad7933024b6a3543acd7",
+          "size": 14898
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0007.exr",
+          "sha256": "3288a404761dcc931207bd2438fe9a7195e6ac062a82c87b2032bfc173e1166b",
+          "size": 14966
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0008.exr",
+          "sha256": "cc1c5daccf48f43b3de5e739e93aa8cd8a761bacb998d3594e54ba54e66cd983",
+          "size": 15004
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0009.exr",
+          "sha256": "456fc3d28fa7e9bdc01d14ad855724f4369904b2e32cc237bb130f51e5852718",
+          "size": 15033
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0010.exr",
+          "sha256": "8d33e8cb8e350301bbca26dd0a9abcdd25ee3aa482159905eca330f8485ec33a",
+          "size": 15056
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0011.exr",
+          "sha256": "daffd7beb0980890ce21c43db9b61243d38b951b523d72c7b7f035c12ca919f0",
+          "size": 14914
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0012.exr",
+          "sha256": "cbac9c82e7665efd819e6873e05e7f4f7ca75041b0caa505e5a0389162ab6ef7",
+          "size": 14967
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0013.exr",
+          "sha256": "2639dc835699448c0daf8cd4f36acdfa01b368f315df7019e5c1ce6ce1800234",
+          "size": 15001
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0014.exr",
+          "sha256": "90f22a5fe55f72722e92f09271167a201bd5508c9f797ae2feee1dc8046f4a4d",
+          "size": 15007
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0015.exr",
+          "sha256": "ac2f10aaaaa1cbbbf51cc2a7a96c1bab8815c9a1bb9684c473c60dbb17e8d201",
+          "size": 15027
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0016.exr",
+          "sha256": "137eaabee2e789aee981f5a14bfe0c656cb60b77211dae9ff3e1c60d4afe7d53",
+          "size": 38342
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0017.exr",
+          "sha256": "fe9822530eaa95c4ec254a1eb3b0fdbedd40c53c9cd735d823034bed9fe5082f",
+          "size": 38252
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0018.exr",
+          "sha256": "cfcde06a3d35a50ea7d9fdb6c53b168166d4959f68031af8f7eead5d2c3b6336",
+          "size": 38191
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0019.exr",
+          "sha256": "46321c04bcffb14df254ff9391baacd0118d113d8b919db30241e5f6164bf24e",
+          "size": 38148
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0020.exr",
+          "sha256": "70f86218fbfe4f9beb9cd29aef4a244dc4507714460688ce33314cc056cc68a0",
+          "size": 38180
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0021.exr",
+          "sha256": "8e4863fcb550128667ff3ab6726224a1b0760aba2fd749608910cf9c952de4f5",
+          "size": 13947
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0022.exr",
+          "sha256": "ad786403a184ce89df2435a4af7d6bcde3cbc42dd1022ee2bc93cd92fc369323",
+          "size": 11184
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0023.exr",
+          "sha256": "e20453cb8ec7563bb3cdc5ebb799c7a9730dbb57409a0f685aaa4c3b2b68065a",
+          "size": 8379
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0024.exr",
+          "sha256": "10b26f5a2937a93372b2d5c1572f1a2c96e62f083fbe2260d82d3b0a755314b5",
+          "size": 5958
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0025.exr",
+          "sha256": "647bacf9ded5263ef9f5ece45b2b42a6a443306cbf11ec51694551ae932d6503",
+          "size": 3252
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0026.exr",
+          "sha256": "291c4d3c91c070c561ce16e251bef05ea030440d28d54319615b4897062b4d94",
+          "size": 6715
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0027.exr",
+          "sha256": "bd0af8fdd2260bce2d0c60a45205b7886153d4ad28644521caa9fdfc84156d76",
+          "size": 6676
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0028.exr",
+          "sha256": "8294609c39c470ef951fbdaaad5e3f41cf48591d7ae616477173ea9024236dda",
+          "size": 6686
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0029.exr",
+          "sha256": "3937b76cbae7f7f24e100a587704b586cc7ea95cf38378a9d433ed47f98c49ec",
+          "size": 6725
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0030.exr",
+          "sha256": "5e4f6b58d30430f06edc989e400184a519b7fe578b0c57b2934c78bfbd4ae122",
+          "size": 6704
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0031.exr",
+          "sha256": "fd3655535bc889a8c6af5413e1c1bdc957fe856342598c229612f1c9542df12a",
+          "size": 15015
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0032.exr",
+          "sha256": "0736222a6789d315c88addaefcac02497a800bac84c589d0a1ab8f0a9fdd174a",
+          "size": 15034
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0033.exr",
+          "sha256": "a4041bf38237c2fab3b6ba924438e39ed210cedf8864a94948a31da0800c0aec",
+          "size": 15042
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0034.exr",
+          "sha256": "43bd2099f8cc1fe9e0a93fbd626679141503eebe667423e2095c91fb60635871",
+          "size": 15049
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0035.exr",
+          "sha256": "a5576311ca54ac43dc936748fe70f21fada759b9552ed967ce3751fdd2bf3780",
+          "size": 15045
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0036.exr",
+          "sha256": "d17cebc7589c3697efb7a2355347a10f0a5cd2ab58a8a72a7cea110a693d62e9",
+          "size": 8554
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0037.exr",
+          "sha256": "c2931e4546e099b159bfbb086e55c7f8d9000656f0981ef9a0a201b2014e3ff8",
+          "size": 13846
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0038.exr",
+          "sha256": "9222cd588d65ba7931d97384dd3df125e178fc457f62c0acdb33ce98ca6ced68",
+          "size": 13906
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0039.exr",
+          "sha256": "557ab9ed839bdd1d64cfb747e9aaeb460bc99580de60910cfbb256c3dfac3220",
+          "size": 13872
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0040.exr",
+          "sha256": "71a383d87811d83b03a2180877703242d3d30c5855b334fdb22249da83328ee7",
+          "size": 13833
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0041.exr",
+          "sha256": "8542537c228089010d194aa742d750be7116c38f2074f49f739c50a8ab2ac288",
+          "size": 15034
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0042.exr",
+          "sha256": "a0280ead023ea377951e1cdabbe63840be888fca53bb2ffd185835c3cdfbd717",
+          "size": 26932
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0043.exr",
+          "sha256": "929110c5e02d729264e2aa51e28f4a96c31f31f9910eab61ffbff5c3b865e857",
+          "size": 26950
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0044.exr",
+          "sha256": "aeab9a7acfe05ded50fc665eaf952af297919d49feaead868f1fffc71375c270",
+          "size": 26905
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0045.exr",
+          "sha256": "a7ac2ac2d1c01dae4cebe02231ad3c94f1072ec36e2c2190048030afbe2ebc42",
+          "size": 15043
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0046.exr",
+          "sha256": "ed4d7aaf931810821bdcc2cad1a17f04db8e907fba863908aee6913e2b18524a",
+          "size": 15039
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0047.exr",
+          "sha256": "c904195c0a6d80b294a14505c98b34838f0c4f0ed0b9b337597e1bb860129dff",
+          "size": 15044
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0048.exr",
+          "sha256": "9f58bf430255616bc0c1365b8ac9031510cfb0aedfa28c6bc4b5de49df29d1c3",
+          "size": 15031
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0049.exr",
+          "sha256": "f06ece88c1b2f7166be027a9f1d57c687357e26c32a618011c703eb935982717",
+          "size": 8717
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0050.exr",
+          "sha256": "d8a329c70fe41dd2f905d9f9f354b9993628cfde367a9cc210b912dd970d16eb",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0051.exr",
+          "sha256": "484a82812cf6cd8aa51f4a955e2c759ac14c71df08e020e6c23c49ab8720c8ca",
+          "size": 15042
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0052.exr",
+          "sha256": "04f38e85e349682f655d920e19ac9158b88bd3878d8ddf810b35da30801355bb",
+          "size": 15037
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0053.exr",
+          "sha256": "92979728f843fee84540b93d19af351e7541c9b32bf4214ff48695566f62d323",
+          "size": 15025
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0054.exr",
+          "sha256": "21065653a49133d54f69b885e06b9f2768ee24e1a94ab1d6415dacbf4d8f4019",
+          "size": 15044
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0055.exr",
+          "sha256": "2c9bac198ce4a6a874746e8b2e88745f9d24cae27921e7937f085e54ce23654f",
+          "size": 15032
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0056.exr",
+          "sha256": "29690af558714d8bdd816c8efa2192ce031210ed77069ec6d4537ef8ba3b0315",
+          "size": 15048
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0057.exr",
+          "sha256": "d69b2cd75b9cff8fdb5cff92de0ecec06636c54edd5da6c48d68ec0322bc5c37",
+          "size": 15046
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0058.exr",
+          "sha256": "5231a444a60e74694c7193f385a76185817700ab2c6dee653f04a3e491b11ac8",
+          "size": 8740
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0059.exr",
+          "sha256": "54b295a66c6026b7ca41101348f1d76d66acde2fb3a6354d0357cf9e43d30729",
+          "size": 15038
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0060.exr",
+          "sha256": "8f14becdb0ead63de3509ae5afbbdbc702c800062e1ca0884c5ab6c6b1c41f56",
+          "size": 15032
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0061.exr",
+          "sha256": "f871e74bc9ba4b332b34adc9eb1dc2595da8788a4ffa9e669a41ec9b030cea95",
+          "size": 15039
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0062.exr",
+          "sha256": "67d1946ed9d091cc1a86ed7579b8f745f546e28e8bea7d7a054c628eb9bc0a0a",
+          "size": 15047
+        },
+        {
+          "path": "usdlux/reference/sphere-embree.0063.exr",
+          "sha256": "66352db08f896bd38e37fb4538193ababf6d41f1e0ef2c2c53c0972526780a00",
+          "size": 15043
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0001.exr",
+          "sha256": "8c5a17f18b23b9d2c3bd02c79546476b619db4104addcbe0b650d695e26de01a",
+          "size": 37755
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0002.exr",
+          "sha256": "fe4c5d963225f4152083f09698e1a34e4dd91fc09313d5a14da02eb50f4b4b28",
+          "size": 35935
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0003.exr",
+          "sha256": "68ac7afd5e53242e924e7865397e7e4a42e217713c919249de885ece47fbaf05",
+          "size": 30593
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0004.exr",
+          "sha256": "6acc63f36af37a6e2d9e6dbffad2db58ccfc9690e3572ffc8d4f8af79119ddec",
+          "size": 22347
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0005.exr",
+          "sha256": "2576d17fcdac369dbfcc27d9de513a42face66946e1507aaea8f5dc920580848",
+          "size": 11471
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0006.exr",
+          "sha256": "849161d136c2812b698674fffdd7c2d5ef8779dade9a08b11d0a4c9b8cf7aca9",
+          "size": 37775
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0007.exr",
+          "sha256": "aabbc03fdd44280ff37be7f70f2575e8b7e1eadb71c4b9d71fba172df35d9e41",
+          "size": 35914
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0008.exr",
+          "sha256": "f368e5eea173a7920d0a9b061d9bb6ad498265c2bd9a74aafcb0d360fb6a6409",
+          "size": 30574
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0009.exr",
+          "sha256": "e729cecbc125b8af87eee60c5a6ea05afb86d5478682005e18c920ccb15cea1c",
+          "size": 22383
+        },
+        {
+          "path": "usdlux/reference/visibleRect-embree.0010.exr",
+          "sha256": "401bdd7e119049bde54ac75b0845a63b00714f13e836392c9ba9959dde21f73b",
+          "size": 11437
+        }
+      ],
+      "release": "reference-data-20260726T150947Z-b334397a-f8f05f47"
     }
   },
   "repository": "anderslanglands/typhoon-test-suite",

@@ -1,0 +1,75 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "geompropvalue_color3" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/geompropvalue_color3/surface.outputs:out>
+        token outputs:surface.connect = </Looks/geompropvalue_color3/surface.outputs:out>
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/geompropvalue_color3/NG_geompropvalue_color3.outputs:out_base_color>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/geompropvalue_color3/uniform_edf.outputs:out>
+            token outputs:out
+        }
+
+        def NodeGraph "NG_geompropvalue_color3"
+        {
+            color3f outputs:out_base_color.connect = </Looks/geompropvalue_color3/NG_geompropvalue_color3/node_under_test.outputs:out>
+
+            def Shader "node_under_test"
+            {
+                uniform token info:id = "ND_geompropvalue_color3"
+                string inputs:geomprop = "testColor3"
+                color3f inputs:default = (0, 0, 0)
+                color3f outputs:out
+            }
+        }
+
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        color3f[] primvars:testColor3 = [(1, 0, 0), (0, 1, 0), (1, 1, 1), (1, 0, 0)] (
+            interpolation = "vertex"
+        )
+        rel material:binding = </Looks/geompropvalue_color3>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/geompropvalue_color3.exr"
+        }
+    }
+}

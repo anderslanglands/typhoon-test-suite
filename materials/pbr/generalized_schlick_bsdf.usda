@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_generalized_schlick_bsdf on the shaderball. The node uses reflection mode with a GGX microfacet lobe, roughness (0.18, 0.18), exponent 4, color0 (0.08, 0.18, 0.55), color82 (0.35, 0.55, 0.85), and color90 (1, 0.72, 0.22). The output is connected directly to ND_surface.bsdf, so the shaderball should show a glossy reflective material whose Fresnel response shifts from a darker blue facing response toward a warmer grazing response, with color82 shaping the high-angle reflectance curve."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "generalized_schlick_bsdf" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/generalized_schlick_bsdf/surface.outputs:out>
+        token outputs:surface.connect = </Looks/generalized_schlick_bsdf/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_generalized_schlick_bsdf"
+            color3f inputs:color0 = (0.08, 0.18, 0.55)
+            color3f inputs:color82 = (0.35, 0.55, 0.85)
+            color3f inputs:color90 = (1, 0.72, 0.22)
+            float inputs:exponent = 4
+            float2 inputs:roughness = (0.18, 0.18)
+            string inputs:scatter_mode = "R"
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/generalized_schlick_bsdf/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/generalized_schlick_bsdf>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "pbr/generalized_schlick_bsdf.exr"
+    }
+}

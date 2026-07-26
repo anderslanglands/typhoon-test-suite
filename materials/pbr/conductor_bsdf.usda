@@ -1,0 +1,58 @@
+#usda 1.0
+(
+    customLayerData = {
+        string doc = "Tests ND_conductor_bsdf with all inputs left at their MaterialX defaults on the shaderball. The default node is a reflective GGX conductor with weight 1, roughness (0.05, 0.05), no thin film, no retroreflection, and default ior/extinction values that approximate gold. The output is connected directly to ND_surface.bsdf, so the shaderball should show a sharp metallic reflection of the dome lighting with a warm gold bias from the default complex IOR."
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "conductor_bsdf" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/conductor_bsdf/surface.outputs:out>
+        token outputs:surface.connect = </Looks/conductor_bsdf/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_conductor_bsdf"
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/conductor_bsdf/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/conductor_bsdf>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "pbr/conductor_bsdf.exr"
+    }
+}

@@ -1,0 +1,80 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "uv2_default" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/uv2_default/SR_uv2_default.outputs:out>
+        token outputs:surface.connect = </Looks/uv2_default/SR_uv2_default.outputs:out>
+
+        def Shader "SR_uv2_default"
+        {
+            uniform token info:id = "ND_standard_surface_surfaceshader"
+            color3f inputs:base_color.connect = </Looks/uv2_default/NG_uv2_default.outputs:out_base_color>
+            float inputs:specular = 0.5
+            float inputs:specular_roughness = 0.45
+            token outputs:out
+        }
+
+        def NodeGraph "NG_uv2_default"
+        {
+            color3f outputs:out_base_color.connect = </Looks/uv2_default/NG_uv2_default/base_color.outputs:out>
+
+            def Shader "uv0"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                int inputs:index = 1
+                float2 outputs:out
+            }
+
+            def Shader "split"
+            {
+                uniform token info:id = "ND_separate2_vector2"
+                float2 inputs:in.connect = </Looks/uv2_default/NG_uv2_default/uv0.outputs:out>
+                float outputs:outx
+                float outputs:outy
+            }
+
+            def Shader "base_color"
+            {
+                uniform token info:id = "ND_combine3_color3"
+                float inputs:in1.connect = </Looks/uv2_default/NG_uv2_default/split.outputs:outx>
+                float inputs:in2.connect = </Looks/uv2_default/NG_uv2_default/split.outputs:outy>
+                float inputs:in3 = 0
+                color3f outputs:out
+            }
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/uv2_default>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "geometric/uv2_default.exr"
+    }
+}

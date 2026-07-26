@@ -1,0 +1,82 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "geompropvalue_float" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/geompropvalue_float/surface.outputs:out>
+        token outputs:surface.connect = </Looks/geompropvalue_float/surface.outputs:out>
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/geompropvalue_float/NG_geompropvalue_float.outputs:out_base_color>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/geompropvalue_float/uniform_edf.outputs:out>
+            token outputs:out
+        }
+
+        def NodeGraph "NG_geompropvalue_float"
+        {
+            color3f outputs:out_base_color.connect = </Looks/geompropvalue_float/NG_geompropvalue_float/to_color.outputs:out>
+
+            def Shader "node_under_test"
+            {
+                uniform token info:id = "ND_geompropvalue_float"
+                string inputs:geomprop = "testFloat"
+                float inputs:default = 0
+                float outputs:out
+            }
+
+            def Shader "to_color"
+            {
+                uniform token info:id = "ND_convert_float_color3"
+                float inputs:in.connect = </Looks/geompropvalue_float/NG_geompropvalue_float/node_under_test.outputs:out>
+                color3f outputs:out
+            }
+        }
+
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        float[] primvars:testFloat = [1, 0.65, 0.35, 0] (
+            interpolation = "vertex"
+        )
+        rel material:binding = </Looks/geompropvalue_float>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/geompropvalue_float.exr"
+        }
+    }
+}

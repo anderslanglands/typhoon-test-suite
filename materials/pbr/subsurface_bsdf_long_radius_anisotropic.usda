@@ -1,0 +1,65 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "subsurface_bsdf_long_radius_anisotropic" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/subsurface_bsdf_long_radius_anisotropic/surface.outputs:out>
+        token outputs:surface.connect = </Looks/subsurface_bsdf_long_radius_anisotropic/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_subsurface_bsdf"
+            float inputs:anisotropy = 0.8
+            color3f inputs:color = (0.9, 0.32, 0.18)
+            float3 inputs:normal = (0.35, 0, 0.93675)
+            color3f inputs:radius = (1.5, 0.5, 0.15)
+            float inputs:weight = 0.5
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/subsurface_bsdf_long_radius_anisotropic/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/subsurface_bsdf_long_radius_anisotropic>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int ty:convergedSamplesPerPixel = 128
+    }
+
+    over "Product"
+    {
+        token productName = "pbr/subsurface_bsdf_long_radius_anisotropic.exr"
+    }
+}

@@ -25,7 +25,7 @@ def RenderSettings "RenderSettings" (
     rel camera = </GoldeneyeCamera>
     rel products = [</RenderProduct>]
     float pixelAspectRatio = 1
-    int2 resolution = (512, 341)
+    int2 resolution = (128, 85)
 }
 
 def RenderProduct "RenderProduct"

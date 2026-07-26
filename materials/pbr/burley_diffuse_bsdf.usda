@@ -1,0 +1,58 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "burley_diffuse_bsdf" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/burley_diffuse_bsdf/surface.outputs:out>
+        token outputs:surface.connect = </Looks/burley_diffuse_bsdf/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_burley_diffuse_bsdf"
+            color3f inputs:color = (0.85, 0.16, 0.06)
+            float inputs:roughness = 0.55
+            float inputs:weight = 1
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/burley_diffuse_bsdf/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/burley_diffuse_bsdf>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "Product"
+    {
+        token productName = "pbr/burley_diffuse_bsdf.exr"
+    }
+}

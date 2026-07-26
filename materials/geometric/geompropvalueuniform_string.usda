@@ -1,0 +1,94 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "geompropvalueuniform_string" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/geompropvalueuniform_string/surface.outputs:out>
+        token outputs:surface.connect = </Looks/geompropvalueuniform_string/surface.outputs:out>
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_geompropvalueuniform_string"
+            string inputs:geomprop = "testString"
+            string inputs:default = "periodic"
+            string outputs:out
+        }
+
+        def Shader "uv0"
+        {
+            uniform token info:id = "ND_texcoord_vector2"
+            float2 outputs:out
+        }
+
+        def Shader "uv_offset"
+        {
+            uniform token info:id = "ND_add_vector2"
+            float2 inputs:in1.connect = </Looks/geompropvalueuniform_string/uv0.outputs:out>
+            float2 inputs:in2 = (0.5, 0)
+            float2 outputs:out
+        }
+
+        def Shader "image"
+        {
+            uniform token info:id = "ND_image_color3"
+            color3f inputs:default = (1, 0, 1)
+            asset inputs:file = @../_assets/materials/Materials/grid.exr@
+            float2 inputs:texcoord.connect = </Looks/geompropvalueuniform_string/uv_offset.outputs:out>
+            string inputs:uaddressmode.connect = </Looks/geompropvalueuniform_string/node_under_test.outputs:out>
+            string inputs:vaddressmode = "constant"
+            color3f outputs:out
+        }
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/geompropvalueuniform_string/image.outputs:out>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/geompropvalueuniform_string/uniform_edf.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        string primvars:testString = "clamp" (
+            interpolation = "constant"
+        )
+        rel material:binding = </Looks/geompropvalueuniform_string>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/geompropvalueuniform_string.exr"
+        }
+    }
+}

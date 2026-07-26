@@ -1,0 +1,123 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "geomcolor_color4" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/geomcolor_color4/surface.outputs:out>
+        token outputs:surface.connect = </Looks/geomcolor_color4/surface.outputs:out>
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/geomcolor_color4/NG_geomcolor_color4.outputs:out_base_color>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/geomcolor_color4/uniform_edf.outputs:out>
+            token outputs:out
+        }
+
+        def NodeGraph "NG_geomcolor_color4"
+        {
+            color3f outputs:out_base_color.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/convert_color4_color3.outputs:out>
+
+            def Shader "node_under_test"
+            {
+                uniform token info:id = "ND_geomcolor_color4"
+                int inputs:index = 0
+                color4f outputs:out
+            }
+
+            def Shader "convert_color4_color3"
+            {
+                uniform token info:id = "ND_convert_color4_color3"
+                color4f inputs:in.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/node_under_test.outputs:out>
+                color3f outputs:out
+            }
+
+            def Shader "split_color"
+            {
+                uniform token info:id = "ND_separate4_color4"
+                color4f inputs:in.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/node_under_test.outputs:out>
+                float outputs:outr
+                float outputs:outg
+                float outputs:outb
+                float outputs:outa
+            }
+
+            def Shader "alpha_weight"
+            {
+                uniform token info:id = "ND_multiply_float"
+                float inputs:in1.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/split_color.outputs:outa>
+                float inputs:in2 = 0.35
+                float outputs:out
+            }
+
+            def Shader "blue_weight"
+            {
+                uniform token info:id = "ND_multiply_float"
+                float inputs:in1.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/split_color.outputs:outb>
+                float inputs:in2 = 0.65
+                float outputs:out
+            }
+
+            def Shader "green_blue_mix"
+            {
+                uniform token info:id = "ND_add_float"
+                float inputs:in1.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/alpha_weight.outputs:out>
+                float inputs:in2.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/blue_weight.outputs:out>
+                float outputs:out
+            }
+
+            def Shader "to_color"
+            {
+                uniform token info:id = "ND_combine3_color3"
+                float inputs:in1.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/split_color.outputs:outa>
+                float inputs:in2.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/split_color.outputs:outr>
+                float inputs:in3.connect = </Looks/geomcolor_color4/NG_geomcolor_color4/green_blue_mix.outputs:out>
+                color3f outputs:out
+            }
+        }
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        color3f[] primvars:displayColor = [(0, 0, 0), (1, 0, 0), (1, 1, 1), (0, 1, 1)] (
+            interpolation = "vertex"
+        )
+        rel material:binding = </Looks/geomcolor_color4>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "geometric/geomcolor_color4.exr"
+        }
+    }
+}

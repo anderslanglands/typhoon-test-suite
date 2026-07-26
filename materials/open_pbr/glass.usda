@@ -1,0 +1,59 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "glass" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/glass/open_pbr_surface_surfaceshader.outputs:out>
+        token outputs:surface.connect = </Looks/glass/open_pbr_surface_surfaceshader.outputs:out>
+
+        def Shader "open_pbr_surface_surfaceshader"
+        {
+            uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+            float inputs:specular_ior = 1.52
+            float inputs:specular_roughness = 0
+            float inputs:transmission_dispersion_abbe_number = 64
+            float inputs:transmission_dispersion_scale = 1
+            float inputs:transmission_weight = 1
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/glass>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int ty:convergedSamplesPerPixel = 128
+
+    }
+
+    over "Product"
+    {
+        token productName = "open_pbr/glass.exr"
+    }
+}

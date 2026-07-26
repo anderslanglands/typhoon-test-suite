@@ -1,0 +1,77 @@
+#usda 1.0
+(
+    defaultPrim = "standard_shader_ball_scene"
+    metersPerUnit = 0.01
+    renderSettingsPrimPath = "/Render/RenderSettings"
+    subLayers = [
+        @../_assets/shaderball/scene.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "dielectric_layer" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/dielectric_layer/surface.outputs:out>
+        token outputs:surface.connect = </Looks/dielectric_layer/surface.outputs:out>
+
+        def Shader "specular_bsdf"
+        {
+            uniform token info:id = "ND_dielectric_bsdf"
+            string inputs:scatter_mode = "R"
+            token outputs:out
+        }
+
+        def Shader "transmission_bsdf"
+        {
+            uniform token info:id = "ND_dielectric_bsdf"
+            string inputs:scatter_mode = "T"
+            token outputs:out
+        }
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_layer_bsdf"
+            token inputs:top.connect = </Looks/dielectric_layer/specular_bsdf.outputs:out>
+            token inputs:base.connect = </Looks/dielectric_layer/transmission_bsdf.outputs:out>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:bsdf.connect = </Looks/dielectric_layer/node_under_test.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "standard_shader_ball_scene"
+{
+    over "shader_ball"
+    {
+        over "material_surface" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Looks/dielectric_layer>
+        }
+
+    }
+}
+
+over "Render"
+{
+    over "RenderSettings"
+    {
+        uniform int ty:convergedSamplesPerPixel = 128
+
+    }
+
+    over "Product"
+    {
+        token productName = "pbr/dielectric_layer.exr"
+    }
+}

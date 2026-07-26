@@ -1,0 +1,83 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    renderSettingsPrimPath = "/Render/Settings"
+    subLayers = [
+        @../_assets/plane/base.usda@,
+        @../_assets/plane/plane.usda@,
+        @../_assets/plane/dome.usda@
+    ]
+    upAxis = "Y"
+)
+
+def Scope "Looks"
+{
+    def Material "image_udim" (
+    )
+    {
+        token outputs:mtlx:surface.connect = </Looks/image_udim/surface.outputs:out>
+        token outputs:surface.connect = </Looks/image_udim/surface.outputs:out>
+
+        def Shader "uv0"
+        {
+            uniform token info:id = "ND_texcoord_vector2"
+            float2 outputs:out
+        }
+
+        def Shader "node_under_test"
+        {
+            uniform token info:id = "ND_image_color3"
+            color3f inputs:default = (1, 0, 1)
+            asset inputs:file = @../_assets/materials/Materials/nodes/udim.<UDIM>.png@
+            float2 inputs:texcoord.connect = </Looks/image_udim/uv0.outputs:out>
+            color3f outputs:out
+        }
+
+        def Shader "uniform_edf"
+        {
+            uniform token info:id = "ND_uniform_edf"
+            color3f inputs:color.connect = </Looks/image_udim/node_under_test.outputs:out>
+            token outputs:out
+        }
+
+        def Shader "surface"
+        {
+            uniform token info:id = "ND_surface"
+            token inputs:edf.connect = </Looks/image_udim/uniform_edf.outputs:out>
+            token outputs:out
+        }
+    }
+}
+
+over "World"
+{
+    over "Geometry" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        float3[] extent = [(-2.1, -2.1, 0), (2.1, 2.1, 0)]
+        int[] faceVertexCounts = [4, 4, 4, 4]
+        int[] faceVertexIndices = [0, 1, 4, 3, 3, 4, 7, 6, 1, 2, 5, 4, 4, 5, 8, 7]
+        normal3f[] normals = [(0, 0, 1)] (
+            interpolation = "constant"
+        )
+        point3f[] points = [(-2.1, -2.1, 0), (0, -2.1, 0), (2.1, -2.1, 0), (-2.1, 0, 0), (0, 0, 0), (2.1, 0, 0), (-2.1, 2.1, 0), (0, 2.1, 0), (2.1, 2.1, 0)]
+        texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (0, 1), (1, 1), (1, 2), (0, 2), (1, 0), (2, 0), (2, 1), (1, 1), (1, 1), (2, 1), (2, 2), (1, 2)] (
+            interpolation = "faceVarying"
+        )
+        rel material:binding = </Looks/image_udim>
+    }
+}
+
+over "Render"
+{
+    over "Settings"
+    {
+
+        over "Product"
+        {
+            token productName = "textures/image_udim.exr"
+        }
+    }
+}

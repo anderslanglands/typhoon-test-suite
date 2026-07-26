@@ -1,0 +1,22 @@
+[suite]
+name = "usdlux"
+
+[render]
+output_pattern = "{path}-embree.{frame:04d}.exr"
+
+[reference]
+dir = "reference"
+pattern = "{path}-embree.{frame:04d}.exr"
+missing = "fail"
+
+[comparison]
+
+[frames]
+cylinder = "1:63"
+disk = "1:63"
+distant = "1:35"
+dome = "1:1"
+iesLibPreview = "1:30"
+rect = "1:63"
+sphere = "1:63"
+visibleRect = "1:10"
