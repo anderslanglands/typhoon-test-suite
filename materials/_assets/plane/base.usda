@@ -27,7 +27,7 @@ def "Render"
     {
         rel camera = </World/Camera>
         rel products = </Render/Settings/Product>
-        uniform int2 resolution = (64, 64)
+        uniform int2 resolution = (128, 128)
         int primvars:arnold:AA_samples = 8
         int primvars:arnold:GI_diffuse_depth = 16
         int primvars:arnold:GI_diffuse_samples = 1

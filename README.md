@@ -28,7 +28,7 @@ pixi run goldeneye:update-references
 
 `test-suite/*.usda` contains the original 41 gallery fixtures. Their collected
 scenes and dependencies live under `test-suite/_assets/scenes`. They render at
-128 pixels on the longest axis, preserving each fixture's aspect ratio and
+256 pixels on the longest axis, preserving each fixture's aspect ratio and
 existing sample count.
 
 `materials/` is a root-level suite containing 67 renderer-focused fixtures imported from
@@ -46,13 +46,13 @@ pinned `usd-wg/assets` submodule. Plane fixtures sublayer the wrappers under
 `materials/_assets/plane/`. Imported textures are byte-identical AOUSD assets
 under `materials/_assets/materials/`.
 
-Material imports render at 64x64. Shaderball fixtures use 16 spp, plane
+Material imports render at 128x128. Shaderball fixtures use 16 spp, plane
 fixtures use 8 spp, and noisy shaderball transmission/volume/SSS fixtures use
-128 spp. Displacement renders at 128x128 so adaptive subdivision remains visible.
+128 spp. Displacement renders at 256x256 so adaptive subdivision remains visible.
 
 `usdlux/` contains 328 active frames covering rect, sphere, disk, cylinder,
 distant, and dome lights, shaping/IES controls, and primary-ray-visible light
-geometry. It renders at 64x64 with 16 spp and `ty:maxBounces = 0`. See
+geometry. It renders at 128x128 with 16 spp and `ty:maxBounces = 0`. See
 `usdlux/README.md`.
 
 ## Scope

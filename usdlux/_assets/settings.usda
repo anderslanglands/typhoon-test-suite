@@ -27,7 +27,7 @@ def Scope "Render"
         custom float karma:object:ssslimit = 0
         token[] materialBindingPurposes = ["full", "allPurpose"]
         float pixelAspectRatio = 1
-        int2 resolution = (64, 64)
+        int2 resolution = (128, 128)
         custom string ri:integrator:name = "PxrDirectLighting"
     }
 

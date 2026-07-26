@@ -87,7 +87,7 @@ over "Render"
 {
     over "RenderSettings"
     {
-        uniform int2 resolution = (128, 128)
+        uniform int2 resolution = (256, 256)
     }
 
     over "Product"
