@@ -14,10 +14,11 @@ openusd-typhoon = "*"
 pytest = "*"
 numpy = "*"
 pillow = "*"
-goldeneye = "*"
+goldeneye = ">=0.7.2"
 
 [pypi-dependencies]
 flip-evaluator = "==1.7"
+# goldeneye = { path = "../goldeneye", editable = true }
 
 [tasks]
 test = "pytest"
