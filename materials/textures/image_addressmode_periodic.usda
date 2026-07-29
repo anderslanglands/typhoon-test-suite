@@ -57,7 +57,7 @@ def Scope "Looks"
                 uniform token info:id = "ND_image_color3"
                 color3f inputs:default = (1, 0, 1)
                 asset inputs:file = @../_assets/materials/Materials/nodes/image_addressmode_constant/textures/address_modes.png@ (
-                    colorSpace = "srgb_texture"
+                    colorSpace = "srgb_rec709_scene"
                 )
                 string inputs:filtertype = "closest"
                 float2 inputs:texcoord.connect = </Looks/image_addressmode_periodic/NG_image_addressmode_periodic/uv_expanded.outputs:out>

@@ -48,7 +48,7 @@ def Scope "Looks"
                 uniform token info:id = "ND_image_color3"
                 color3f inputs:default = (1, 0, 1)
                 asset inputs:file = @../_assets/materials/Materials/nodes/image_format_png/textures/texture.png@ (
-                    colorSpace = "srgb_texture"
+                    colorSpace = "srgb_rec709_scene"
                 )
                 float2 inputs:texcoord.connect = </Looks/blur_color3/NG_blur_color3/uv0.outputs:out>
                 string inputs:uaddressmode = "periodic"

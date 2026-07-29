@@ -40,7 +40,7 @@ def Scope "Looks"
             {
                 uniform token info:id = "ND_image_color3"
                 asset inputs:file = @../_assets/materials/Materials/nodes/image_format_png/textures/texture.png@ (
-                    colorSpace = "srgb_texture"
+                    colorSpace = "srgb_rec709_scene"
                 )
                 float2 inputs:texcoord.connect = </Looks/image_format_png/NG_image_format_png/uv0.outputs:out>
                 string inputs:uaddressmode = "periodic"
