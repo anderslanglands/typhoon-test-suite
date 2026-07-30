@@ -1,0 +1,43 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Y"
+    doc = """Shared polygon cube scene.
+The cube has independent 0-1 face-varying st coordinates and is angled to show
+three faces under the Stinson Beach environment."""
+)
+
+def Xform "World"
+{
+    def Camera "Camera"
+    {
+        float focalLength = 50
+        float horizontalAperture = 36
+        float verticalAperture = 24
+        float2 clippingRange = (0.1, 1000)
+        double3 xformOp:translate = (0, 0, 4.5)
+        token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def "Cube" (
+        prepend references = @./meshes/Cube_Poly.usda@</Root/Cube_Poly>
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        float3 xformOp:rotateXYZ = (-18, -28, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+    }
+
+    def Scope "Materials"
+    {
+    }
+
+    def DomeLight "Environment"
+    {
+        asset inputs:texture:file = @../images/StinsonBeach.hdr@
+        token inputs:texture:format = "latlong"
+        color3f inputs:color = (1.0, 1.0, 1.0)
+        float inputs:intensity = 1.0
+    }
+}

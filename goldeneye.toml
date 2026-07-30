@@ -24,3 +24,16 @@ command = [
     "{usd_path}",
     "--outputRoot", "{suite_output_root}",
 ]
+
+
+[renderers.arnold]
+command = [
+    "kick", "{usd_path}",
+    "-od", "{suite_output_root}",
+    "-set", "options.abort_on_license_fail", "off",
+    "-set", "options.skip_license_check", "on",
+    "-set", "driver_exr.tiled", "false",
+    "-dw",
+    "-dp",
+    "-r", "256", "256",
+]

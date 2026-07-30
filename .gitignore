@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 .goldeneye-reference-state.json
 reference/
+**/*.tx
