@@ -1,0 +1,106 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    renderSettingsPrimPath = "/RenderSettings"
+    subLayers = [
+        @./_assets/scenes/cube.usda@
+    ]
+)
+
+def RenderSettings "RenderSettings" (
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
+)
+{
+    rel camera = </World/Camera>
+    rel products = [</RenderProduct>]
+    float pixelAspectRatio = 1
+    int2 resolution = (256, 256)
+    int ty:convergedSamplesPerPixel = 128
+    int primvars:arnold:AA_samples = 8
+    int primvars:arnold:GI_diffuse_depth = 16
+    int primvars:arnold:GI_diffuse_samples = 1
+    int primvars:arnold:GI_specular_depth = 16
+    int primvars:arnold:GI_specular_samples = 1
+    int primvars:arnold:GI_sss_samples = 1
+    int primvars:arnold:GI_total_depth = 16
+    int primvars:arnold:GI_transmission_depth = 16
+    int primvars:arnold:GI_transmission_samples = 1
+    int primvars:arnold:GI_volume_depth = 16
+    int primvars:arnold:GI_volume_samples = 1
+    int primvars:arnold:light_samples = 1
+}
+
+def RenderProduct "RenderProduct"
+{
+    rel camera = </World/Camera>
+    rel orderedVars = [</RenderProduct/Color>]
+    token productName = "openPbr_height_to_normal_glass_cube_roughness_0_5.exr"
+    token productType = "raster"
+
+    def RenderVar "Color"
+    {
+        token dataType = "color4f"
+        string sourceName = "color"
+        token sourceType = "raw"
+    }
+}
+
+over "World"
+{
+    over "Cube"
+    {
+        rel material:binding = </World/Materials/OpenPbrHeightToNormalGlassRoughness05>
+    }
+
+    over "Materials"
+    {
+        def Material "OpenPbrHeightToNormalGlassRoughness05" (
+            prepend apiSchemas = ["MaterialXConfigAPI"]
+        )
+        {
+            string config:mtlx:version = "1.38"
+            token outputs:mtlx:surface.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/OpenPbr.outputs:out>
+
+            def Shader "TexCoord"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                float2 outputs:out
+            }
+
+            def Shader "HeightImage"
+            {
+                uniform token info:id = "ND_image_float"
+                float inputs:default = 0.5
+                asset inputs:file = @./_assets/images/bump-in.png@ (
+                    colorSpace = "none"
+                )
+                float2 inputs:texcoord.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/TexCoord.outputs:out>
+                float outputs:out
+            }
+
+            def Shader "HeightToNormal"
+            {
+                uniform token info:id = "ND_heighttonormal_vector3"
+                float inputs:in.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/HeightImage.outputs:out>
+                float2 inputs:texcoord.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/TexCoord.outputs:out>
+                float3 outputs:out
+            }
+
+            def Shader "NormalMap"
+            {
+                uniform token info:id = "ND_normalmap_float"
+                float3 inputs:in.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/HeightToNormal.outputs:out>
+                float3 outputs:out
+            }
+
+            def Shader "OpenPbr"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                float inputs:specular_roughness = 0.5
+                float inputs:transmission_weight = 1.0
+                vector3f inputs:geometry_normal.connect = </World/Materials/OpenPbrHeightToNormalGlassRoughness05/NormalMap.outputs:out>
+                token outputs:out
+            }
+        }
+    }
+}
