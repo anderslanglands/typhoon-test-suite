@@ -1,9 +1,9 @@
 {
   "groups": {
     "materials/geometric": {
-      "archive": "materials--geometric--a2f18bb1be33.zip",
-      "archive_sha256": "0a22d0990ccb03449d4847b8dafbcbb6f308e3b4b7281f7fa51ab2782016e696",
-      "archive_size": 2741815,
+      "archive": "materials--geometric--8aaa0870c7a5.zip",
+      "archive_sha256": "00f0b8cfd684c8db8c3582b484ca28975676edb130f8b8276096aeab9b19dcd3",
+      "archive_size": 2741808,
       "files": [
         {
           "path": "materials/reference/geometric/binormal_default.exr",
@@ -52,8 +52,8 @@
         },
         {
           "path": "materials/reference/geometric/heighttonormal_normal_input.exr",
-          "sha256": "4c4d0ec54f4da2227ed42b75f97a69f337d8884cc353f66b04b329de7be82517",
-          "size": 75390
+          "sha256": "dec10b984b791348e7219259bc3ed8377d9c07121ae1d0ce7276e4923f3338f8",
+          "size": 75383
         },
         {
           "path": "materials/reference/geometric/normal_space_object.exr",
@@ -96,7 +96,7 @@
           "size": 199413
         }
       ],
-      "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
+      "release": "reference-data-20260731T055034Z-85268583-b858feda"
     },
     "materials/misc": {
       "archive": "materials--misc--dbee11573d27.zip",
@@ -384,9 +384,9 @@
       "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
     },
     "test-suite": {
-      "archive": "test-suite--65df1facc0f6.zip",
-      "archive_sha256": "a44d0beb6bf95d8cd5add4c7842aed53311769ae4a27f8927b1f690508108dce",
-      "archive_size": 7230191,
+      "archive": "test-suite--e3c5fd0fa38d.zip",
+      "archive_sha256": "3f69c6d77bb1b496caea1a707d5862dd2cbb238b12488c0baf2b6544a5dc30b1",
+      "archive_size": 8368437,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
@@ -485,13 +485,23 @@
         },
         {
           "path": "test-suite/reference/openPbr_bump_fractal.exr",
-          "sha256": "796f4f01d29a4d3e446644b5d508a97a83188137bf46e8b8b8ba21312137266e",
-          "size": 112968
+          "sha256": "191c614a2aa0d870342f00956bce8fa0c05e7e947e00bdf3a763e6ac6e2abc07",
+          "size": 112923
         },
         {
           "path": "test-suite/reference/openPbr_glass.exr",
           "sha256": "f0cbc0295ec9b4a613c5cc5bf90dbf68048e9a85e40f6ac8464047d21704ce0d",
           "size": 26802
+        },
+        {
+          "path": "test-suite/reference/openPbr_height_to_normal_cube.exr",
+          "sha256": "50304eb6eefede42d35f48a32ec87acc0fac7d94bef8a410758ee27733fd256d",
+          "size": 569008
+        },
+        {
+          "path": "test-suite/reference/openPbr_normal_map_cube.exr",
+          "sha256": "bfdc5843c84be356008f064898189a07d21f78ebf6ae018ccbdca8f003927cdb",
+          "size": 568927
         },
         {
           "path": "test-suite/reference/openPbr_parameter_parity.exr",
@@ -594,7 +604,7 @@
           "size": 449420
         }
       ],
-      "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
+      "release": "reference-data-20260731T055034Z-85268583-b858feda"
     },
     "usdlux": {
       "archive": "usdlux--3359d0381fcf.zip",
