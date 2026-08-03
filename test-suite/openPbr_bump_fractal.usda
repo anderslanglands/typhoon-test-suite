@@ -8,13 +8,25 @@
 )
 
 def RenderSettings "RenderSettings" (
-    prepend apiSchemas = ["TyphoonRenderSettingsAPI"]
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
 )
 {
     rel camera = </World/Camera>
     rel products = [</RenderProduct>]
     float pixelAspectRatio = 1
     int2 resolution = (256, 170)
+    int primvars:arnold:AA_samples = 8
+    int primvars:arnold:GI_diffuse_depth = 16
+    int primvars:arnold:GI_diffuse_samples = 1
+    int primvars:arnold:GI_specular_depth = 16
+    int primvars:arnold:GI_specular_samples = 1
+    int primvars:arnold:GI_sss_samples = 1
+    int primvars:arnold:GI_total_depth = 16
+    int primvars:arnold:GI_transmission_depth = 16
+    int primvars:arnold:GI_transmission_samples = 1
+    int primvars:arnold:GI_volume_depth = 16
+    int primvars:arnold:GI_volume_samples = 1
+    int primvars:arnold:light_samples = 1
 }
 
 def RenderProduct "RenderProduct"
