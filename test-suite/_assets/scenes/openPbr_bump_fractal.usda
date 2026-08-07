@@ -7,7 +7,7 @@
 Contains:
 - One polygon plane with st
 - One polygon sphere mesh with face-varying st
-- A shared OpenPBR material using fractal3d as bump height"""
+- A shared OpenPBR material using scaled fractal3d as bump height"""
 )
 
 def Xform "World"
@@ -43,6 +43,7 @@ def Xform "World"
         ] (
             interpolation = "vertex"
         )
+        custom uniform float3 primvars:p_scale = (6, 6, 6)
         uniform token subdivisionScheme = "none"
         bool doubleSided = true
         rel material:binding = </World/Materials/FractalBumpOpenPbr>
@@ -53,6 +54,7 @@ def Xform "World"
         prepend apiSchemas = ["MaterialBindingAPI"]
     )
     {
+        custom uniform float3 primvars:p_scale = (0.5, 0.5, 0.5)
         double3 xformOp:translate = (0, 1.25, 0.0)
         double3 xformOp:scale = (1.25, 1.25, 1.25)
         token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
@@ -87,11 +89,19 @@ def Xform "World"
                 float3 outputs:out
             }
 
+            def Shader "PScale"
+            {
+                uniform token info:id = "ND_geompropvalue_vector3"
+                string inputs:geomprop = "p_scale"
+                float3 inputs:default = (6, 6, 6)
+                float3 outputs:out
+            }
+
             def Shader "ScalePosition"
             {
-                uniform token info:id = "ND_multiply_vector3FA"
+                uniform token info:id = "ND_multiply_vector3"
                 float3 inputs:in1.connect = </World/Materials/FractalBumpOpenPbr/Position.outputs:out>
-                float inputs:in2 = 6.0
+                float3 inputs:in2.connect = </World/Materials/FractalBumpOpenPbr/PScale.outputs:out>
                 float3 outputs:out
             }
 
@@ -110,7 +120,7 @@ def Xform "World"
             {
                 uniform token info:id = "ND_bump_vector3"
                 float inputs:height.connect = </World/Materials/FractalBumpOpenPbr/FractalHeight.outputs:out>
-                float inputs:scale = 0.05
+                float inputs:scale = 0.03
                 vector3f outputs:out
             }
 
@@ -142,7 +152,7 @@ def Xform "World"
                 color3f inputs:base_color = (0.2, 0.2, 0.2)
                 float inputs:base_metalness = 0.0
                 float inputs:specular_weight = 1.0
-                float inputs:specular_roughness = 0.1
+                float inputs:specular_roughness = 0.5
                 color3f inputs:specular_color = (1.0, 1.0, 1.0)
                 float inputs:specular_ior = 1.5
                 vector3f inputs:normal.connect = </World/Materials/FractalBumpOpenPbr/Bump.outputs:out>
