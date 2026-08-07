@@ -61,7 +61,6 @@ def RenderSettings "RenderSettings" (
     rel products = [</RenderProduct>]
     float pixelAspectRatio = 1
     int2 resolution = (170, 256)
-    token ty:samplerSequence = "openqmc_sobolbn"
     int ty:convergedSamplesPerPixel = 1
     int ty:randomNumberSeed = 1
     int ty:maxBounces = 0
