@@ -1,0 +1,107 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    renderSettingsPrimPath = "/RenderSettings"
+    subLayers = [
+        @./_assets/scenes/cube_20x20.usda@
+    ]
+)
+
+def RenderSettings "RenderSettings" (
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
+)
+{
+    rel camera = </World/Camera>
+    rel products = [</RenderProduct>]
+    float pixelAspectRatio = 1
+    int2 resolution = (256, 256)
+    int primvars:arnold:AA_samples = 8
+    int primvars:arnold:GI_diffuse_depth = 16
+    int primvars:arnold:GI_diffuse_samples = 1
+    int primvars:arnold:GI_specular_depth = 16
+    int primvars:arnold:GI_specular_samples = 1
+    int primvars:arnold:GI_sss_samples = 1
+    int primvars:arnold:GI_total_depth = 16
+    int primvars:arnold:GI_transmission_depth = 16
+    int primvars:arnold:GI_transmission_samples = 1
+    int primvars:arnold:GI_volume_depth = 16
+    int primvars:arnold:GI_volume_samples = 1
+    int primvars:arnold:light_samples = 1
+}
+
+def RenderProduct "RenderProduct"
+{
+    rel camera = </World/Camera>
+    rel orderedVars = [</RenderProduct/Color>]
+    token productName = "openPbr_displacement_glass_cube_roughness_02.exr"
+    token productType = "raster"
+
+    def RenderVar "Color"
+    {
+        token dataType = "color4f"
+        string sourceName = "color"
+        token sourceType = "raw"
+    }
+}
+
+over "World"
+{
+    over "Cube"
+    {
+        rel material:binding = </World/Materials/OpenPbrDisplacementGlass20x20>
+    }
+
+    over "Materials"
+    {
+        def Material "OpenPbrDisplacementGlass20x20" (
+            prepend apiSchemas = ["MaterialXConfigAPI"]
+        )
+        {
+            string config:mtlx:version = "1.38"
+            token outputs:mtlx:surface.connect = </World/Materials/OpenPbrDisplacementGlass20x20/OpenPbr.outputs:out>
+            token outputs:mtlx:displacement.connect = </World/Materials/OpenPbrDisplacementGlass20x20/Displacement.outputs:out>
+            token outputs:displacement.connect = </World/Materials/OpenPbrDisplacementGlass20x20/Displacement.outputs:out>
+
+            def Shader "TexCoord"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                float2 outputs:out
+            }
+
+            def Shader "HeightImage"
+            {
+                uniform token info:id = "ND_image_float"
+                float inputs:default = 0.0
+                asset inputs:file = @./_assets/images/bump-in.png@ (
+                    colorSpace = "none"
+                )
+                float2 inputs:texcoord.connect = </World/Materials/OpenPbrDisplacementGlass20x20/TexCoord.outputs:out>
+                float outputs:out
+            }
+
+            def Shader "Displacement"
+            {
+                uniform token info:id = "ND_displacement_float"
+                float inputs:displacement.connect = </World/Materials/OpenPbrDisplacementGlass20x20/SubtractOne.outputs:out>
+                float inputs:scale = 0.08
+                token outputs:out
+            }
+
+            def Shader "SubtractOne"
+            {
+                uniform token info:id = "ND_subtract_float"
+                float inputs:in1.connect = </World/Materials/OpenPbrDisplacementGlass20x20/HeightImage.outputs:out>
+                float inputs:in2 = 1.0
+                float outputs:out
+            }
+
+            def Shader "OpenPbr"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                float inputs:specular_roughness = 0.2
+                float inputs:transmission_weight = 1.0
+                token outputs:out
+            }
+        }
+    }
+}

@@ -112,9 +112,9 @@
       "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
     },
     "materials/open_pbr": {
-      "archive": "materials--open_pbr--d3735fea0c43.zip",
-      "archive_sha256": "3880ceac0277fd686db73a3b562c15a0d9c6b7f167576422a2888d044cbd985c",
-      "archive_size": 3345143,
+      "archive": "materials--open_pbr--cab540848bd7.zip",
+      "archive_sha256": "b46d1b6c84d43280ec0cf2617183151c9610270d681586bbe450a575d5259d4f",
+      "archive_size": 3345129,
       "files": [
         {
           "path": "materials/reference/open_pbr/displacement.exr",
@@ -173,8 +173,8 @@
         },
         {
           "path": "materials/reference/open_pbr/feature_transmission.exr",
-          "sha256": "c1d573060b0d4bf47cd800490407cedb1b3ae78fbd489cd2d9348efcf77f5db2",
-          "size": 75690
+          "sha256": "48c61e5d6d736afa610eac1546f4ddd8771b3f4ef1ec9e55a29364fc06667eeb",
+          "size": 75691
         },
         {
           "path": "materials/reference/open_pbr/glass.exr",
@@ -198,8 +198,8 @@
         },
         {
           "path": "materials/reference/open_pbr/open_pbr_surface_sweep_transmission_dispersion_scale_1_00.exr",
-          "sha256": "4a134fd8a60ea9a6e6544baa47b9de83709fcdbfda7c5dd8c1e1e923127ce122",
-          "size": 194365
+          "sha256": "1879a57c9a7527f0651efc70da8d4e9f7f841f51e3d4361fe3ac62f8d9400a6a",
+          "size": 194350
         },
         {
           "path": "materials/reference/open_pbr/soapbubble.exr",
@@ -207,7 +207,7 @@
           "size": 137225
         }
       ],
-      "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
+      "release": "reference-data-20260809T183708Z-0bab4edc-24468ee2"
     },
     "materials/pbr": {
       "archive": "materials--pbr--bb37ab673082.zip",
@@ -384,9 +384,9 @@
       "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
     },
     "test-suite": {
-      "archive": "test-suite--a23e8225c6e4.zip",
-      "archive_sha256": "d1d3fbfb2d72cff4f76c6fa9f953f8ee55fc3bf557337f1f0597f44cfb16f843",
-      "archive_size": 11477856,
+      "archive": "test-suite--2884b584fbfd.zip",
+      "archive_sha256": "9892dbc4c9aafd1e7c79a81b5f9abb1bedecf2d5d7cbc71e1e6023c9f89f74f5",
+      "archive_size": 14276988,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
@@ -485,13 +485,28 @@
         },
         {
           "path": "test-suite/reference/openPbr_bump_fractal.exr",
-          "sha256": "191c614a2aa0d870342f00956bce8fa0c05e7e947e00bdf3a763e6ac6e2abc07",
-          "size": 112923
+          "sha256": "88aef6aaa7fda2dc13aeb67e812c51821e1e3efe82abaa4c3c4c7299175a44b8",
+          "size": 112944
         },
         {
           "path": "test-suite/reference/openPbr_displacement_glass_cube_20x20.exr",
           "sha256": "c225de06472c5e9c3c588089c312da1017c313c2983051277c98dc2c4b6b6cee",
           "size": 567582
+        },
+        {
+          "path": "test-suite/reference/openPbr_displacement_glass_cube_roughness_01.exr",
+          "sha256": "847b320b6511942de11f339e70da6e2b791a4e74b45b896514cdd495e3b4e071",
+          "size": 567738
+        },
+        {
+          "path": "test-suite/reference/openPbr_displacement_glass_cube_roughness_02.exr",
+          "sha256": "bf6ce61f0b2602e3b7bdce61500db62ea2a27d6b784aa0ca377015c4c9c3fa0f",
+          "size": 567685
+        },
+        {
+          "path": "test-suite/reference/openPbr_displacement_glass_cube_roughness_05.exr",
+          "sha256": "ae6ec69473ffc6c9a9c497745a3e64e35866fbf5ebcd3355580e6739f715afe7",
+          "size": 567642
         },
         {
           "path": "test-suite/reference/openPbr_displacement_glass_planes_20x20.exr",
@@ -505,8 +520,8 @@
         },
         {
           "path": "test-suite/reference/openPbr_height_to_normal_cube.exr",
-          "sha256": "50304eb6eefede42d35f48a32ec87acc0fac7d94bef8a410758ee27733fd256d",
-          "size": 569008
+          "sha256": "a4caff7d1b412b9c2bf5ae7053cf45da8aae12287a26e57627b1231e954ec154",
+          "size": 568963
         },
         {
           "path": "test-suite/reference/openPbr_height_to_normal_glass_cube.exr",
@@ -515,18 +530,18 @@
         },
         {
           "path": "test-suite/reference/openPbr_height_to_normal_glass_cube_roughness_0_5.exr",
-          "sha256": "2026e95c70074029cc7753e7f05ff080177761eb3e2e5f813f7e44715c737dbb",
-          "size": 568978
+          "sha256": "e945a334126402a09dd4d72e7a3f2a912313d61a86ca011dcfe5696c42dba186",
+          "size": 569149
         },
         {
           "path": "test-suite/reference/openPbr_height_to_normal_glass_planes_20x20.exr",
-          "sha256": "d08ee215baaca45433d661c4ba49bcaf9cd3577b1f77f621249a5c901379e58b",
-          "size": 88133
+          "sha256": "794ed176efc463ce6cc35ff74ea12b039b94638fd2157ed61d1877eda357bff2",
+          "size": 66418
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_cube.exr",
-          "sha256": "bfdc5843c84be356008f064898189a07d21f78ebf6ae018ccbdca8f003927cdb",
-          "size": 568927
+          "sha256": "afd4bcfe08d6edbcee8000a6cfbb7cd995cc51f92eaf05490b402caf13bb7c5a",
+          "size": 568961
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_cube.exr",
@@ -534,14 +549,24 @@
           "size": 569040
         },
         {
+          "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_1.exr",
+          "sha256": "7bc40e24111d9cceee75a736c8dc9fdc9c2c34c3f557bf28e9ca32ccd4d02dcc",
+          "size": 569076
+        },
+        {
+          "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_2.exr",
+          "sha256": "090dc5fad72d2934897829bee8c23a7e2e0c888e8d690adfc330f7ce68631204",
+          "size": 569190
+        },
+        {
           "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_5.exr",
-          "sha256": "9b89a57a83424f7fc71aa67e52b206b525227e4f1a8ea6441f0597c60670e46b",
-          "size": 568990
+          "sha256": "3f39b66328a9d9e3c8c97bf4755826b97f8b1c1d27ccaa2327c7d2e78ad301c8",
+          "size": 569129
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_planes_20x20.exr",
-          "sha256": "acf350e65700bd77c5707dab6a170a4f4983e9fbc701325b9d023273a0304728",
-          "size": 87960
+          "sha256": "3c1067cb67f386075bff4f2f0fc3de436c63da3ec5f4b3ef3fc206808e6a7190",
+          "size": 66090
         },
         {
           "path": "test-suite/reference/openPbr_parameter_parity.exr",
@@ -644,7 +669,60 @@
           "size": 449420
         }
       ],
-      "release": "reference-data-20260803T122021Z-cf06afea-0f0ef972"
+      "release": "reference-data-20260809T183708Z-0bab4edc-24468ee2"
+    },
+    "test-suite/furnace": {
+      "archive": "test-suite--furnace--3e0b24939d3b.zip",
+      "archive_sha256": "49c6e5a4e24e16a6dee2ad79135540dd32a24516d02a0b5f2bb201d945957103",
+      "archive_size": 716978,
+      "files": [
+        {
+          "path": "test-suite/reference/furnace/openpbr_carpaint.exr",
+          "sha256": "5e348c94b0c9a53ac6dc3c29d607467d755da17f2cda0e9af4a508dc7682fce0",
+          "size": 90960
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r00.exr",
+          "sha256": "9c79ee743796ed75eb779a1affbde807588104d088d3289bffcd788e14c0b5e2",
+          "size": 12756
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r02.exr",
+          "sha256": "126745fbe48e4edf2e1630eca1dadec00ab010f04b3e5658e9303269c6e2fbcb",
+          "size": 91001
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r05.exr",
+          "sha256": "8811e1cfb21dcdb6e683ea8953f6171591434573d93b653dccd37a4c381cb530",
+          "size": 90990
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r10.exr",
+          "sha256": "ef3d28b19e45078a9b285934e9fa7376cec56c2fbd50c7f49dc9161676c09d43",
+          "size": 90951
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r00.exr",
+          "sha256": "3df5c8a166d582fa414f690e800c190b778ab512b394867b20240da2fff674a3",
+          "size": 65607
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r02.exr",
+          "sha256": "d2ddc8338f82992a1bb2b891b3690f96b602df359cc72085326fbac03b7ab248",
+          "size": 91016
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r05.exr",
+          "sha256": "0846b867f56615dd5dae0c438529099cf521b662b89e835d592f58bab5396dba",
+          "size": 91019
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r10.exr",
+          "sha256": "5822c9c13501cbf8347c37d351314d31b65382216bc74ab1ff1ea23fe2ef1ba0",
+          "size": 91010
+        }
+      ],
+      "release": "reference-data-20260809T183708Z-0bab4edc-24468ee2"
     },
     "usdlux": {
       "archive": "usdlux--3359d0381fcf.zip",
