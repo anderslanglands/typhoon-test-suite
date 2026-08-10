@@ -24,11 +24,8 @@ def RenderSettings "RenderSettings"
     int ty:maxBounces = 16
     int ty:minBouncesBeforeRR = 4
     int ty:lightSamplesPerHit = 1
-    bool ty:enableAdaptiveSampling = false
-    bool ty:stratifyLightSamples = true
-    bool ty:enableCaustics = true
+    bool ty:enableCaustics = false
     float ty:causticsClampThreshold = 5.0
-    token ty:samplerSequence = "openqmc_sobolbn"
     rel products = [</RenderProduct>]
 }
 
