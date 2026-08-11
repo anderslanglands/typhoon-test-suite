@@ -6,3 +6,4 @@ __pycache__/
 .goldeneye-reference-state.json
 reference/
 **/*.tx
+/goldeneye.*.toml

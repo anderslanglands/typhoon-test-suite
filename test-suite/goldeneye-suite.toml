@@ -1,9 +1,6 @@
 [suite]
 name = "test-suite"
 
-[render]
-output_pattern = "{path}.exr"
-
 [reference]
 dir = "reference"
 pattern = "{path}.exr"
