@@ -1,0 +1,126 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 1
+    upAxis = "Y"
+    renderSettingsPrimPath = "/RenderSettings"
+    doc = "OpenPBR dielectric appearance test with 0.2 specular roughness and a tangent-space normal map."
+)
+
+def Xform "World"
+{
+    def Camera "Camera"
+    {
+        float focalLength = 50
+        float horizontalAperture = 36
+        float verticalAperture = 24
+        float2 clippingRange = (0.1, 1000)
+        double3 xformOp:translate = (0, 0, 4.5)
+        token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Xform "Sphere" (
+        prepend references = @./_assets/scenes/meshes/Sphere_Poly.usda@
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
+    {
+        float3 xformOp:scale = (2.0, 2.0, 2.0)
+        token[] xformOpOrder = ["xformOp:scale"]
+        rel material:binding = </World/Materials/OpenPbrDielectricR00>
+    }
+
+    def Scope "Materials"
+    {
+        def Material "OpenPbrDielectricR00" (
+            prepend apiSchemas = ["MaterialXConfigAPI"]
+        )
+        {
+            string config:mtlx:version = "1.38"
+            token outputs:mtlx:surface.connect = </World/Materials/OpenPbrDielectricR00/OpenPbr.outputs:out>
+
+            def Shader "TexCoord"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                float2 outputs:out
+            }
+
+            def Shader "NormalImage"
+            {
+                uniform token info:id = "ND_image_vector3"
+                float3 inputs:default = (0.5, 0.5, 1.0)
+                asset inputs:file = @./_assets/images/normals.png@ (
+                    colorSpace = "none"
+                )
+                float2 inputs:texcoord.connect = </World/Materials/OpenPbrDielectricR00/TexCoord.outputs:out>
+                float3 outputs:out
+            }
+
+            def Shader "NormalMap"
+            {
+                uniform token info:id = "ND_normalmap_float"
+                float3 inputs:in.connect = </World/Materials/OpenPbrDielectricR00/NormalImage.outputs:out>
+                float3 outputs:out
+            }
+
+            def Shader "OpenPbr"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                float inputs:base_weight = 0.0
+                color3f inputs:base_color = (1.0, 1.0, 1.0)
+                float inputs:specular_weight = 1.0
+                float inputs:specular_roughness = 0.2
+                color3f inputs:specular_color = (1.0, 1.0, 1.0)
+                float inputs:specular_ior = 1.5
+                float inputs:transmission_weight = 1.0
+                color3f inputs:transmission_color = (1.0, 1.0, 1.0)
+                vector3f inputs:geometry_normal.connect = </World/Materials/OpenPbrDielectricR00/NormalMap.outputs:out>
+                token outputs:out
+            }
+        }
+    }
+
+    def DomeLight "Environment"
+    {
+        asset inputs:texture:file = @./_assets/images/StinsonBeach.hdr@
+        token inputs:texture:format = "latlong"
+        color3f inputs:color = (1.0, 1.0, 1.0)
+        float inputs:intensity = 1.0
+    }
+}
+
+def RenderSettings "RenderSettings" (
+    prepend apiSchemas = ["TyphoonRenderSettingsAPI", "ArnoldOptionsAPI"]
+)
+{
+    rel camera = </World/Camera>
+    rel products = [</RenderProduct>]
+    float pixelAspectRatio = 1
+    int2 resolution = (256, 256)
+    int primvars:arnold:AA_samples = 8
+    int primvars:arnold:GI_diffuse_depth = 16
+    int primvars:arnold:GI_diffuse_samples = 1
+    int primvars:arnold:GI_specular_depth = 16
+    int primvars:arnold:GI_specular_samples = 1
+    int primvars:arnold:GI_sss_samples = 1
+    int primvars:arnold:GI_total_depth = 16
+    int primvars:arnold:GI_transmission_depth = 16
+    int primvars:arnold:GI_transmission_samples = 1
+    int primvars:arnold:GI_volume_depth = 16
+    int primvars:arnold:GI_volume_samples = 1
+    int primvars:arnold:light_samples = 1
+}
+
+def RenderProduct "RenderProduct"
+{
+    rel camera = </World/Camera>
+    rel orderedVars = [</RenderProduct/Color>]
+    token productName = "openpbr_dielectic_r02_normal_map.exr"
+    token productType = "raster"
+
+    def RenderVar "Color"
+    {
+        token dataType = "color4f"
+        string sourceName = "color"
+        token sourceType = "raw"
+    }
+}
