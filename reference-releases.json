@@ -384,9 +384,9 @@
       "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
     },
     "test-suite": {
-      "archive": "test-suite--2884b584fbfd.zip",
-      "archive_sha256": "9892dbc4c9aafd1e7c79a81b5f9abb1bedecf2d5d7cbc71e1e6023c9f89f74f5",
-      "archive_size": 14276988,
+      "archive": "test-suite--22de44b863f5.zip",
+      "archive_sha256": "bb923423a5ee5f20c23801363eebea36fecde6bad01703b699317c68e48c632c",
+      "archive_size": 18630446,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
@@ -550,18 +550,18 @@
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_1.exr",
-          "sha256": "7bc40e24111d9cceee75a736c8dc9fdc9c2c34c3f557bf28e9ca32ccd4d02dcc",
-          "size": 569076
+          "sha256": "2934c38bd64a0534d0b2ffa50844393cafb98f722e667705b5f2d901342f6b2a",
+          "size": 569066
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_2.exr",
-          "sha256": "090dc5fad72d2934897829bee8c23a7e2e0c888e8d690adfc330f7ce68631204",
-          "size": 569190
+          "sha256": "5864c19cc1af7c82ef7da1a1cba353d42c9840e1684e7b0bd38f32c9638d1720",
+          "size": 569173
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_cube_roughness_0_5.exr",
-          "sha256": "3f39b66328a9d9e3c8c97bf4755826b97f8b1c1d27ccaa2327c7d2e78ad301c8",
-          "size": 569129
+          "sha256": "21b0a6fe44472412187775fec8f65b6023b1a8c69cc88c4bb8e3e972110e93dd",
+          "size": 569117
         },
         {
           "path": "test-suite/reference/openPbr_normal_map_glass_planes_20x20.exr",
@@ -577,6 +577,41 @@
           "path": "test-suite/reference/openPbr_simple.exr",
           "sha256": "1fa838b9d7f5e383cf422e9b2ff5b4813ed7149e4132e3adba0b748bb48f0b7a",
           "size": 102889
+        },
+        {
+          "path": "test-suite/reference/openpbr_carpaint_normal_map.exr",
+          "sha256": "d87b0db2ed652e5ead2f7d2e9432e8e1fbbaff8eb4b49317cd9d94cd8547f106",
+          "size": 624790
+        },
+        {
+          "path": "test-suite/reference/openpbr_conductor_r00_normal_map.exr",
+          "sha256": "5624cb3ab3e94747692adb294c3fc42920aa5bcdc22308a4eb856c94668bea8d",
+          "size": 603234
+        },
+        {
+          "path": "test-suite/reference/openpbr_conductor_r02_normal_map.exr",
+          "sha256": "cf248b645f450cd9f5eb473fc2b89c3e85c28905b832038f68d425cdca0ecaac",
+          "size": 624832
+        },
+        {
+          "path": "test-suite/reference/openpbr_conductor_r05_normal_map.exr",
+          "sha256": "d59288d7786318828b83a7f1c5b2df6951cb23cc81556965a4508689ebf61825",
+          "size": 624843
+        },
+        {
+          "path": "test-suite/reference/openpbr_dielectic_r00_normal_map.exr",
+          "sha256": "0bab19669f65353e22dd9f45fdbe58ddaf72edc1bf737a84092789486244472a",
+          "size": 624618
+        },
+        {
+          "path": "test-suite/reference/openpbr_dielectic_r02_normal_map.exr",
+          "sha256": "4f0a3de853c9441c4b1fb220779bbc150a096e12e4e037cf53f0b7c3ff062f19",
+          "size": 624826
+        },
+        {
+          "path": "test-suite/reference/openpbr_dielectic_r05_normal_map.exr",
+          "sha256": "1bf69fe56be34866fd6b66f3ab3c0b52a716df3b3ba3cf6e807d8899cae5d69f",
+          "size": 625034
         },
         {
           "path": "test-suite/reference/openpbr_sss_native_adobe_compare.exr",
@@ -669,12 +704,12 @@
           "size": 449420
         }
       ],
-      "release": "reference-data-20260809T183708Z-0bab4edc-24468ee2"
+      "release": "reference-data-20260811T083722Z-9ddb6a52-b7f0802c"
     },
     "test-suite/furnace": {
-      "archive": "test-suite--furnace--3e0b24939d3b.zip",
-      "archive_sha256": "49c6e5a4e24e16a6dee2ad79135540dd32a24516d02a0b5f2bb201d945957103",
-      "archive_size": 716978,
+      "archive": "test-suite--furnace--6ca508c9d20d.zip",
+      "archive_sha256": "b8c14711e1b1d5d11b656254f4a2a61220d03e6458106a41acc67bad1d82554c",
+      "archive_size": 1350684,
       "files": [
         {
           "path": "test-suite/reference/furnace/openpbr_carpaint.exr",
@@ -682,7 +717,17 @@
           "size": 90960
         },
         {
+          "path": "test-suite/reference/furnace/openpbr_carpaint_normal_map.exr",
+          "sha256": "61113a57f65dbd0c5fba3f43ad26869c365a46a410926321e9e6257619b16080",
+          "size": 103952
+        },
+        {
           "path": "test-suite/reference/furnace/openpbr_conductor_r00.exr",
+          "sha256": "9c79ee743796ed75eb779a1affbde807588104d088d3289bffcd788e14c0b5e2",
+          "size": 12756
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r00_normal_map.exr",
           "sha256": "9c79ee743796ed75eb779a1affbde807588104d088d3289bffcd788e14c0b5e2",
           "size": 12756
         },
@@ -692,9 +737,19 @@
           "size": 91001
         },
         {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r02_normal_map.exr",
+          "sha256": "1f678fba34e9fc2dcf4ee5d25ac3474a6e0c5c19d50f2fce7883d08ab4e44cea",
+          "size": 103952
+        },
+        {
           "path": "test-suite/reference/furnace/openpbr_conductor_r05.exr",
           "sha256": "8811e1cfb21dcdb6e683ea8953f6171591434573d93b653dccd37a4c381cb530",
           "size": 90990
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_conductor_r05_normal_map.exr",
+          "sha256": "4a7b706d8fae2617cfb7ab5ddade2557c47414c20994f28a296d71159b838cc0",
+          "size": 103967
         },
         {
           "path": "test-suite/reference/furnace/openpbr_conductor_r10.exr",
@@ -707,9 +762,19 @@
           "size": 65607
         },
         {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r00_normal_map.exr",
+          "sha256": "09a4379060ed5128726fac13b0290ba2a9f1bd5737296e3578d70242d3ea28bc",
+          "size": 99567
+        },
+        {
           "path": "test-suite/reference/furnace/openpbr_dielectic_r02.exr",
           "sha256": "d2ddc8338f82992a1bb2b891b3690f96b602df359cc72085326fbac03b7ab248",
           "size": 91016
+        },
+        {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r02_normal_map.exr",
+          "sha256": "bd155e6669bd2e35fcd05528b3f2d86a580d20ef88cf62e0de220fa4064b7329",
+          "size": 104025
         },
         {
           "path": "test-suite/reference/furnace/openpbr_dielectic_r05.exr",
@@ -717,12 +782,17 @@
           "size": 91019
         },
         {
+          "path": "test-suite/reference/furnace/openpbr_dielectic_r05_normal_map.exr",
+          "sha256": "ba2148082e60829622120bc5410a57f7df04da83896b98238ea5ba5fa9a95a44",
+          "size": 104055
+        },
+        {
           "path": "test-suite/reference/furnace/openpbr_dielectic_r10.exr",
           "sha256": "5822c9c13501cbf8347c37d351314d31b65382216bc74ab1ff1ea23fe2ef1ba0",
           "size": 91010
         }
       ],
-      "release": "reference-data-20260809T183708Z-0bab4edc-24468ee2"
+      "release": "reference-data-20260811T083722Z-9ddb6a52-b7f0802c"
     },
     "usdlux": {
       "archive": "usdlux--3359d0381fcf.zip",
