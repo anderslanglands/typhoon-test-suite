@@ -15,6 +15,8 @@ environments:
       channel-priority: disabled
     packages:
       linux-64:
+      - conda: https://conda.anaconda.org/anderslanglands/linux-64/flip-evaluator-1.7-py311h48b7412_0.conda
+      - conda: https://conda.anaconda.org/anderslanglands/linux-64/goldeneye-0.9.0-py311h48b7412_0.conda
       - conda: https://conda.anaconda.org/anderslanglands/linux-64/imath-dev-3.2.2-h99d2594_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/linux-64/imath-lib-3.2.2-hb0f4dca_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/linux-64/materialx-dev-1.39.5-hed5a164_2.conda
@@ -187,9 +189,10 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/noarch/tomli-2.4.1-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/typing_extensions-4.16.0-pyhcf101f3_0.conda
       - conda: https://conda.anaconda.org/conda-forge/noarch/tzdata-2026c-h151e31d_0.conda
-      - pypi: ../goldeneye
       - pypi: https://files.pythonhosted.org/packages/1b/0b/f887708fdb5a929405fec1df9cad16891c99fc95db6c0771e216dded3e11/flip_evaluator-1.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
       osx-arm64:
+      - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/flip-evaluator-1.7-py311h5f8ada8_0.conda
+      - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/goldeneye-0.9.0-py311h5f8ada8_0.conda
       - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/imath-dev-3.2.2-hdb89eb8_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/imath-lib-3.2.2-h60d57d3_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/materialx-dev-1.39.5-hb9ac815_2.conda
@@ -316,9 +319,10 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zlib-1.3.2-h8088a28_3.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zlib-ng-2.3.3-hed4e4f5_1.conda
       - conda: https://conda.anaconda.org/conda-forge/osx-arm64/zstd-1.5.7-hbf9d68e_6.conda
-      - pypi: ../goldeneye
       - pypi: https://files.pythonhosted.org/packages/2a/59/a74b3a41d9b512febd3e71366ec8cbc038b481235195166a6812a7826d8f/flip_evaluator-1.7-cp311-cp311-macosx_11_0_arm64.whl
       win-64:
+      - conda: https://conda.anaconda.org/anderslanglands/win-64/flip-evaluator-1.7-py311h5b37ef5_0.conda
+      - conda: https://conda.anaconda.org/anderslanglands/win-64/goldeneye-0.9.0-py311h71d400c_0.conda
       - conda: https://conda.anaconda.org/anderslanglands/win-64/imath-dev-3.2.2-hc3fa3f9_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/win-64/imath-lib-3.2.2-ha41a7fa_1.conda
       - conda: https://conda.anaconda.org/anderslanglands/win-64/materialx-dev-1.39.5-hc84e75f_2.conda
@@ -444,9 +448,34 @@ environments:
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-1.3.2-hfd05255_3.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zlib-ng-2.3.3-h0261ad2_1.conda
       - conda: https://conda.anaconda.org/conda-forge/win-64/zstd-1.5.7-h534d264_6.conda
-      - pypi: ../goldeneye
       - pypi: https://files.pythonhosted.org/packages/4f/dc/fb7353be63688585345eb46176019cb97c96a99e5fd1a386b1227d853d8f/flip_evaluator-1.7-cp311-cp311-win_amd64.whl
 packages:
+- conda: https://conda.anaconda.org/anderslanglands/linux-64/flip-evaluator-1.7-py311h48b7412_0.conda
+  sha256: e3fbdc9f11003105f9d285332099fc948469dcd9778e4c72abfe3c78e4668e14
+  md5: d997ba45669b3664b6d3cb15cc9c01aa
+  depends:
+  - libgomp
+  - python
+  - libstdcxx >=15
+  - libgcc >=15
+  - python_abi 3.11.* *_cp311
+  license: BSD-3-Clause
+  size: 224383
+  timestamp: 1783715419267
+- conda: https://conda.anaconda.org/anderslanglands/linux-64/goldeneye-0.9.0-py311h48b7412_0.conda
+  sha256: 2c3a518f96bfd50b01d3202c4441d22399b27b87121c123cbfaa919f82c05b7b
+  md5: 9cedb6b29dad6c8c318b30aeee49a350
+  depends:
+  - flip-evaluator ==1.7
+  - numpy
+  - openusd-typhoon
+  - pillow
+  - pytest
+  - python
+  - python_abi 3.11.* *_cp311
+  license: Apache-2.0
+  size: 322991
+  timestamp: 1786377152174
 - conda: https://conda.anaconda.org/anderslanglands/linux-64/imath-dev-3.2.2-h99d2594_1.conda
   sha256: 824042a52d43ed89de767c4be8fb42fd0d469f693795032d311834fbc80c62b2
   md5: 8ec2b3e5522abf1f644aa5ff8b85268f
@@ -772,6 +801,30 @@ packages:
   license: Apache-2.0
   size: 7200012
   timestamp: 1781768449127
+- conda: https://conda.anaconda.org/anderslanglands/osx-arm64/flip-evaluator-1.7-py311h5f8ada8_0.conda
+  sha256: 8d6d1b254a43b322f90fce8e771f266fb3ee43ebd0406233059e45e68fb51e03
+  md5: affda8c35858aabd36b1645cb146f8b0
+  depends:
+  - python
+  - libcxx >=22
+  - python_abi 3.11.* *_cp311
+  license: BSD-3-Clause
+  size: 211990
+  timestamp: 1783715417559
+- conda: https://conda.anaconda.org/anderslanglands/osx-arm64/goldeneye-0.9.0-py311h5f8ada8_0.conda
+  sha256: ae15cfd1aa04f9d0ed9ce1af31ea1c28a094558092c987b9793d03b209ff970f
+  md5: 7c9b62dacebb916a9ffe5e91a6131a89
+  depends:
+  - flip-evaluator ==1.7
+  - numpy
+  - openusd-typhoon
+  - pillow
+  - pytest
+  - python
+  - python_abi 3.11.* *_cp311
+  license: Apache-2.0
+  size: 321660
+  timestamp: 1786377170869
 - conda: https://conda.anaconda.org/anderslanglands/osx-arm64/imath-dev-3.2.2-hdb89eb8_1.conda
   sha256: 8a8034221f4b57158d56b93d6262afeca5f760569f6b26906e34d49da164443b
   md5: 07cfec78d80f7723d071ee9d8a86b5ea
@@ -1050,6 +1103,32 @@ packages:
   license: Apache-2.0
   size: 5178859
   timestamp: 1781768451164
+- conda: https://conda.anaconda.org/anderslanglands/win-64/flip-evaluator-1.7-py311h5b37ef5_0.conda
+  sha256: f3690bbae863d2434589811f4451fa9a8284bf0712866319746b0276912ff659
+  md5: 1b3d5019f7ac5ea041d658c4f169a4cd
+  depends:
+  - python
+  - vc >=14.3,<15
+  - vc14_runtime >=14.44.35208
+  - ucrt >=10.0.20348.0
+  - python_abi 3.11.* *_cp311
+  license: BSD-3-Clause
+  size: 234721
+  timestamp: 1783715427478
+- conda: https://conda.anaconda.org/anderslanglands/win-64/goldeneye-0.9.0-py311h71d400c_0.conda
+  sha256: 056735ea318ab31986c3c1553cfc149a08ee4e1eb7ad949d4c585fe8cdf5fea7
+  md5: 36eeac96e8caf6eba128e43c0d06b5c2
+  depends:
+  - flip-evaluator ==1.7
+  - numpy
+  - openusd-typhoon
+  - pillow
+  - pytest
+  - python
+  - python_abi 3.11.* *_cp311
+  license: Apache-2.0
+  size: 366086
+  timestamp: 1786377155603
 - conda: https://conda.anaconda.org/anderslanglands/win-64/imath-dev-3.2.2-hc3fa3f9_1.conda
   sha256: ac410d33f62e7f04d355081c0a67a6b0c5ca3e4cb2c28482f42c4490bc3fddb8
   md5: b4d2a899bbe0ab0487ebfae3f31dbe46
@@ -6705,14 +6784,6 @@ packages:
     - zstd >=1.5.7,<1.6.0a0
   size: 388453
   timestamp: 1764777142545
-- pypi: ../goldeneye
-  name: goldeneye
-  requires_dist:
-  - pytest
-  - numpy
-  - pillow
-  - flip-evaluator==1.7
-  requires_python: '>=3.11'
 - pypi: https://files.pythonhosted.org/packages/1b/0b/f887708fdb5a929405fec1df9cad16891c99fc95db6c0771e216dded3e11/flip_evaluator-1.7-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
   name: flip-evaluator
   version: '1.7'
