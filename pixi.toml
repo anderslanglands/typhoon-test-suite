@@ -22,7 +22,7 @@ flip-evaluator = "==1.7"
 
 [tasks]
 test = "pytest"
-"goldeneye:download-references" = "goldeneye download-references"
-"goldeneye:update-references" = "goldeneye update-references"
-"goldeneye:extract-failures" = "goldeneye extract-failures"
-"goldeneye:view" = "goldeneye view"
+"download-references" = "goldeneye download-references"
+"update-references" = "goldeneye update-references"
+"extract-failures" = "goldeneye extract-failures"
+"view" = "goldeneye view"
