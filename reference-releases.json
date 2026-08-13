@@ -384,9 +384,9 @@
       "release": "reference-data-20260726T180635Z-bb9ab9d8-d0be28b3"
     },
     "test-suite": {
-      "archive": "test-suite--22de44b863f5.zip",
-      "archive_sha256": "bb923423a5ee5f20c23801363eebea36fecde6bad01703b699317c68e48c632c",
-      "archive_size": 18630446,
+      "archive": "test-suite--ad98ad68d2e4.zip",
+      "archive_sha256": "18adc20c618aeb5937d3d4fd4300c90b31427769d991e77d13e9909d3ca6feb6",
+      "archive_size": 18630463,
       "files": [
         {
           "path": "test-suite/reference/caustics_off_policy_regression.exr",
@@ -485,8 +485,8 @@
         },
         {
           "path": "test-suite/reference/openPbr_bump_fractal.exr",
-          "sha256": "88aef6aaa7fda2dc13aeb67e812c51821e1e3efe82abaa4c3c4c7299175a44b8",
-          "size": 112944
+          "sha256": "d3fe966bd82f9607178a2036b1cbef345dc2f22b281c818221e9a08f33150279",
+          "size": 112961
         },
         {
           "path": "test-suite/reference/openPbr_displacement_glass_cube_20x20.exr",
@@ -704,7 +704,7 @@
           "size": 449420
         }
       ],
-      "release": "reference-data-20260811T083722Z-9ddb6a52-b7f0802c"
+      "release": "reference-data-20260813T224437Z-15612a68-33c2ced5"
     },
     "test-suite/furnace": {
       "archive": "test-suite--furnace--6ca508c9d20d.zip",
