@@ -20,22 +20,22 @@ build pinned in `pixi.lock` when a task is first run.
 Run all 474 collected image comparisons with:
 
 ```sh
-pixi run test
+pixi run pytest
 ```
 
 The `test` task accepts any suite, subtree, or individual USD fixture:
 
 ```sh
-pixi run test materials/pbr
-pixi run test usdlux
-pixi run test materials/open_pbr/displacement.usda
+pixi run pytest materials/pbr
+pixi run pytest usdlux
+pixi run pytest materials/open_pbr/displacement.usda
 ```
 
 Use Goldeneye's dry-run mode to inspect the resolved renderer command without
 rendering:
 
 ```sh
-pixi run test test-suite/openPbr_simple.usda --goldeneye-dry-run -s
+pixi run pytest test-suite/openPbr_simple.usda --goldeneye-dry-run -s
 ```
 
 ### Testing a local Typhoon build

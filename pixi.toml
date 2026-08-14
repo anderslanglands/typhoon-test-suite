@@ -21,7 +21,6 @@ flip-evaluator = "==1.7"
 # goldeneye = { path = "../goldeneye", editable = true }
 
 [tasks]
-test = "pytest"
 "download-references" = "goldeneye download-references"
 "update-references" = "goldeneye update-references"
 "extract-failures" = "goldeneye extract-failures"
